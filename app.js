@@ -48,7 +48,7 @@ function setLang(l) {
   if (screen === 'ex' && run && run.list.length) renderExercise(run.cur || run.list[0]); else home();
 }
 const langSwitch = () => h('div', { class: 'langs', role: 'group', 'aria-label': t('langLabel') },
-  window.LANGS.map(([code, label]) => h('button', { class: 'lang' + (code === lang ? ' on' : ''), 'aria-pressed': String(code === lang), onclick: () => { if (code !== lang) setLang(code); } }, label)));
+  window.LANGS.map(([code, label]) => h('button', { class: 'lang' + (code === lang ? ' on' : ''), 'aria-pressed': String(code === lang), onclick: () => { if (code !== lang) { setLang(code); track('lang/' + code, 'Язык ' + label); } } }, label)));
 
 const dayKey = (d = new Date()) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 const todayXp = () => S.today[dayKey()] || 0;
@@ -168,6 +168,13 @@ function vocabSet(set) {
   return shuffle(items);
 }
 function openVocab(set) { startSession(vocabSet(set), () => tSet(set), vocabLesson(set)); }
+
+// ---------- Анонимная статистика (GoatCounter): заходы, «активные минуты», решённые задания ----------
+// Никаких имён, ответов и текстов не отправляется; без интернета или с блокировщиком рекламы просто молчит.
+const track = (path, title) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title: title || path, event: true }); } catch (e) { /* без статистики */ } };
+let lastTouch = Date.now();
+['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(ev => addEventListener(ev, () => { lastTouch = Date.now(); }, { passive: true }));
+setInterval(() => { if (!document.hidden && Date.now() - lastTouch < 90000) track('minute', 'Активная минута'); }, 60000);
 
 // ---------- Сообщение об ошибке ----------
 const REPORT_KEY = window.REPORT_KEY || '';
@@ -309,6 +316,7 @@ function home() {
           h('span', { class: 'pct' }, S.done[l.id] ? p + '%' : ''));
       }),
     ]),
+    h('p', { class: 'lk-hint', style: 'text-align:center;margin:20px 0 4px' }, t('statsNote')),
   );
 }
 
@@ -484,6 +492,7 @@ function renderExercise(item) {
       run.list.push({ ...item, retry: true, res: null });
     }
     save();
+    track(r.ok ? 'exercise/ok' : 'exercise/wrong', r.ok ? 'Задание: верно' : 'Задание: ошибка');
     item.res = { ok: r.ok, loose: r.loose, mine: r.mine, pick: e.t === 'c' ? (r.mine === e.a ? -1 : e.w.indexOf(r.mine)) : -1 };
     }
     const whyText = e.vocab ? [e.why, e.opt && e.opt[r.mine]].filter(Boolean).join(' ') : whyOf(l.id, item.i);
@@ -553,6 +562,7 @@ function finish() {
   screen = 'fin';
   const acc = Math.round(run.firstTry / run.total * 100);
   addXp(run.xp);
+  track('session-done/' + (run.lesson ? run.lesson.id : 'mix-or-review'), 'Сессия завершена');
   if (run.lesson) {
     const d = S.done[run.lesson.id] || { best: 0, times: 0 };
     d.best = Math.max(d.best, acc); d.times++;
