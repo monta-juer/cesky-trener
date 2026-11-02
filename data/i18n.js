@@ -5,7 +5,6 @@ window.LANGS = [['ru', 'RU'], ['cs', 'CS'], ['en', 'EN'], ['kk', 'KZ']];
 window.UI = {
   ru: {
     appTitle: 'Český trenér',
-    statsNote: 'Анонимная статистика заходов: без имён и личных данных.',
     reportBtn: '⚠️ Сообщить об ошибке', reportTitle: 'Сообщить об ошибке', reportAbout: 'Что не так с этим заданием?', reportPh: 'Опиши ошибку или как должно быть', reportContactPh: 'Как с тобой связаться (необязательно)', reportSend: 'Отправить', reportSending: 'Отправляю…', reportThanks: 'Спасибо! Сообщение отправлено.', reportFail: 'Не удалось отправить. Проверь интернет и попробуй ещё раз.', reportEmpty: 'Напиши хотя бы пару слов.', reportCtx: 'Задание', reportClose: 'Закрыть',
     goal: 'Цель на сегодня: {n} / {max} XP',
     myMistakes: '🎯 Мои ошибки', mistakesWait: '{n} упражн. ждут повтора', noMistakes: 'пока ошибок нет',
@@ -33,7 +32,6 @@ window.UI = {
   },
   cs: {
     appTitle: 'Český trenér',
-    statsNote: 'Anonymní statistika návštěv: bez jmen a osobních údajů.',
     reportBtn: '⚠️ Nahlásit chybu', reportTitle: 'Nahlásit chybu', reportAbout: 'Co je s tímto cvičením špatně?', reportPh: 'Popište chybu nebo jak to má být', reportContactPh: 'Kontakt (nepovinné)', reportSend: 'Odeslat', reportSending: 'Odesílám…', reportThanks: 'Děkuji! Zpráva byla odeslána.', reportFail: 'Odeslání se nepovedlo. Zkontrolujte internet a zkuste to znovu.', reportEmpty: 'Napište alespoň pár slov.', reportCtx: 'Cvičení', reportClose: 'Zavřít',
     goal: 'Dnešní cíl: {n} / {max} XP',
     myMistakes: '🎯 Moje chyby', mistakesWait: '{n} cvičení čeká na opakování', noMistakes: 'zatím žádné chyby',
@@ -61,7 +59,6 @@ window.UI = {
   },
   en: {
     appTitle: 'Český trenér',
-    statsNote: 'Anonymous visit statistics: no names or personal data.',
     reportBtn: '⚠️ Report a mistake', reportTitle: 'Report a mistake', reportAbout: 'What is wrong with this exercise?', reportPh: 'Describe the mistake or how it should be', reportContactPh: 'Contact (optional)', reportSend: 'Send', reportSending: 'Sending…', reportThanks: 'Thank you! Your report was sent.', reportFail: 'Could not send. Check your internet and try again.', reportEmpty: 'Please write a few words.', reportCtx: 'Exercise', reportClose: 'Close',
     goal: "Today's goal: {n} / {max} XP",
     myMistakes: '🎯 My mistakes', mistakesWait: '{n} exercises to review', noMistakes: 'no mistakes yet',
@@ -89,7 +86,6 @@ window.UI = {
   },
   kk: {
     appTitle: 'Český trenér',
-    statsNote: 'Кіру туралы анонимді статистика: аты-жөні мен жеке деректер жоқ.',
     reportBtn: '⚠️ Қате туралы хабарлау', reportTitle: 'Қате туралы хабарлау', reportAbout: 'Бұл жаттығуда не дұрыс емес?', reportPh: 'Қатені немесе дұрыс нұсқасын жаз', reportContactPh: 'Байланыс (міндетті емес)', reportSend: 'Жіберу', reportSending: 'Жіберіліп жатыр…', reportThanks: 'Рақмет! Хабарлама жіберілді.', reportFail: 'Жіберу мүмкін болмады. Интернетті тексеріп, қайта көр.', reportEmpty: 'Кемінде бірнеше сөз жаз.', reportCtx: 'Жаттығу', reportClose: 'Жабу',
     goal: 'Бүгінгі мақсат: {n} / {max} XP',
     myMistakes: '🎯 Қателерім', mistakesWait: '{n} жаттығуды қайталау керек', noMistakes: 'әзірге қате жоқ',

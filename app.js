@@ -316,7 +316,6 @@ function home() {
           h('span', { class: 'pct' }, S.done[l.id] ? p + '%' : ''));
       }),
     ]),
-    h('p', { class: 'lk-hint', style: 'text-align:center;margin:20px 0 4px' }, t('statsNote')),
   );
 }
 
