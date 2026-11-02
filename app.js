@@ -414,7 +414,7 @@ function renderExercise(item) {
     checked = true;
     if (inlineBtn) inlineBtn.hidden = true;
     if (document.activeElement && document.activeElement.blur) document.activeElement.blur();   // клавиатура опускается сама
-    r.say = sayText(e);
+    r.say = sayText(item.e);   // озвучка строится из исходного упражнения: на любом языке читается один и тот же чешский текст
     r.mark(r.ok);
     const id = exId(l, item.i);
     if (fresh) {
