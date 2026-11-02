@@ -33,17 +33,6 @@ const whyRuleOf = id => (CT().whyRule || {})[id] || WHY_RULE[id];
 // слова набора с переводом на выбранный язык: [чешское, перевод, род]
 const wordsOf = set => { const tr = (CT().vocab || {})[set.id]; return set.words.map(([cz, ru, g], i) => [cz, (tr && tr[i]) || ru, g]); };
 let screen = 'home';
-// Lingea переводчик: адрес со словом передать нельзя, поэтому слово копируем в буфер обмена
-const LINGEA = 'https://www.lingea.cz/prekladac';
-function toast(msg) {
-  const el = h('div', { class: 'toast', role: 'status' }, msg);
-  document.body.append(el); setTimeout(() => el.remove(), 3500);
-}
-function copyWord(q) {
-  q = (q || '').trim(); if (!q) return;
-  try { navigator.clipboard.writeText(q).then(() => toast(t('copied', { w: q })), () => {}); } catch (e) { /* без буфера обмена */ }
-}
-function openLingea(q) { copyWord(q); window.open(LINGEA, '_blank', 'noopener'); }
 function setLang(l) {
   lang = l; S.lang = l; save(); document.documentElement.lang = l;
   if (screen === 'ex' && run && run.list.length) renderExercise(run.cur || run.list[0]); else home();
@@ -98,11 +87,23 @@ const WHY_RULE = window.WHY_RULE || {};
 const gen = g => t('gen')[g];
 const plainWord = cz => cz.replace(/\s*\(.*\)/, '');
 // у Seznam нет казахского: для kk всегда чешско-английский словарь
+// Google Translate подставляет слово прямо в адрес (в отличие от Lingea) и знает казахский.
+// Направление: чешское слово → язык интерфейса; для kk слово на кириллице считаем казахским и переводим на чешский.
+const gtUrl = q => {
+  const w = q.trim(), kz = lang === 'kk', cyrIn = /[Ѐ-ӿ]/.test(w);
+  const sl = cyrIn ? (kz ? 'auto' : 'ru') : 'cs', tl = cyrIn ? 'cs' : (kz ? 'kk' : lang === 'ru' ? 'ru' : 'en');
+  return 'https://translate.google.com/?sl=' + sl + '&tl=' + tl + '&text=' + encodeURIComponent(w) + '&op=translate';
+};
 const seznamUrl = q => 'https://slovnik.seznam.cz/preklad/' + (lang === 'kk' ? 'cesky_anglicky' : /[а-яё]/i.test(q) ? 'rusky_cesky' : lang === 'ru' ? 'cesky_rusky' : 'cesky_anglicky') + '/' + encodeURIComponent(q.trim());
+
+// основной словарь: для казахского — Google Translate (у Seznam нет казахского), для остальных — Seznam Slovník
+const mainUrl = q => (lang === 'kk' ? gtUrl(q) : seznamUrl(q));
+const altUrl = q => (lang === 'kk' ? seznamUrl(q) : gtUrl(q));
+const altName = () => (lang === 'kk' ? 'Seznam' : 'Google Translate');
 
 function vocabLesson(set) {
   const rows = wordsOf(set).map(([cz, ru, g]) =>
-    '<tr><td><a href="' + seznamUrl(plainWord(cz)) + '" target="_blank" rel="noopener"><b>' + esc(cz) + '</b></a>' +
+    '<tr><td><a href="' + mainUrl(plainWord(cz)) + '" target="_blank" rel="noopener"><b>' + esc(cz) + '</b></a>' +
     (g ? ' <small>(' + gen(g) + ')</small>' : '') + '</td><td>' + esc(ru) + '</td></tr>').join('');
   return { id: set.id, title: tSet(set), icon: set.icon, ex: [],
     rule: '<p>' + t('vocabHint') + '</p><table>' + rows + '</table>' };
@@ -212,10 +213,10 @@ function home() {
     u.items.push(l);
   }
   const lookIn = h('input', { class: 'lookup-in', type: 'search', placeholder: t('lookupPh'), autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false', enterkeyhint: 'search' });
-  // одно поле: слово сразу ищется в Seznam Slovník; если не нашлось — под полем есть ссылка на Lingea
-  const lookHint = h('div', { class: 'lk-hint', hidden: '' }, t('notFound') + ' ',
-    h('a', { href: LINGEA, target: '_blank', rel: 'noopener', onclick: () => copyWord(lookIn.value) }, 'Lingea'));
-  const look = () => { const q = lookIn.value.trim(); if (!q) return; window.open(seznamUrl(q), '_blank', 'noopener'); lookHint.hidden = false; };
+  // одно поле: слово сразу открывается в основном словаре; если не нашлось — под полем ссылка на второй вариант с тем же словом
+  const lookAlt = h('a', { href: 'https://translate.google.com/', target: '_blank', rel: 'noopener' }, altName());
+  const lookHint = h('div', { class: 'lk-hint', hidden: '' }, t('notFound') + ' ', lookAlt);
+  const look = () => { const q = lookIn.value.trim(); if (!q) return; window.open(mainUrl(q), '_blank', 'noopener'); lookAlt.href = altUrl(q); lookHint.hidden = false; };
   lookIn.addEventListener('keydown', ev => { if (ev.key === 'Enter') look(); });
   const vocabBlock = VOCAB.length ? [
     h('div', { class: 'unit' }, t('vocabUnit')),
@@ -444,8 +445,8 @@ function renderExercise(item) {
         !r.ok && e.tip ? h('div', { class: 'tip' }, '💡 ' + e.tip) : null,
         r.ok && whyBox ? h('div', { class: 'tip' }, h('a', { onclick: () => { whyBox.hidden = !whyBox.hidden; } }, t('why'))) : null,
         whyBox,
-        e.vocab ? h('div', { class: 'tip' }, h('a', { href: seznamUrl(e.vocab), target: '_blank', rel: 'noopener' }, '🔎 ' + e.vocab + t('inSeznam')), ' · ',
-          h('a', { href: LINGEA, target: '_blank', rel: 'noopener', onclick: () => copyWord(e.vocab) }, 'Lingea')) : null,
+        e.vocab ? h('div', { class: 'tip' }, h('a', { href: mainUrl(e.vocab), target: '_blank', rel: 'noopener' }, '🔎 ' + e.vocab + t('inSeznam')), ' · ',
+          h('a', { href: altUrl(e.vocab), target: '_blank', rel: 'noopener' }, altName())) : null,
         !r.ok ? h('div', { class: 'tip' }, h('a', { onclick: () => showRule(l) }, t('openRule'))) : null),
       h('div', { style: 'display:flex;gap:10px' },
         h('button', { class: 'speak', style: 'height:auto;width:56px;flex:none', 'aria-label': t('speak'), onclick: () => speak(r.say) }, '🔊'),
