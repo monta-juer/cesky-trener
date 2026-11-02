@@ -22,7 +22,7 @@ function t(key, vars) {
 const pickLang = (map, fb) => (lang !== 'ru' && map && map[lang]) || fb;
 const tUnit = name => pickLang(window.TITLES.units[name], name);
 const tLesson = l => pickLang(window.TITLES.lessons[l.id], l.title);
-const tDesc = l => { const m = window.TITLES.lessons[l.id]; return (lang !== 'ru' && m && m['desc' + (lang === 'cs' ? 'Cs' : 'En')]) || l.desc; };
+const tDesc = l => { const m = window.TITLES.lessons[l.id]; return (lang !== 'ru' && m && m['desc' + lang[0].toUpperCase() + lang.slice(1)]) || l.desc; };
 const tSet = set => pickLang(window.TITLES.vocab[set.id], set.title);
 // контент на выбранном языке: что не переведено — остаётся русским
 const CT = () => (lang !== 'ru' && window.CONTENT && window.CONTENT[lang]) || {};
@@ -97,7 +97,8 @@ const WHY = window.WHY || {};
 const WHY_RULE = window.WHY_RULE || {};
 const gen = g => t('gen')[g];
 const plainWord = cz => cz.replace(/\s*\(.*\)/, '');
-const seznamUrl = q => 'https://slovnik.seznam.cz/preklad/' + (/[а-яё]/i.test(q) ? 'rusky_cesky' : lang === 'ru' ? 'cesky_rusky' : 'cesky_anglicky') + '/' + encodeURIComponent(q.trim());
+// у Seznam нет казахского: для kk всегда чешско-английский словарь
+const seznamUrl = q => 'https://slovnik.seznam.cz/preklad/' + (lang === 'kk' ? 'cesky_anglicky' : /[а-яё]/i.test(q) ? 'rusky_cesky' : lang === 'ru' ? 'cesky_rusky' : 'cesky_anglicky') + '/' + encodeURIComponent(q.trim());
 
 function vocabLesson(set) {
   const rows = wordsOf(set).map(([cz, ru, g]) =>
@@ -149,7 +150,7 @@ function vocabSet(set) {
     ...fresh.slice(0, SESSION_SIZE - used.size).map((wi, k) => vocabItem(set, wi, kinds[k % 3]))];
   return shuffle(items);
 }
-function openVocab(set) { startSession(vocabSet(set), tSet(set), vocabLesson(set)); }
+function openVocab(set) { startSession(vocabSet(set), () => tSet(set), vocabLesson(set)); }
 
 // ---------- Озвучка ----------
 // Читаем только чешский текст: без подсказок на другом языке, пометок в скобках и пояснений вроде «Формально:».
@@ -235,9 +236,9 @@ function home() {
       h('b', {}, t('goal', { n: todayXp(), max: DAILY_GOAL })),
       h('div', { class: 'bar' }, h('i', { style: 'width:' + goal + '%' }))),
     h('div', { class: 'quick' },
-      h('button', { class: 'qbtn alt', disabled: wl.length ? false : 'disabled', onclick: () => startSession(reviewSet(), t('reviewTitle')) },
+      h('button', { class: 'qbtn alt', disabled: wl.length ? false : 'disabled', onclick: () => startSession(reviewSet(), () => t('reviewTitle')) },
         t('myMistakes'), h('small', {}, wl.length ? t('mistakesWait', { n: wl.length }) : t('noMistakes'))),
-      h('button', { class: 'qbtn', onclick: () => startSession(mixSet(), t('mixTitle')) },
+      h('button', { class: 'qbtn', onclick: () => startSession(mixSet(), () => t('mixTitle')) },
         t('mix'), h('small', {}, t('mixSub')))),
     h('div', { class: 'lookup' }, lookIn, h('button', { class: 'lk', onclick: look, 'aria-label': t('lookupLabel') }, '🔎')),
     lookHint,
@@ -274,7 +275,7 @@ function mixSet() {
 
 // ---------- Урок: старт ----------
 function openLesson(l) {
-  startSession(lessonSet(l), tLesson(l), l);
+  startSession(lessonSet(l), () => tLesson(l), l);
 }
 function showRule(l) {
   const sheet = h('div', { class: 'sheet', onclick: ev => { if (ev.target === sheet) sheet.remove(); } },
@@ -503,7 +504,7 @@ function finish() {
   mount(h('div', { class: 'result' },
     h('div', { class: 'big' }, emoji),
     h('h2', {}, msg),
-    h('div', { style: 'color:var(--muted)' }, run.title),
+    h('div', { style: 'color:var(--muted)' }, typeof run.title === 'function' ? run.title() : run.title),
     h('div', { class: 'nums' },
       h('div', {}, h('b', {}, '+' + run.xp), h('small', {}, 'XP')),
       h('div', {}, h('b', {}, acc + '%'), h('small', {}, t('firstTry'))),

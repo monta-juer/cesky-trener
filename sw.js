@@ -1,5 +1,5 @@
-const CACHE = 'cesky-trener-v6';
-const FILES = ['./', 'index.html', 'style.css', 'app.js', 'data/i18n.js', 'data/lessons.js', 'data/vocab.js', 'data/why.js', 'data/content.en.js', 'data/content.cs.js', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
+const CACHE = 'cesky-trener-v7';
+const FILES = ['./', 'index.html', 'style.css', 'app.js', 'data/i18n.js', 'data/lessons.js', 'data/vocab.js', 'data/why.js', 'data/content.en.js', 'data/content.cs.js', 'data/content.kk.js', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
