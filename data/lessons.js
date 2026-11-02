@@ -637,7 +637,7 @@ Tomáš → <i>Tomáši</i> · Alexej → <i>Alexeji</i> · Jiří → <i>Jiří
     c('Jedu ___ do Prahy. (поезд)', 'vlakem', ['vlak', 'pěšky']),
     c('Zítra ___ do obchodu. (я пойду, будущее время)', 'půjdu', ['pojedu', 'jdu']),
     c('Příští rok ___ do Prahy. (я поеду, будущее время)', 'pojedu', ['půjdu', 'jedu']),
-    c('Koně ___ zítra vlakem do školy. (будущее время)', 'pojedou', ['půjdou', 'jedou']),
+    c('Oni ___ zítra vlakem do školy. (будущее время)', 'pojedou', ['půjdou', 'jedou']),
     c('Za týden ___ domů vlakem. (они, будущее время)', 'pojedou', ['půjdou', 'jedou']),
     c('Pozítří ___ do nemocnice. (он, будущее время)', 'půjde', ['pojede', 'jde']),
     c('Kam ___ autem? (ты едешь)', 'jedeš', ['jdeš', 'pojedu']),

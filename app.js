@@ -6,10 +6,50 @@ const DAILY_GOAL = 50;
 const SESSION_SIZE = 12;
 
 // ---------- Хранилище ----------
-const fresh = () => ({ xp: 0, streak: 0, last: '', today: {}, done: {}, wrong: {} });
+const fresh = () => ({ xp: 0, streak: 0, last: '', today: {}, done: {}, wrong: {}, lang: '' });
 let S = fresh();
 try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { /* первый запуск */ }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* приватный режим */ } };
+
+// ---------- Язык интерфейса ----------
+const detectLang = () => { const l = (navigator.language || 'ru').slice(0, 2).toLowerCase(); return window.UI[l] ? l : 'ru'; };
+let lang = window.UI[S.lang] ? S.lang : detectLang();
+document.documentElement.lang = lang;
+function t(key, vars) {
+  const s = (window.UI[lang][key] != null ? window.UI[lang][key] : window.UI.ru[key]);
+  return typeof s === 'string' && vars ? s.replace(/\{(\w+)\}/g, (m, k) => (vars[k] != null ? vars[k] : m)) : s;
+}
+const pickLang = (map, fb) => (lang !== 'ru' && map && map[lang]) || fb;
+const tUnit = name => pickLang(window.TITLES.units[name], name);
+const tLesson = l => pickLang(window.TITLES.lessons[l.id], l.title);
+const tDesc = l => { const m = window.TITLES.lessons[l.id]; return (lang !== 'ru' && m && m['desc' + (lang === 'cs' ? 'Cs' : 'En')]) || l.desc; };
+const tSet = set => pickLang(window.TITLES.vocab[set.id], set.title);
+// контент на выбранном языке: что не переведено — остаётся русским
+const CT = () => (lang !== 'ru' && window.CONTENT && window.CONTENT[lang]) || {};
+const ruleOf = l => ((CT().lessons || {})[l.id] || {}).rule || l.rule;
+const exOf = (l, i, e) => { const ov = (((CT().lessons || {})[l.id] || {}).ex || {})[i]; return ov ? Object.assign({}, e, ov) : e; };
+const whyOf = (id, i) => ((CT().why || {})[id] || [])[i] || (WHY[id] && WHY[id][i]) || '';
+const whyRuleOf = id => (CT().whyRule || {})[id] || WHY_RULE[id];
+// слова набора с переводом на выбранный язык: [чешское, перевод, род]
+const wordsOf = set => { const tr = (CT().vocab || {})[set.id]; return set.words.map(([cz, ru, g], i) => [cz, (tr && tr[i]) || ru, g]); };
+let screen = 'home';
+// Lingea переводчик: адрес со словом передать нельзя, поэтому слово копируем в буфер обмена
+const LINGEA = 'https://www.lingea.cz/prekladac';
+function toast(msg) {
+  const el = h('div', { class: 'toast', role: 'status' }, msg);
+  document.body.append(el); setTimeout(() => el.remove(), 3500);
+}
+function copyWord(q) {
+  q = (q || '').trim(); if (!q) return;
+  try { navigator.clipboard.writeText(q).then(() => toast(t('copied', { w: q })), () => {}); } catch (e) { /* без буфера обмена */ }
+}
+function openLingea(q) { copyWord(q); window.open(LINGEA, '_blank', 'noopener'); }
+function setLang(l) {
+  lang = l; S.lang = l; save(); document.documentElement.lang = l;
+  if (screen === 'ex' && run && run.list.length) renderExercise(run.cur || run.list[0]); else home();
+}
+const langSwitch = () => h('div', { class: 'langs', role: 'group', 'aria-label': t('langLabel') },
+  window.LANGS.map(([code, label]) => h('button', { class: 'lang' + (code === lang ? ' on' : ''), 'aria-pressed': String(code === lang), onclick: () => { if (code !== lang) setLang(code); } }, label)));
 
 const dayKey = (d = new Date()) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 const todayXp = () => S.today[dayKey()] || 0;
@@ -55,38 +95,40 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 const VOCAB = window.VOCAB || [];
 const WHY = window.WHY || {};
 const WHY_RULE = window.WHY_RULE || {};
-const GENDER = { m: 'м.', 'ž': 'ж.', s: 'ср.', pl: 'мн.', 'm/ž': 'м./ж.' };
+const gen = g => t('gen')[g];
 const plainWord = cz => cz.replace(/\s*\(.*\)/, '');
-const seznamUrl = q => 'https://slovnik.seznam.cz/preklad/' + (/[а-яё]/i.test(q) ? 'rusky_cesky' : 'cesky_rusky') + '/' + encodeURIComponent(q.trim());
+const seznamUrl = q => 'https://slovnik.seznam.cz/preklad/' + (/[а-яё]/i.test(q) ? 'rusky_cesky' : lang === 'ru' ? 'cesky_rusky' : 'cesky_anglicky') + '/' + encodeURIComponent(q.trim());
 
 function vocabLesson(set) {
-  const rows = set.words.map(([cz, ru, g]) =>
+  const rows = wordsOf(set).map(([cz, ru, g]) =>
     '<tr><td><a href="' + seznamUrl(plainWord(cz)) + '" target="_blank" rel="noopener"><b>' + esc(cz) + '</b></a>' +
-    (g ? ' <small>(' + GENDER[g] + ')</small>' : '') + '</td><td>' + esc(ru) + '</td></tr>').join('');
-  return { id: set.id, title: set.title, icon: set.icon, ex: [],
-    rule: '<p>Нажми на слово, чтобы открыть его в Seznam Slovník.</p><table>' + rows + '</table>' };
+    (g ? ' <small>(' + gen(g) + ')</small>' : '') + '</td><td>' + esc(ru) + '</td></tr>').join('');
+  return { id: set.id, title: tSet(set), icon: set.icon, ex: [],
+    rule: '<p>' + t('vocabHint') + '</p><table>' + rows + '</table>' };
 }
 
 // kind: cr = чешское → русское, rc = русское → чешское (выбор), rt = русское → чешское (вписать)
-function makeVocab(set, wi, kind) {
-  const [cz, ru, g] = set.words[wi];
+function makeVocab(set, wi, kind, fixed) {
+  const [cz, ru, g] = wordsOf(set)[wi];
   const plain = plainWord(cz);
-  const pool = set.words.length >= 8 ? set.words : VOCAB.flatMap(s => s.words);
+  const pool = set.words.length >= 8 ? wordsOf(set) : VOCAB.flatMap(wordsOf);
   const seen = new Set([ru, plain]);
-  const others = [];
-  for (const w of shuffle(pool)) {
+  let others = [];
+  if (fixed) others = fixed.map(cz2 => pool.find(w => w[0] === cz2) || VOCAB.flatMap(wordsOf).find(w => w[0] === cz2)).filter(Boolean);
+  if (others.length !== 3) others = [];
+  for (const w of others.length ? [] : shuffle(pool)) {
     const wp = plainWord(w[0]);
     if (seen.has(w[1]) || seen.has(wp)) continue;
     seen.add(w[1]); seen.add(wp); others.push(w);
     if (others.length === 3) break;
   }
-  const tag = g ? ' (' + GENDER[g] + ')' : '';
-  const why = '«' + plain + '» значит «' + ru + '»' + (g ? ' (' + GENDER[g] + ' род)' : '') + '.';
-  if (kind === 'cr') return { t: 'c', q: 'Что значит «' + plain + '»' + tag + '?', a: ru, w: others.map(w => w[1]), vocab: plain, why,
-    opt: Object.fromEntries(others.map(w => [w[1], 'Вариант «' + w[1] + '» — это по-чешски «' + plainWord(w[0]) + '».'])) };
-  if (kind === 'rc') return { t: 'c', q: 'Как по-чешски «' + ru + '»?', a: plain, w: others.map(w => plainWord(w[0])), vocab: plain, why,
-    opt: Object.fromEntries(others.map(w => [plainWord(w[0]), 'Слово «' + plainWord(w[0]) + '» значит «' + w[1] + '».'])) };
-  return { t: 'f', q: 'Напиши по-чешски: ' + ru + tag, a: [...new Set([plain, cz])], vocab: plain, why };
+  const tag = g ? ' (' + gen(g) + ')' : '';
+  const why = t('whyMeans', { w: plain, r: ru, g: g ? t('whyGender', { g: gen(g) }) : '' });
+  if (kind === 'cr') return { t: 'c', q: t('qMeans', { w: plain, tag }), a: ru, w: others.map(w => w[1]), vocab: plain, why, say: plain, _fixed: others.map(w => w[0]),
+    opt: Object.fromEntries(others.map(w => [w[1], t('optIs', { r: w[1], w: plainWord(w[0]) })])) };
+  if (kind === 'rc') return { t: 'c', q: t('qCz', { w: ru }), a: plain, w: others.map(w => plainWord(w[0])), vocab: plain, why, say: plain, _fixed: others.map(w => w[0]),
+    opt: Object.fromEntries(others.map(w => [plainWord(w[0]), t('optMeans', { w: plainWord(w[0]), r: w[1] })])) };
+  return { t: 'f', q: t('qWrite', { w: ru, tag }), a: [...new Set([plain, cz])], vocab: plain, why, say: plain };
 }
 function vocabItem(set, wi, kind) {
   return { e: makeVocab(set, wi, kind), l: vocabLesson(set), i: wi + ':' + kind };
@@ -107,19 +149,38 @@ function vocabSet(set) {
     ...fresh.slice(0, SESSION_SIZE - used.size).map((wi, k) => vocabItem(set, wi, kinds[k % 3]))];
   return shuffle(items);
 }
-function openVocab(set) { startSession(vocabSet(set), set.title, vocabLesson(set)); }
+function openVocab(set) { startSession(vocabSet(set), tSet(set), vocabLesson(set)); }
 
 // ---------- Озвучка ----------
+// Читаем только чешский текст: без подсказок на другом языке, пометок в скобках и пояснений вроде «Формально:».
+function sayText(e) {
+  if (e.say) return e.say;
+  const ans = e.t === 'f' ? e.a[0] : e.a;
+  let txt = e.t === 'b' ? e.a[0] : (e.q && e.q.includes('___') ? e.q.replace('___', ans) : ans);
+  txt = txt.replace(/^.*[=→]\s*/, '');   // «14:10 → Je čtrnáct deset» читаем только после стрелки
+  txt = txt.replace(/^[^:_]{1,40}:\s+(?=\S)/, '')   // «Формально: …»
+    .replace(/\([^)]*\)/g, ' ')                       // «(Adam)», «(2)», «(%)»
+    .replace(/[\u0400-\u04FF]+/g, ' ')                  // остатки кириллицы
+    .replace(/\s+([.,!?;:])/g, '$1').replace(/\s+/g, ' ').trim();
+  return txt || String(ans);
+}
+let czVoice = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  if (vs.length) czVoice = vs.find(v => v.lang && v.lang.toLowerCase().replace('_', '-').startsWith('cs')) || null;
+}
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.addEventListener && speechSynthesis.addEventListener('voiceschanged', pickVoice); }
 function speak(text) {
   if (!('speechSynthesis' in window) || !text) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'cs-CZ'; u.rate = 0.9;
-  const v = speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith('cs'));
-  if (v) u.voice = v;
-  speechSynthesis.speak(u);
+  if (!czVoice) pickVoice();
+  if (czVoice) u.voice = czVoice;
+  // небольшая пауза после cancel(): иначе часть браузеров глотает первую фразу
+  setTimeout(() => { speechSynthesis.resume(); speechSynthesis.speak(u); }, 80);
 }
-const speakBtn = text => h('button', { class: 'speak', 'aria-label': 'Озвучить', onclick: () => speak(text) }, '🔊');
+const speakBtn = text => h('button', { class: 'speak', 'aria-label': t('speak'), onclick: () => speak(text) }, '🔊');
 
 // ---------- Главная ----------
 function lessonPct(l) {
@@ -140,6 +201,7 @@ function wrongList() {
 }
 
 function home() {
+  screen = 'home';
   const wl = wrongList();
   const goal = Math.min(100, Math.round(todayXp() / DAILY_GOAL * 100));
   const units = [];
@@ -148,40 +210,45 @@ function home() {
     if (!u) units.push(u = { name: l.unit, items: [] });
     u.items.push(l);
   }
-  const lookIn = h('input', { class: 'lookup-in', type: 'search', placeholder: 'Перевести слово…', autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false', enterkeyhint: 'search' });
-  const look = () => { const q = lookIn.value.trim(); if (q) window.open(seznamUrl(q), '_blank', 'noopener'); };
+  const lookIn = h('input', { class: 'lookup-in', type: 'search', placeholder: t('lookupPh'), autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false', enterkeyhint: 'search' });
+  // одно поле: слово сразу ищется в Seznam Slovník; если не нашлось — под полем есть ссылка на Lingea
+  const lookHint = h('div', { class: 'lk-hint', hidden: '' }, t('notFound') + ' ',
+    h('a', { href: LINGEA, target: '_blank', rel: 'noopener', onclick: () => copyWord(lookIn.value) }, 'Lingea'));
+  const look = () => { const q = lookIn.value.trim(); if (!q) return; window.open(seznamUrl(q), '_blank', 'noopener'); lookHint.hidden = false; };
   lookIn.addEventListener('keydown', ev => { if (ev.key === 'Enter') look(); });
   const vocabBlock = VOCAB.length ? [
-    h('div', { class: 'unit' }, 'Слова (из учебника и Classroom)'),
+    h('div', { class: 'unit' }, t('vocabUnit')),
     VOCAB.map(set => {
       const p = lessonPct(set);
       return h('button', { class: 'lesson' + (p >= 80 ? ' done' : ''), onclick: () => openVocab(set) },
         h('span', { class: 'ic' }, set.icon),
-        h('span', { class: 'tx' }, h('b', {}, set.title), h('small', {}, set.words.length + ' слов'), h('div', { class: 'mini' }, h('i', { style: 'width:' + p + '%' }))),
+        h('span', { class: 'tx' }, h('b', {}, tSet(set)), h('small', {}, t('nWords', { n: set.words.length })), h('div', { class: 'mini' }, h('i', { style: 'width:' + p + '%' }))),
         h('span', { class: 'pct' }, S.done[set.id] ? p + '%' : ''));
     }),
   ] : null;
   mount(
     h('div', { class: 'top' },
-      h('h1', {}, 'Český trenér'),
+      h('h1', {}, t('appTitle')),
+      langSwitch(),
       h('div', { class: 'stats' }, h('span', { class: 'stat' }, '🔥 ' + S.streak), h('span', { class: 'stat' }, '⭐ ' + S.xp))),
     h('div', { class: 'today' },
-      h('b', {}, 'Цель на сегодня: ' + todayXp() + ' / ' + DAILY_GOAL + ' XP'),
+      h('b', {}, t('goal', { n: todayXp(), max: DAILY_GOAL })),
       h('div', { class: 'bar' }, h('i', { style: 'width:' + goal + '%' }))),
     h('div', { class: 'quick' },
-      h('button', { class: 'qbtn alt', disabled: wl.length ? false : 'disabled', onclick: () => startSession(reviewSet(), 'Работа над ошибками') },
-        '🎯 Мои ошибки', h('small', {}, wl.length ? wl.length + ' упражн. ждут повтора' : 'пока ошибок нет')),
-      h('button', { class: 'qbtn', onclick: () => startSession(mixSet(), 'Микс') },
-        '🔀 Микс', h('small', {}, 'случайно из всех тем'))),
-    h('div', { class: 'lookup' }, lookIn, h('button', { class: 'lk', onclick: look, 'aria-label': 'Найти в Seznam Slovník' }, '🔎 Seznam')),
+      h('button', { class: 'qbtn alt', disabled: wl.length ? false : 'disabled', onclick: () => startSession(reviewSet(), t('reviewTitle')) },
+        t('myMistakes'), h('small', {}, wl.length ? t('mistakesWait', { n: wl.length }) : t('noMistakes'))),
+      h('button', { class: 'qbtn', onclick: () => startSession(mixSet(), t('mixTitle')) },
+        t('mix'), h('small', {}, t('mixSub')))),
+    h('div', { class: 'lookup' }, lookIn, h('button', { class: 'lk', onclick: look, 'aria-label': t('lookupLabel') }, '🔎')),
+    lookHint,
     vocabBlock,
     units.map(u => [
-      h('div', { class: 'unit' }, u.name),
+      h('div', { class: 'unit' }, tUnit(u.name)),
       u.items.map(l => {
         const p = lessonPct(l);
         return h('button', { class: 'lesson' + (p >= 80 ? ' done' : ''), onclick: () => openLesson(l) },
           h('span', { class: 'ic' }, l.icon),
-          h('span', { class: 'tx' }, h('b', {}, l.title), h('small', {}, l.desc), h('div', { class: 'mini' }, h('i', { style: 'width:' + p + '%' }))),
+          h('span', { class: 'tx' }, h('b', {}, tLesson(l)), h('small', {}, tDesc(l)), h('div', { class: 'mini' }, h('i', { style: 'width:' + p + '%' }))),
           h('span', { class: 'pct' }, S.done[l.id] ? p + '%' : ''));
       }),
     ]),
@@ -207,12 +274,12 @@ function mixSet() {
 
 // ---------- Урок: старт ----------
 function openLesson(l) {
-  startSession(lessonSet(l), l.title, l);
+  startSession(lessonSet(l), tLesson(l), l);
 }
 function showRule(l) {
   const sheet = h('div', { class: 'sheet', onclick: ev => { if (ev.target === sheet) sheet.remove(); } },
-    h('div', {}, h('h3', {}, l.icon + ' ' + l.title), h('div', { html: l.rule }),
-      h('button', { class: 'main', onclick: () => sheet.remove() }, 'Понятно')));
+    h('div', {}, h('h3', {}, l.icon + ' ' + (l.id.startsWith('v-') ? l.title : tLesson(l))), h('div', { html: ruleOf(l) }),
+      h('button', { class: 'main', onclick: () => sheet.remove() }, t('ok'))));
   document.body.append(sheet);
 }
 
@@ -221,26 +288,42 @@ let run = null;
 
 function startSession(items, title, lesson) {
   if (!items.length) return home();
-  run = { title, lesson, queue: items.map(x => ({ ...x, retry: false })), total: items.length, solved: 0, firstTry: 0, xp: 0, mistakes: 0 };
-  next();
+  run = { title, lesson, list: items.map(x => ({ ...x, retry: false, res: null })), total: items.length, solved: 0, firstTry: 0, xp: 0, mistakes: 0, cur: null };
+  renderExercise(run.list[0]);
 }
 
+// следующий вопрос без ответа: сначала дальше по списку, потом с начала; ответили на всё — итоги
 function next() {
-  if (!run.queue.length) return finish();
-  renderExercise(run.queue[0]);
+  const n = run.list.length, i = run.list.indexOf(run.cur);
+  for (let k = 1; k <= n; k++) {
+    const it = run.list[(i + k) % n];
+    if (!it.res) return renderExercise(it);
+  }
+  finish();
 }
 
 function renderExercise(item) {
-  const { e, l } = item;
+  screen = 'ex';
+  run.cur = item;
+  // при смене языка словарные вопросы пересобираем (те же слова и те же неверные варианты)
+  if (item.e.vocab && item.lang !== lang) {
+    const set = VOCAB.find(x => x.id === item.l.id);
+    const [wi, kind] = String(item.i).split(':');
+    if (set) { item.e = makeVocab(set, +wi, kind, item.e._fixed); item.l = vocabLesson(set); }
+  }
+  item.lang = lang;
+  const { l } = item;
+  const e = exOf(l, item.i, item.e);
   let checked = false;
-  let getAnswer, isReady = () => false, onReady = () => {};
+  let getAnswer, restore = () => {}, isReady = () => false;
   const body = h('div', { class: 'ex' });
   const footBox = h('div', {});
   const foot = h('div', { class: 'foot' }, footBox);
-  const btn = h('button', { class: 'main', disabled: 'disabled' }, 'Проверить');
+  const btn = h('button', { class: 'main', disabled: 'disabled' }, t('check'));
   footBox.append(btn);
 
-  const setReady = ok => { if (ok) btn.removeAttribute('disabled'); else btn.setAttribute('disabled', 'disabled'); };
+  let inlineBtn = null;   // кнопка «Проверить» прямо под полем ввода — видна над клавиатурой
+  const setReady = ok => { for (const b of [btn, inlineBtn]) if (b) { if (ok) b.removeAttribute('disabled'); else b.setAttribute('disabled', 'disabled'); } };
 
   // --- выбор варианта ---
   if (e.t === 'c') {
@@ -249,11 +332,12 @@ function renderExercise(item) {
     const btns = opts.map(o => h('button', { class: 'opt', onclick: () => { if (checked) return; sel = o; btns.forEach(b => b.classList.toggle('sel', b === btnOf(o))); setReady(true); } }, o));
     const btnOf = o => btns[opts.indexOf(o)];
     const parts = e.q.split('___');
-    body.append(h('div', { class: 'kind' }, e.q.includes('___') ? 'Выбери пропущенное' : 'Выбери ответ'),
+    body.append(h('div', { class: 'kind' }, e.q.includes('___') ? t('kindBlank') : t('kindPick')),
       h('div', { class: 'q' }, h('span', {}, parts.length > 1 ? [parts[0], h('span', { class: 'blank' }, ' '), parts[1]] : e.q)),
       h('div', { class: 'opts' }, btns));
     getAnswer = () => ({ ok: sel === e.a, mine: sel, show: e.a, say: e.q.includes('___') ? e.q.replace('___', e.a) : e.a, mark: ok => btns.forEach(b => { if (b.textContent === e.a) b.classList.add('right'); else if (b.textContent === sel && !ok) b.classList.add('wrong'); }) });
     isReady = () => sel != null;
+    restore = res => { sel = res.pick >= 0 ? e.w[res.pick] : e.a; btns.forEach(b => b.classList.toggle('sel', b.textContent === sel)); };
   }
 
   // --- вписать ---
@@ -268,10 +352,13 @@ function renderExercise(item) {
       input.setSelectionRange(s + 1, s + 1); input.focus(); setReady(true);
     } }, ch)));
     const parts = e.q.split('___');
-    body.append(h('div', { class: 'kind' }, 'Впиши слово'),
+    body.append(h('div', { class: 'kind' }, t('kindType')),
       h('div', { class: 'q' }, h('span', {}, parts.length > 1 ? [parts[0], h('span', { class: 'blank' }, ' '), parts[1]] : e.q)),
-      input, chars);
-    setTimeout(() => input.focus(), 50);
+      input, chars,
+      inlineBtn = h('button', { class: 'main inline', type: 'button', disabled: 'disabled', onclick: () => btn.click() }, t('check')));
+    if (!item.res) { foot.classList.add('pre'); setTimeout(() => input.focus(), 50); }   // кнопка проверки — под полем, нижняя панель появится с результатом
+    // тап по пустому месту опускает клавиатуру
+    body.addEventListener('click', ev => { if (ev.target === body || ev.target.classList.contains('kind') || ev.target.classList.contains('q')) input.blur(); });
     getAnswer = () => {
       const val = clean(input.value);
       const exact = e.a.some(a => clean(a) === val);
@@ -279,6 +366,7 @@ function renderExercise(item) {
       return { ok: exact || loose, loose, mine: input.value.trim(), show: e.a[0], say: e.q.replace('___', e.a[0]), mark: ok => input.classList.add(ok ? 'right' : 'wrong') };
     };
     isReady = () => input.value.trim().length > 0;
+    restore = res => { input.value = res.mine; };
   }
 
   // --- собрать предложение ---
@@ -299,7 +387,7 @@ function renderExercise(item) {
     };
     // имена собственные оставляем с заглавной, остальное с маленькой — порядок слов не подсказываем
     const display = w => (words[0] === w || e.a.some(a => a.split(/\s+/)[0].replace(/[.,!?]$/, '') === w)) ? lower(w) : w;
-    body.append(h('div', { class: 'kind' }, 'Переведи на чешский'),
+    body.append(h('div', { class: 'kind' }, t('kindBuild')),
       h('div', { class: 'q' }, h('span', {}, e.ru)),
       area, bank);
     draw();
@@ -309,15 +397,26 @@ function renderExercise(item) {
       return { ok, mine: chosen.map(t => t.w).join(' '), show: e.a[0] + '.', say: e.a[0], mark: ok2 => area.classList.add(ok2 ? 'right' : 'wrong') };
     };
     isReady = () => chosen.length > 0;
+    restore = res => {
+      for (const w of res.mine.split(/\s+/).filter(Boolean)) { const tl = tiles.find(x => !x.used && x.w === w); if (tl) { tl.used = true; chosen.push(tl); } }
+      draw();
+    };
   }
 
   btn.addEventListener('click', () => {
-    if (checked) { run.queue.shift(); next(); return; }
+    if (checked) { next(); return; }
     if (!isReady()) return;
+    settle(getAnswer(), true);
+  });
+
+  function settle(r, fresh) {
     checked = true;
-    const r = getAnswer();
+    if (inlineBtn) inlineBtn.hidden = true;
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();   // клавиатура опускается сама
+    r.say = sayText(e);
     r.mark(r.ok);
     const id = exId(l, item.i);
+    if (fresh) {
     if (r.ok) {
       if (!item.retry) { run.firstTry++; run.xp += 10; if (S.wrong[id]) { S.wrong[id]--; if (S.wrong[id] <= 0) delete S.wrong[id]; } }
       else run.xp += 3;
@@ -325,45 +424,73 @@ function renderExercise(item) {
     } else {
       run.mistakes++;
       S.wrong[id] = Math.min((S.wrong[id] || 0) + 1, 5);
-      run.queue.push({ ...item, retry: true });
+      run.list.push({ ...item, retry: true, res: null });
     }
     save();
-    const whyText = e.vocab ? [e.why, e.opt && e.opt[r.mine]].filter(Boolean).join(' ') : (WHY[l.id] && WHY[l.id][item.i]) || '';
+    item.res = { ok: r.ok, loose: r.loose, mine: r.mine, pick: e.t === 'c' ? (r.mine === e.a ? -1 : e.w.indexOf(r.mine)) : -1 };
+    }
+    const whyText = e.vocab ? [e.why, e.opt && e.opt[r.mine]].filter(Boolean).join(' ') : whyOf(l.id, item.i);
     const whyBox = whyText ? h('div', { class: 'why', hidden: r.ok ? '' : null },
-      !r.ok ? h('div', {}, 'Твой ответ: ', h('b', {}, r.mine || '—')) : null,
+      !r.ok ? h('div', {}, t('yourAnswer'), h('b', {}, r.mine || '—')) : null,
       h('div', {}, '💡 ' + whyText),
-      !e.vocab && WHY_RULE[l.id] ? h('div', {}, '📘 Правило: ' + WHY_RULE[l.id]) : null) : null;
+      !e.vocab && whyRuleOf(l.id) ? h('div', {}, t('ruleLabel') + whyRuleOf(l.id)) : null) : null;
     foot.className = 'foot ' + (r.ok ? 'ok' : 'bad');
     footBox.replaceChildren(
       h('div', { class: 'fb' },
-        h('strong', {}, r.ok ? ['Správně! ', pick(['👍', '🎉', '💪', '✨'])] : 'Ошибка'),
-        r.ok && r.loose ? h('div', {}, 'Правильно, но с диакритикой: ', h('b', {}, r.show)) : null,
-        !r.ok ? h('div', {}, 'Правильно: ', h('b', {}, r.show)) : null,
+        h('strong', {}, r.ok ? [t('good'), pick(['👍', '🎉', '💪', '✨'])] : t('bad')),
+        r.ok && r.loose ? h('div', {}, t('looseOk'), h('b', {}, r.show)) : null,
+        !r.ok ? h('div', {}, t('correct'), h('b', {}, r.show)) : null,
         !r.ok && e.tip ? h('div', { class: 'tip' }, '💡 ' + e.tip) : null,
-        r.ok && whyBox ? h('div', { class: 'tip' }, h('a', { onclick: () => { whyBox.hidden = !whyBox.hidden; } }, '💡 Почему так?')) : null,
+        r.ok && whyBox ? h('div', { class: 'tip' }, h('a', { onclick: () => { whyBox.hidden = !whyBox.hidden; } }, t('why'))) : null,
         whyBox,
-        e.vocab ? h('div', { class: 'tip' }, h('a', { href: seznamUrl(e.vocab), target: '_blank', rel: 'noopener' }, '🔎 ' + e.vocab + ' в Seznam Slovník')) : null,
-        !r.ok ? h('div', { class: 'tip' }, h('a', { onclick: () => showRule(l) }, '📘 Открыть правило')) : null),
+        e.vocab ? h('div', { class: 'tip' }, h('a', { href: seznamUrl(e.vocab), target: '_blank', rel: 'noopener' }, '🔎 ' + e.vocab + t('inSeznam')), ' · ',
+          h('a', { href: LINGEA, target: '_blank', rel: 'noopener', onclick: () => copyWord(e.vocab) }, 'Lingea')) : null,
+        !r.ok ? h('div', { class: 'tip' }, h('a', { onclick: () => showRule(l) }, t('openRule'))) : null),
       h('div', { style: 'display:flex;gap:10px' },
-        h('button', { class: 'speak', style: 'height:auto;width:56px;flex:none', 'aria-label': 'Озвучить', onclick: () => speak(r.say) }, '🔊'),
+        h('button', { class: 'speak', style: 'height:auto;width:56px;flex:none', 'aria-label': t('speak'), onclick: () => speak(r.say) }, '🔊'),
         h('div', { style: 'flex:1' }, btn)));
-    btn.textContent = 'Дальше';
+    btn.textContent = t('nextBtn');
     btn.removeAttribute('disabled');
-    speak(r.say);
-  });
+    if (fresh) speak(r.say);
+  }
 
   const pct = Math.round(run.solved / run.total * 100);
   mount(
     h('div', { class: 'head' },
-      h('button', { class: 'x', 'aria-label': 'Выйти', onclick: () => { if (confirm('Выйти? Прогресс этой сессии не сохранится.')) { speechSynthesis && speechSynthesis.cancel(); home(); } } }, '✕'),
+      h('button', { class: 'x', 'aria-label': t('exit'), onclick: () => { if (confirm(t('exitConfirm'))) { speechSynthesis && speechSynthesis.cancel(); home(); } } }, '✕'),
       h('div', { class: 'bar' }, h('i', { style: 'width:' + pct + '%' })),
-      h('button', { class: 'help', 'aria-label': 'Правило', onclick: () => showRule(l) }, '?')),
-    body, foot);
+      langSwitch(),
+      h('button', { class: 'help', 'aria-label': t('rule'), onclick: () => showRule(l) }, '?')),
+    questionNav(item), body, foot);
+  // ответ уже дан, а язык сменили: показываем тот же результат без повторного зачёта
+  if (item.res) { restore(item.res); settle(getAnswer(), false); }
 }
 const pick = a => a[Math.floor(Math.random() * a.length)];
 
+// кнопки внизу поднимаются над экранной клавиатурой
+if (window.visualViewport) {
+  const lift = () => {
+    const f = document.querySelector('.foot'); if (!f) return;
+    const vv = window.visualViewport, off = window.innerHeight - vv.height - vv.offsetTop;
+    f.style.transform = off > 80 ? 'translateY(' + (-off) + 'px)' : '';
+  };
+  window.visualViewport.addEventListener('resize', lift);
+  window.visualViewport.addEventListener('scroll', lift);
+}
+
+// Листание между всеми вопросами сессии (отвеченными и нет)
+function questionNav(cur) {
+  const i = run.list.indexOf(cur), n = run.list.length;
+  const go = d => () => renderExercise(run.list[i + d]);
+  return h('div', { class: 'qnav' },
+    h('button', { 'aria-label': t('prevQ'), disabled: i > 0 ? false : 'disabled', onclick: go(-1) }, '‹'),
+    h('span', {}, (i + 1) + ' / ' + n),
+    h('button', { 'aria-label': t('nextQ'), disabled: i < n - 1 ? false : 'disabled', onclick: go(1) }, '›'));
+}
+
 // ---------- Итоги ----------
 function finish() {
+  screen = 'fin';
   const acc = Math.round(run.firstTry / run.total * 100);
   addXp(run.xp);
   if (run.lesson) {
@@ -372,17 +499,17 @@ function finish() {
     S.done[run.lesson.id] = d; save();
   }
   const emoji = acc >= 90 ? '🏆' : acc >= 70 ? '🎉' : acc >= 50 ? '💪' : '📚';
-  const msg = acc >= 90 ? 'Отлично!' : acc >= 70 ? 'Хорошо!' : acc >= 50 ? 'Неплохо, повтори ещё' : 'Ошибки — это нормально, они запомнятся';
+  const msg = acc >= 90 ? t('resGreat') : acc >= 70 ? t('resGood') : acc >= 50 ? t('resOk') : t('resLow');
   mount(h('div', { class: 'result' },
     h('div', { class: 'big' }, emoji),
     h('h2', {}, msg),
     h('div', { style: 'color:var(--muted)' }, run.title),
     h('div', { class: 'nums' },
       h('div', {}, h('b', {}, '+' + run.xp), h('small', {}, 'XP')),
-      h('div', {}, h('b', {}, acc + '%'), h('small', {}, 'с первого раза')),
-      h('div', {}, h('b', {}, '🔥 ' + S.streak), h('small', {}, 'дней подряд'))),
-    h('button', { class: 'main', onclick: home }, 'Продолжить'),
-    run.mistakes ? h('p', { style: 'color:var(--muted);font-size:15px' }, 'Ошибки сохранены — они вернутся в «Мои ошибки».') : null));
+      h('div', {}, h('b', {}, acc + '%'), h('small', {}, t('firstTry'))),
+      h('div', {}, h('b', {}, '🔥 ' + S.streak), h('small', {}, t('streakDays')))),
+    h('button', { class: 'main', onclick: home }, t('cont')),
+    run.mistakes ? h('p', { style: 'color:var(--muted);font-size:15px' }, t('savedMistakes')) : null));
 }
 
 home();
