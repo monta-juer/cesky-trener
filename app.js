@@ -169,6 +169,42 @@ function vocabSet(set) {
 }
 function openVocab(set) { startSession(vocabSet(set), () => tSet(set), vocabLesson(set)); }
 
+// ---------- Сообщение об ошибке ----------
+const REPORT_KEY = window.REPORT_KEY || '';
+async function sendReport(text, subject) {
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({ access_key: REPORT_KEY, subject, from_name: 'Český trenér', message: text }),
+  });
+  const j = await res.json();
+  return !!j.success;
+}
+// info: { id, title, task, correct, mine }
+function openReport(info) {
+  const ta = h('textarea', { placeholder: t('reportPh'), maxlength: '1500', 'aria-label': t('reportAbout') });
+  const contact = h('input', { type: 'text', placeholder: t('reportContactPh'), maxlength: '120', autocomplete: 'off' });
+  const msg = h('p', { class: 'msg', role: 'status' });
+  const send = h('button', { class: 'main', type: 'button' }, t('reportSend'));
+  const close = h('button', { class: 'main sec', type: 'button', onclick: () => sheet.remove() }, t('reportClose'));
+  const sheet = h('div', { class: 'sheet report', onclick: ev => { if (ev.target === sheet) sheet.remove(); } },
+    h('div', {}, h('h3', {}, t('reportTitle')), h('div', { class: 'ctx' }, h('b', {}, t('reportCtx') + ': '), info.id + ' · ' + info.task),
+      h('div', { style: 'font-weight:700;margin-bottom:6px' }, t('reportAbout')), ta, contact, msg, h('div', { class: 'row' }, send, close)));
+  send.addEventListener('click', async () => {
+    const comment = ta.value.trim();
+    if (!comment) { msg.className = 'msg err'; msg.textContent = t('reportEmpty'); return; }
+    send.disabled = true; msg.className = 'msg'; msg.textContent = t('reportSending');
+    const text = ['Урок: ' + info.title, 'Упражнение: ' + info.id, 'Язык интерфейса: ' + lang, 'Задание: ' + info.task, ...(info.orig && info.orig !== info.task ? ['Задание (оригинал): ' + info.orig] : []),
+      'Правильный ответ в приложении: ' + info.correct, 'Ответ пользователя: ' + (info.mine || '—'),
+      'Комментарий: ' + comment, 'Контакт: ' + (contact.value.trim() || '—')].join('\n');
+    let ok = false;
+    try { ok = await sendReport(text, '[Český trenér] ' + info.id); } catch (e) { ok = false; }
+    if (ok) { msg.className = 'msg ok'; msg.textContent = t('reportThanks'); ta.value = ''; ta.disabled = true; contact.disabled = true; setTimeout(() => sheet.remove(), 1800); }
+    else { msg.className = 'msg err'; msg.textContent = t('reportFail'); send.disabled = false; }
+  });
+  document.body.append(sheet);
+  setTimeout(() => ta.focus(), 50);
+}
+
 // ---------- Озвучка ----------
 // Читаем только чешский текст: без подсказок на другом языке, пометок в скобках и пояснений вроде «Формально:».
 function sayText(e) {
@@ -466,7 +502,10 @@ function renderExercise(item) {
         whyBox,
         e.vocab ? h('div', { class: 'tip' }, h('a', { href: mainUrl(e.vocab), target: '_blank', rel: 'noopener' }, '🔎 ' + e.vocab + t('inSeznam')), ' · ',
           h('a', altProps(e.vocab), altName())) : null,
-        !r.ok ? h('div', { class: 'tip' }, h('a', { onclick: () => showRule(l) }, t('openRule'))) : null),
+        !r.ok ? h('div', { class: 'tip' }, h('a', { onclick: () => showRule(l) }, t('openRule'))) : null,
+        REPORT_KEY ? h('div', { class: 'tip' }, h('a', { onclick: () => openReport({
+          id: e.vocab ? l.id + ' · ' + e.vocab + ' (' + item.i + ')' : exId(l, item.i), title: l.title,
+          task: (e.t === 'b' ? e.ru : e.q) || '', orig: (item.e.t === 'b' ? item.e.ru : item.e.q) || '', correct: r.show, mine: r.mine }) }, t('reportBtn'))) : null),
       h('div', { style: 'display:flex;gap:10px' },
         h('button', { class: 'speak', style: 'height:auto;width:56px;flex:none', 'aria-label': t('speak'), onclick: () => speak(r.say) }, '🔊'),
         h('div', { style: 'flex:1' }, btn)));
