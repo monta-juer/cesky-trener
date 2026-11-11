@@ -1174,6 +1174,117 @@ Ta košile je mi <b>bohužel malá</b>. = Nesedí mi. · Ta černá mi <b>sedí<
     b('Я хожу в зал три раза в неделю', 'Chodím do posilovny třikrát týdně', ['za', 'v'], 'třikrát týdně.'),
   ],
 },
-
+{
+  id: 'chodit', unit: '8. Новое из Classroom (ноябрь)', icon: '🚶', title: 'Jít × chodit, jet × jezdit',
+  desc: 'dnes jdu × každý den chodím',
+  rule: `<p>Четыре глагола движения. Все они <b>несовершенного вида</b>, но различаются так:</p>
+<table>
+<tr><td><b>jít, jet</b><br>«короткие»</td><td>действие <b>одно</b>, сейчас или в конкретный раз: <i>teď, dnes, za chvíli, za 10 minut</i></td></tr>
+<tr><td><b>chodit, jezdit</b><br>«длинные»</td><td>действие <b>повторяется</b>: <i>často, pořád, obvykle, každý den / týden / rok, každou neděli</i></td></tr></table>
+<p><b>jít</b> (пешком) и <b>chodit</b>, <b>jet</b> (транспортом) и <b>jezdit</b>:</p>
+<table>
+<tr><td>já</td><td><b>jdu</b> · <b>jedu</b></td><td><b>chodím</b> · <b>jezdím</b></td></tr>
+<tr><td>ty</td><td><b>jdeš</b> · <b>jedeš</b></td><td><b>chodíš</b> · <b>jezdíš</b></td></tr>
+<tr><td>on/ona</td><td><b>jde</b> · <b>jede</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr>
+<tr><td>my</td><td><b>jdeme</b> · <b>jedeme</b></td><td><b>chodíme</b> · <b>jezdíme</b></td></tr>
+<tr><td>vy</td><td><b>jdete</b> · <b>jedete</b></td><td><b>chodíte</b> · <b>jezdíte</b></td></tr>
+<tr><td>oni</td><td><b>jdou</b> · <b>jedou</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr></table>
+<p><i>Chodím do školy každý den. × Dnes nejdu do školy, protože jsem nemocný.<br>Často jezdím do Brna. × Tento týden jedu do Brna na návštěvu.<br>Do práce obvykle jezdím tramvají. × V pondělí jedu do práce autem.</i></p>`,
+  ex: [
+    c('Každé úterý ___ na angličtinu. (хожу)', 'chodím', ['jdu', 'jedu'], 'Каждый вторник — повторяется → chodit.'),
+    c('Dnes večer ___ do divadla. (мы идём)', 'jdeme', ['chodíme', 'jezdíme'], 'Dnes večer — один раз → jít.'),
+    c('Moje sestra ___ každý rok do Řecka. (ездит)', 'jezdí', ['jede', 'jde'], 'Каждый год, транспортом → jezdit.'),
+    c('Teď nemám čas, ___ na poštu. (иду)', 'jdu', ['chodím', 'jezdím'], 'Teď — одно действие, пешком → jdu.'),
+    c('Často ___ do Brna, protože tam bydlí můj kamarád. (езжу)', 'jezdím', ['jedu', 'chodím'], 'Často — повторяется → jezdím.'),
+    c('Tento týden ___ na návštěvu do Brna. (еду)', 'jedu', ['jezdím', 'chodím'], 'Tento týden — один конкретный раз → jedu.'),
+    c('Do práce obvykle ___ tramvají. (езжу)', 'jezdím', ['jedu', 'jdu'], 'Obvykle — привычка, транспорт → jezdím.'),
+    c('V pondělí ___ do práce autem. (поеду, один раз)', 'jedu', ['jezdím', 'chodím'], 'Конкретный понедельник → jedu.'),
+    c('Kam ___ obvykle na procházku? (ты ходишь)', 'chodíš', ['jdeš', 'jezdíš'], 'Obvykle — привычка, пешком → chodíš.'),
+    c('Proč dneska ___ Martina na tenis? (не идёт)', 'nejde', ['nechodí', 'nejezdí'], 'Dneska — сегодня, один раз → nejde.'),
+    c('Za dvě hodiny ___ na zkoušku. (иду)', 'jdu', ['chodím', 'jezdím'], 'Za dvě hodiny — один конкретный раз → jdu.'),
+    c('Jak často ___ tvůj bratranec do Německa? (ездит)', 'jezdí', ['jede', 'chodí'], 'Jak často? — вопрос о повторении → jezdí.'),
+    f('Každou sobotu ___ na fotbal. (my, chodit)', 'chodíme', 'Каждую субботу → chodit: chodíme.'),
+    f('Dnes večer ___ k babičce autem. (my, jet)', 'jedeme', 'Dnes večer → jet: jedeme.'),
+    f('Vlakem ___ do Prahy dvakrát do roka. (oni, jezdit)', 'jezdí', 'Дважды в год → jezdit: jezdí.'),
+    f('Zítra ___ do Prahy vlakem. (já, jet)', 'jedu', 'Zítra — один раз → jet: jedu.'),
+    c('Как сказать «я каждый день хожу в школу»?', 'Chodím každý den do školy', ['Jdu každý den do školy', 'Jedu každý den do školy'], 'Каждый день → chodím; в школу пешком → не jedu.'),
+    c('Как сказать «ездить на поезде»?', 'jezdit vlakem', ['jít vlakem', 'chodit vlakem'], 'Транспорт → jet / jezdit; «пешком» — jít / chodit.'),
+    b('Я часто хожу в театр', 'Často chodím do divadla', ['jdu', 'chodíš'], 'Často → chodím.'),
+    b('Сегодня вечером мы едем в театр', 'Dnes večer jedeme do divadla', ['jezdíme', 'jdeme'], 'Dnes večer → jedeme.'),
+  ],
+},
+{
+  id: 'genpl1', unit: '8. Новое из Classroom (ноябрь)', icon: '👥', title: 'Genitiv pl.: существительные',
+  desc: 'hodně studentů, málo žen, pět židlí',
+  rule: `<p>Родительный падеж <b>множественного числа</b> (2. pád pl.) нужен после <b>mnoho, hodně, moc, málo, několik, пять и больше</b>, а также после do, z, od, u, vedle, bez, blízko:</p>
+<p><i>Je tady hodně <b>studentů</b>. Mám málo <b>kamarádek</b>. Potřebuju pět <b>židlí</b>.</i></p>
+<table>
+<tr><td>м. р. (все)</td><td><b>-ů</b></td><td>student → studentů, muž → mužů, učitel → učitelů, pokoj → pokojů, sešit → sešitů; pes → psů</td></tr>
+<tr><td>ж. -a</td><td><b>без окончания</b></td><td>žena → žen, škola → škol, banka → bank</td></tr>
+<tr><td>ж. -ka, -ra…</td><td>без окончания + <b>вставная e</b></td><td>kamarádka → kamarádek, učitelka → učitelek, sestra → sester</td></tr>
+<tr><td>ж. -e</td><td><b>-í</b></td><td>židle → židlí, kancelář → kanceláří, skříň → skříní, místnost → místností</td></tr>
+<tr><td>ж. -ice</td><td><b>-ic</b></td><td>ulice → ulic, učebnice → učebnic, sestřenice → sestřenic</td></tr>
+<tr><td>ср. -o</td><td><b>без окончания</b></td><td>město → měst, okno → oken, divadlo → divadel, letadlo → letadel</td></tr>
+<tr><td>ср. -e, -í</td><td><b>-í</b></td><td>moře → moří, náměstí → náměstí</td></tr>
+<tr><td>-ště</td><td><b>-išť</b></td><td>parkoviště → parkovišť, letiště → letišť</td></tr></table>
+<p><b>Особые слова:</b> přítel → <b>přátel</b>, člověk → <b>lidí</b>, peníze → <b>peněz</b>.</p>`,
+  ex: [
+    c('V třídě je hodně ___. (student)', 'studentů', ['studenty', 'studentu'], 'м. р. во мн. ч. → -ů: studentů.'),
+    c('V domě je hodně ___. (pokoj)', 'pokojů', ['pokoje', 'pokoji'], 'м. р. неодуш. → -ů: pokojů.'),
+    c('Potřebuju několik ___. (sešit)', 'sešitů', ['sešity', 'sešit'], 'několik + род. п. мн. ч.: sešitů.'),
+    c('Je tady málo ___. (muž)', 'mužů', ['muži', 'muže'], 'muž → mužů.'),
+    c('V restauraci je moc ___. (žena)', 'žen', ['ženy', 'ženů'], 'ж. -a → без окончания: žen.'),
+    c('Potřebuju pět ___. (židle)', 'židlí', ['židle', 'židlích'], 'ж. -e → -í: židlí.'),
+    c('V centru je hodně ___. (ulice)', 'ulic', ['ulice', 'ulicí'], '-ice → -ic: ulic.'),
+    c('V domě je několik ___. (místnost)', 'místností', ['místnosti', 'místnostů'], 'ж. на согласную (-ost) → -í: místností.'),
+    c('Ve městě je málo ___. (škola)', 'škol', ['školy', 'školů'], 'ж. -a → без окончания: škol.'),
+    c('Mám hodně ___. (kamarádka)', 'kamarádek', ['kamarády', 'kamarádků'], '-ka → -ek (вставная e): kamarádek.'),
+    c('Vidím tam hodně ___. (okno)', 'oken', ['okna', 'oknů'], 'ср. -o → без окончания, вставная e: oken.'),
+    c('V Praze je hodně ___. (divadlo)', 'divadel', ['divadla', 'divadlů'], 'ср. -o: divadel (вставная e).'),
+    c('Navštívím pět ___. (město)', 'měst', ['města', 'městů'], 'pět + род. п. мн. ч.: měst.'),
+    c('Vidím hodně ___. (moře)', 'moří', ['moře', 'mořů'], 'ср. -e → -í: moří.'),
+    c('Na letišti je málo ___. (parkoviště)', 'parkovišť', ['parkoviště', 'parkovištích'], '-ště → -išť: parkovišť.'),
+    c('Znám málo ___. (přítel)', 'přátel', ['přítelů', 'přátele'], 'Особая форма: přátel.'),
+    c('V Praze je hodně ___. (člověk)', 'lidí', ['člověků', 'lidé'], 'Особая форма: lidí.'),
+    c('Nemám mnoho ___. (peníze)', 'peněz', ['peníze', 'peněží'], 'Особая форма: peněz.'),
+    f('Máme hodně ___. (sestra)', 'sester', 'sestra → sester (вставная e).'),
+    f('Bydlím blízko dvou ___. (náměstí)', 'náměstí', 'náměstí в род. п. мн. ч. не меняется.'),
+    b('Я знаю много студентов', 'Znám hodně studentů', ['studenty', 'studenti'], 'hodně + род. п. мн. ч.'),
+    b('В городе много школ', 'Ve městě je hodně škol', ['školy', 'jsou'], 'hodně → глагол je, школ → škol.'),
+  ],
+},
+{
+  id: 'genpl2', unit: '8. Новое из Classroom (ноябрь)', icon: '🔢', title: 'Genitiv pl.: прилагательные и количество',
+  desc: 'hodně českých studentů, málo mých přátel',
+  rule: `<p>Прилагательные и местоимения при существительном в родительном мн. ч. тоже стоят в родительном:</p>
+<table>
+<tr><td>прилагательные</td><td>твёрдые <b>-ých</b>, мягкие <b>-ích</b></td><td>českých, velkých, dobrých · moderních</td></tr>
+<tr><td>мой, твой, наш, ваш</td><td><b>mých, tvých, našich, vašich</b></td><td>jeho, jejich — без изменений</td></tr>
+<tr><td>числа</td><td><b>dvou, tří / třech, čtyř / čtyřech</b></td><td>těch — «тех»</td></tr></table>
+<p><i>Znám hodně <b>českých studentů</b>. Mám málo <b>mých přátel</b>. Sedím vedle <b>dvou kamarádek</b>.</i></p>
+<p><b>Глагол:</b> после mnoho, hodně, málo, několik, пяти и больше глагол стоит в 3-м лице <b>ед. числа</b>: <i>Tam <b>je</b> hodně studentů.</i> А после <b>dva, tři, čtyři</b> — существительное в именительном мн. ч. и глагол <b>jsou</b>: <i>Tam <b>jsou</b> tři sešity.</i></p>`,
+  ex: [
+    c('Znám hodně ___ studentů. (чешских)', 'českých', ['české', 'český'], 'Прилагательное тоже в род. п. мн. ч.: českých.'),
+    c('V Praze je mnoho ___ kostelů. (старых)', 'starých', ['staré', 'starý'], 'твёрдое прилагательное → -ých.'),
+    c('Mám málo ___ kamarádů. (хороших)', 'dobrých', ['dobré', 'dobří'], 'dobrý → dobrých.'),
+    c('V tom městě je hodně ___ domů. (современных)', 'moderních', ['moderní', 'moderními'], 'мягкое прилагательное → -ích: moderních.'),
+    c('Znám několik ___ spolužáků. (твоих)', 'tvých', ['tvoje', 'tvé'], 'tvůj → tvých.'),
+    c('Bydlím blízko ___ rodičů. (наших)', 'našich', ['naši', 'naše'], 'náš → našich.'),
+    c('To jsou dárky od ___ přátel. (моих)', 'mých', ['moji', 'mé'], 'můj → mých.'),
+    c('Tam ___ hodně studentů.', 'je', ['jsou', 'byli'], 'hodně + род. п. мн. ч. → глагол в ед. числе: je.'),
+    c('Tam ___ tři sešity.', 'jsou', ['je', 'bylo'], 'tři + именительный мн. ч. → jsou.'),
+    c('Sedím vedle ___ kamarádek. (двух)', 'dvou', ['dva', 'dvě'], 'vedle + род. п.: dvou.'),
+    c('V ulici je ___ aut. (несколько)', 'několik', ['několikrát', 'kolik'], 'několik + род. п. мн. ч.: několik aut.'),
+    c('Как сказать «много денег»?', 'hodně peněz', ['hodně peníze', 'hodně peněží'], 'peníze → peněz.'),
+    c('Как сказать «мало людей»?', 'málo lidí', ['málo lidé', 'málo člověků'], 'člověk → lidí.'),
+    c('Ve třídě je pět ___. (новых студентов)', 'nových studentů', ['nové studenty', 'nových studenty'], 'Прилагательное и существительное оба в род. п. мн. ч.'),
+    f('V knihovně je mnoho ___ knih. (zajímavý)', 'zajímavých', 'zajímavý → zajímavých.'),
+    f('V hotelu je málo ___ pokojů. (volný)', 'volných', 'volný → volných.'),
+    f('Bydlím blízko ___ obchodů. (velký)', 'velkých', 'velký → velkých.'),
+    b('В классе много хороших студентов', 'Ve třídě je hodně dobrých studentů', ['dobré', 'jsou'], 'hodně → je; dobrých studentů.'),
+    b('У меня мало друзей', ['Mám málo přátel', 'Mám málo kamarádů'], ['přátelé', 'je'], 'málo + род. п. мн. ч.: přátel.'),
+    b('Я боюсь собак', 'Bojím se psů', ['psy', 'psi'], 'bát se + род. п. мн. ч.: psů.'),
+  ],
+},
 
 ];

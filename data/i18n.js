@@ -165,6 +165,9 @@ window.TITLES = {
     gakuz: { cs: 'Genitiv × akuzativ: jednoho, dva', en: 'Genitive × accusative: jednoho, dva', kk: 'Ілік септік × табыс септік: jednoho, dva' },
     hotel: { cs: 'V hotelu', en: 'At the hotel', kk: 'Қонақүйде' },
     za: { cs: 'Za, na, v: cena, za hodinu, za týden', en: 'Za, na, v: price, in an hour, per week', kk: 'Za, na, v: баға, бір сағаттан кейін, аптасына' },
+    chodit: { cs: 'Jít × chodit, jet × jezdit', en: 'Jít × chodit, jet × jezdit (go)', kk: 'Jít × chodit, jet × jezdit (бару)' },
+    genpl1: { cs: 'Genitiv pl.: podstatná jména', en: 'Genitive plural: nouns', kk: 'Ілік септік көпше: зат есімдер' },
+    genpl2: { cs: 'Genitiv pl.: přídavná jména a množství', en: 'Genitive plural: adjectives and quantity', kk: 'Ілік септік көпше: сын есімдер және мөлшер' },
   },
   vocab: {
     'v-obchod': { cs: 'Obchod a oblečení', en: 'Shop and clothes', kk: 'Дүкен және киім' },

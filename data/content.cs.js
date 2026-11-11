@@ -1599,6 +1599,240 @@ window.CONTENT.cs = {
      "tip": "třikrát týdně."
     }
    }
+  },
+  "chodit": {
+   "rule": "<p>Čtyři slovesa pohybu. Všechna jsou <b>nedokonavá</b>, ale liší se takto:</p>\n<table>\n<tr><td><b>jít, jet</b><br>„krátká“</td><td>děj je <b>jeden</b>, teď nebo jednou: <i>teď, dnes, za chvíli, za 10 minut</i></td></tr>\n<tr><td><b>chodit, jezdit</b><br>„dlouhá“</td><td>děj se <b>opakuje</b>: <i>často, pořád, obvykle, každý den / týden / rok, každou neděli</i></td></tr></table>\n<p><b>jít</b> (pěšky) a <b>chodit</b>, <b>jet</b> (dopravním prostředkem) a <b>jezdit</b>:</p>\n<table>\n<tr><td>já</td><td><b>jdu</b> · <b>jedu</b></td><td><b>chodím</b> · <b>jezdím</b></td></tr>\n<tr><td>ty</td><td><b>jdeš</b> · <b>jedeš</b></td><td><b>chodíš</b> · <b>jezdíš</b></td></tr>\n<tr><td>on/ona</td><td><b>jde</b> · <b>jede</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr>\n<tr><td>my</td><td><b>jdeme</b> · <b>jedeme</b></td><td><b>chodíme</b> · <b>jezdíme</b></td></tr>\n<tr><td>vy</td><td><b>jdete</b> · <b>jedete</b></td><td><b>chodíte</b> · <b>jezdíte</b></td></tr>\n<tr><td>oni</td><td><b>jdou</b> · <b>jedou</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr></table>\n<p><i>Chodím do školy každý den. × Dnes nejdu do školy, protože jsem nemocný.<br>Často jezdím do Brna. × Tento týden jedu do Brna na návštěvu.<br>Do práce obvykle jezdím tramvají. × V pondělí jedu do práce autem.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Každé úterý ___ na angličtinu. (já, opakovaně, pěšky)",
+     "tip": "Každé úterý = děj se opakuje → chodit."
+    },
+    "1": {
+     "q": "Dnes večer ___ do divadla. (my, jednou, pěšky)",
+     "tip": "Dnes večer = jeden děj → jít."
+    },
+    "2": {
+     "q": "Moje sestra ___ každý rok do Řecka. (opakovaně, dopravním prostředkem)",
+     "tip": "Každý rok, dopravní prostředek → jezdit."
+    },
+    "3": {
+     "q": "Teď nemám čas, ___ na poštu. (já, právě teď, pěšky)",
+     "tip": "Teď = jeden děj, pěšky → jdu."
+    },
+    "4": {
+     "q": "Často ___ do Brna, protože tam bydlí můj kamarád. (já, opakovaně, dopravním prostředkem)",
+     "tip": "Často = opakuje se → jezdím."
+    },
+    "5": {
+     "q": "Tento týden ___ na návštěvu do Brna. (já, jednou, dopravním prostředkem)",
+     "tip": "Tento týden = jeden konkrétní případ → jedu."
+    },
+    "6": {
+     "q": "Do práce obvykle ___ tramvají. (já, zvyk)",
+     "tip": "Obvykle = zvyk, dopravní prostředek → jezdím."
+    },
+    "7": {
+     "q": "V pondělí ___ do práce autem. (já, jednou)",
+     "tip": "Konkrétní pondělí = jednou → jedu."
+    },
+    "8": {
+     "q": "Kam ___ obvykle na procházku? (ty, zvyk, pěšky)",
+     "tip": "Obvykle = zvyk, pěšky → chodíš."
+    },
+    "9": {
+     "q": "Proč dneska ___ Martina na tenis? (záporně, dnes, jednou)",
+     "tip": "Dneska = dnes, jednou → nejde."
+    },
+    "10": {
+     "q": "Za dvě hodiny ___ na zkoušku. (já, jednou, pěšky)",
+     "tip": "Za dvě hodiny = jeden konkrétní případ → jdu."
+    },
+    "11": {
+     "q": "Jak často ___ tvůj bratranec do Německa? (opakovaně, dopravním prostředkem)",
+     "tip": "Jak často? = otázka na opakování → jezdí."
+    },
+    "12": {
+     "tip": "Každou sobotu → chodit: chodíme."
+    },
+    "13": {
+     "tip": "Dnes večer → jet: jedeme."
+    },
+    "14": {
+     "tip": "Dvakrát do roka → jezdit: jezdí."
+    },
+    "15": {
+     "tip": "Zítra = jednou → jet: jedu."
+    },
+    "16": {
+     "q": "Vyberte správnou větu: já pěšky do školy, opakovaně, každý den.",
+     "tip": "Každý den → chodím; do školy pěšky, ne jedu."
+    },
+    "17": {
+     "q": "Jak se řekne „opakovaně cestovat vlakem“?",
+     "tip": "Dopravní prostředek → jet / jezdit; pěšky → jít / chodit."
+    },
+    "18": {
+     "ru": "Řekni, že do divadla chodíš často. (pravidelně)",
+     "tip": "Často → chodím."
+    },
+    "19": {
+     "ru": "Řekni, že dnes večer jedete do divadla. (my, jednou)",
+     "tip": "Dnes večer → jedeme."
+    }
+   }
+  },
+  "genpl1": {
+   "rule": "<p>2. pád <b>množného čísla</b> (genitiv plurálu) potřebujeme po <b>mnoho, hodně, moc, málo, několik, pět a víc</b>, a také po do, z, od, u, vedle, bez, blízko:</p>\n<p><i>Je tady hodně <b>studentů</b>. Mám málo <b>kamarádek</b>. Potřebuju pět <b>židlí</b>.</i></p>\n<table>\n<tr><td>m. (všechna)</td><td><b>-ů</b></td><td>student → studentů, muž → mužů, učitel → učitelů, pokoj → pokojů, sešit → sešitů; pes → psů</td></tr>\n<tr><td>ž. -a</td><td><b>bez koncovky</b></td><td>žena → žen, škola → škol, banka → bank</td></tr>\n<tr><td>ž. -ka, -ra…</td><td>bez koncovky + <b>vsuvka e</b></td><td>kamarádka → kamarádek, učitelka → učitelek, sestra → sester</td></tr>\n<tr><td>ž. -e</td><td><b>-í</b></td><td>židle → židlí, kancelář → kanceláří, skříň → skříní, místnost → místností</td></tr>\n<tr><td>ž. -ice</td><td><b>-ic</b></td><td>ulice → ulic, učebnice → učebnic, sestřenice → sestřenic</td></tr>\n<tr><td>s. -o</td><td><b>bez koncovky</b></td><td>město → měst, okno → oken, divadlo → divadel, letadlo → letadel</td></tr>\n<tr><td>s. -e, -í</td><td><b>-í</b></td><td>moře → moří, náměstí → náměstí</td></tr>\n<tr><td>-ště</td><td><b>-išť</b></td><td>parkoviště → parkovišť, letiště → letišť</td></tr></table>\n<p><b>Zvláštní slova:</b> přítel → <b>přátel</b>, člověk → <b>lidí</b>, peníze → <b>peněz</b>.</p>",
+   "ex": {
+    "0": {
+     "tip": "Muži (m.) mají v 2. pádu množného čísla -ů: studentů."
+    },
+    "1": {
+     "tip": "Neživotné m. → -ů: pokojů."
+    },
+    "2": {
+     "tip": "několik + 2. pád množného čísla: sešitů."
+    },
+    "3": {
+     "tip": "muž → mužů."
+    },
+    "4": {
+     "tip": "ž. -a → bez koncovky: žen."
+    },
+    "5": {
+     "tip": "ž. -e → -í: židlí."
+    },
+    "6": {
+     "tip": "-ice → -ic: ulic."
+    },
+    "7": {
+     "tip": "ž. na souhlásku (-ost) → -í: místností."
+    },
+    "8": {
+     "tip": "ž. -a → bez koncovky: škol."
+    },
+    "9": {
+     "tip": "-ka → -ek (vsuvka e): kamarádek."
+    },
+    "10": {
+     "tip": "s. -o → bez koncovky, vsuvka e: oken."
+    },
+    "11": {
+     "tip": "s. -o: divadel (vsuvka e)."
+    },
+    "12": {
+     "tip": "pět + 2. pád množného čísla: měst."
+    },
+    "13": {
+     "tip": "s. -e → -í: moří."
+    },
+    "14": {
+     "tip": "-ště → -išť: parkovišť."
+    },
+    "15": {
+     "tip": "Zvláštní tvar: přátel."
+    },
+    "16": {
+     "tip": "Zvláštní tvar: lidí."
+    },
+    "17": {
+     "tip": "Zvláštní tvar: peněz."
+    },
+    "18": {
+     "tip": "sestra → sester (vsuvka e)."
+    },
+    "19": {
+     "tip": "náměstí se v 2. pádu množného čísla nemění."
+    },
+    "20": {
+     "ru": "Řekni, že znáš hodně studentů. (mnoho)",
+     "tip": "hodně + 2. pád množného čísla."
+    },
+    "21": {
+     "ru": "Řekni, že ve městě je hodně škol. (škola)",
+     "tip": "hodně → sloveso je; „škol“ je 2. pád od škola."
+    }
+   }
+  },
+  "genpl2": {
+   "rule": "<p>Přídavná jména a zájmena u podstatného jména v 2. pádu množného čísla jsou také ve 2. pádu:</p>\n<table>\n<tr><td>přídavná jména</td><td>tvrdá <b>-ých</b>, měkká <b>-ích</b></td><td>českých, velkých, dobrých · moderních</td></tr>\n<tr><td>můj, tvůj, náš, váš</td><td><b>mých, tvých, našich, vašich</b></td><td>jeho, jejich — beze změny</td></tr>\n<tr><td>číslovky</td><td><b>dvou, tří / třech, čtyř / čtyřech</b></td><td>těch — „těch“ (2. pád od ti)</td></tr></table>\n<p><i>Znám hodně <b>českých studentů</b>. Mám málo <b>mých přátel</b>. Sedím vedle <b>dvou kamarádek</b>.</i></p>\n<p><b>Sloveso:</b> po mnoho, hodně, málo, několik, pět a víc je sloveso ve 3. osobě <b>jednotného čísla</b>: <i>Tam <b>je</b> hodně studentů.</i> Po <b>dva, tři, čtyři</b> je podstatné jméno v 1. pádu množného čísla a sloveso je <b>jsou</b>: <i>Tam <b>jsou</b> tři sešity.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Znám hodně ___ studentů. (přídavné jméno český)",
+     "tip": "Přídavné jméno je také ve 2. pádu množného čísla: českých."
+    },
+    "1": {
+     "q": "V Praze je mnoho ___ kostelů. (přídavné jméno starý)",
+     "tip": "Tvrdé přídavné jméno → -ých."
+    },
+    "2": {
+     "q": "Mám málo ___ kamarádů. (přídavné jméno dobrý)",
+     "tip": "dobrý → dobrých."
+    },
+    "3": {
+     "q": "V tom městě je hodně ___ domů. (přídavné jméno moderní)",
+     "tip": "Měkké přídavné jméno → -ích: moderních."
+    },
+    "4": {
+     "q": "Znám několik ___ spolužáků. (zájmeno tvůj)",
+     "tip": "tvůj → tvých."
+    },
+    "5": {
+     "q": "Bydlím blízko ___ rodičů. (zájmeno náš)",
+     "tip": "náš → našich."
+    },
+    "6": {
+     "q": "To jsou dárky od ___ přátel. (zájmeno můj)",
+     "tip": "můj → mých."
+    },
+    "7": {
+     "tip": "hodně + 2. pád množného čísla → sloveso v jednotném čísle: je."
+    },
+    "8": {
+     "tip": "tři + 1. pád množného čísla → jsou."
+    },
+    "9": {
+     "q": "Sedím vedle ___ kamarádek. (číslovka 2)",
+     "tip": "vedle + 2. pád: dvou."
+    },
+    "10": {
+     "q": "V ulici je ___ aut. (víc než dvě, ale ne moc)",
+     "tip": "několik + 2. pád množného čísla: několik aut."
+    },
+    "11": {
+     "q": "Jak se řekne „hodně“ + peníze (2. pád množného čísla)?",
+     "tip": "peníze → peněz."
+    },
+    "12": {
+     "q": "Jak se řekne „málo“ + člověk (2. pád množného čísla)?",
+     "tip": "člověk → lidí."
+    },
+    "13": {
+     "q": "Ve třídě je pět ___. (nový student, 2. pád množného čísla)",
+     "tip": "Přídavné jméno i podstatné jméno jsou ve 2. pádu množného čísla."
+    },
+    "14": {
+     "tip": "zajímavý → zajímavých."
+    },
+    "15": {
+     "tip": "volný → volných."
+    },
+    "16": {
+     "tip": "velký → velkých."
+    },
+    "17": {
+     "ru": "Řekni, že ve třídě je hodně dobrých studentů. (třída)",
+     "tip": "hodně → je; dobrých studentů."
+    },
+    "18": {
+     "ru": "Řekni, že máš málo přátel nebo kamarádů. (málo)",
+     "tip": "málo + 2. pád množného čísla: přátel."
+    },
+    "19": {
+     "ru": "Řekni, že se bojíš psů. (pes, více psů)",
+     "tip": "bát se + 2. pád množného čísla: psů."
+    }
+   }
   }
  },
  "why": {
@@ -2353,6 +2587,74 @@ window.CONTENT.cs = {
    "Za hodinu = až uplyne hodina. Na je pro délku a v pro přesný čas.",
    "Na dva dny = pobyt trvá dva dny. Za dva dny by znamenalo „po dvou dnech od teď“.",
    "Třikrát týdně = třikrát každý týden. Týdně znamená „každý týden“."
+  ],
+  "chodit": [
+   "„Každé úterý“ — děj se opakuje, proto potřebujeme „dlouhé“ sloveso: chodit → chodím. Jdu znamená „jdu teď“, jedu znamená „jedu“ (dopravním prostředkem).",
+   "„Dnes večer“ — jeden konkrétní děj, proto „krátké“ sloveso: jít → jdeme. Chodíme a jezdíme by znamenalo „chodíme / jezdíme pravidelně“.",
+   "„Každý rok“ — děj se opakuje a do Řecka se jezdí dopravním prostředkem: jezdit → jezdí. Jede a jde jsou tvary pro jeden děj.",
+   "„Teď“ — jeden děj, na poštu jdeme pěšky: jít → jdu. Chodím znamená „chodím pravidelně“, jezdím „jezdím“.",
+   "„Často“ — děj se opakuje, dopravní prostředek: jezdit → jezdím. Jedu je jednorázové „jedu“.",
+   "„Tento týden“ — jeden konkrétní případ, ne zvyk: jet → jedu. Jezdím by znamenalo „jezdím pravidelně“.",
+   "„Obvykle“ — zvyk, a „tramvají“ je dopravní prostředek: jezdit → jezdím. Jedu a jdu jsou jednorázové tvary.",
+   "„V pondělí“ — konkrétní pondělí, jednou: jet → jedu. Jezdím a chodím se používají pro opakování.",
+   "„Obvykle“ — zvyk, na procházku se chodí pěšky: chodit → chodíš. Jdeš je „jdeš teď“, jezdíš je dopravním prostředkem.",
+   "„Dneska“ — dnes, jednou: jít → nejde. Nechodí a nejezdí by znamenalo „vůbec nechodí / nejezdí“.",
+   "„Za dvě hodiny“ — jeden konkrétní případ, na zkoušku pěšky: jít → jdu. Chodím a jezdím jsou pro opakování.",
+   "„Jak často?“ — otázka na opakování, do Německa se jezdí dopravním prostředkem: jezdit → jezdí. Jede je jednorázové.",
+   "„Každou sobotu“ — opakuje se: chodit. S „my“ je to chodíme.",
+   "„Dnes večer“ — jednou, dopravním prostředkem (autem): jet. S „my“ je to jedeme.",
+   "„Dvakrát do roka“ — opakuje se, vlakem: jezdit. S „oni“ je to jezdí (jezdí je 3. osoba jednotného i množného čísla).",
+   "„Zítra“ — jednou, vlakem: jet. S „já“ je to jedu.",
+   "Chodím — opakuje se („každý den“) a do školy se chodí pěšky. Jdu a jedu jsou tvary pro jeden děj, a jedu je navíc dopravním prostředkem.",
+   "Dopravní prostředek — jet / jezdit, pěšky — jít / chodit. „Opakovaně cestovat vlakem“ → jezdit vlakem. Jít vlakem a chodit vlakem se neříká.",
+   "„Často“ — opakuje se: chodit → chodím. Jdu znamená „jdu teď“.",
+   "„Dnes večer“ — jednou, do divadla se jede → jedeme. Jezdíme je „jezdíme pravidelně“, jdeme je „jdeme pěšky“."
+  ],
+  "genpl1": [
+   "Po hodně je 2. pád množného čísla. Mužský rod má koncovku -ů: student → studentů.",
+   "Pokoj je mužský rod, v 2. pádu množného čísla má -ů: pokojů.",
+   "Několik + 2. pád množného čísla. Sešit → sešitů (m., -ů).",
+   "Muž → mužů. Mužský rod má v 2. pádu množného čísla vždy -ů.",
+   "Žena (ž. -a) v 2. pádu množného čísla ztrácí koncovku: žen. Ženy je 1. pád množného čísla, ženů je tvar mužského rodu.",
+   "Židle (ž. na -e) → -í: židlí. Po „pět“ potřebujeme 2. pád množného čísla.",
+   "Ulice → ulic: u slov na -ice se koncovka -ice mění na -ic.",
+   "Místnost je ženský rod na souhlásku, v 2. pádu množného čísla má -í: místností.",
+   "Škola (ž. -a) → škol: koncovka -a odpadá.",
+   "Kamarádka → kamarádek: koncovka odpadá a před poslední souhlásku přijde vsuvka e.",
+   "Okno (s. -o) → oken: koncovka odpadá a přijde vsuvka e.",
+   "Divadlo → divadel: koncovka odpadá a přijde vsuvka e (jako okno → oken).",
+   "Město → měst: koncovka -o odpadá. Po „pět“ je 2. pád množného čísla.",
+   "Moře (s. -e) → moří: -e → -í.",
+   "Slova na -ště se mění na -išť: parkoviště → parkovišť.",
+   "Přítel má zvláštní tvar: přátel. Přítelů se neříká.",
+   "Člověk má zvláštní tvar: lidí. Člověků a lidé nejsou správně.",
+   "Peníze mají zvláštní tvar: peněz.",
+   "Sestra → sester: koncovka -a odpadá a před poslední souhlásku přijde vsuvka e.",
+   "Náměstí (s. na -í) se v 2. pádu množného čísla nemění.",
+   "Hodně + 2. pád množného čísla. Mužský rod → -ů: studentů.",
+   "Hodně + 2. pád množného čísla: škola → škol. Sloveso po hodně je ve 3. osobě jednotného čísla: je."
+  ],
+  "genpl2": [
+   "Přídavné jméno se shoduje s podstatným jménem: obě jsou ve 2. pádu množného čísla. Tvrdá přídavná jména: -ých → českých.",
+   "Starý (tvrdé) → starých. Mnoho + 2. pád množného čísla.",
+   "Dobrý → dobrých. Málo + 2. pád množného čísla.",
+   "Moderní je měkké přídavné jméno: ve 2. pádu množného čísla má -ích → moderních.",
+   "Tvůj → tvých (2. pád množného čísla): několik tvých spolužáků.",
+   "Náš → našich: blízko + 2. pád, rodičů je množné číslo.",
+   "Můj → mých: od + 2. pád množného čísla: od mých přátel.",
+   "Po hodně (a mnoho, málo, několik, pět a víc) je sloveso v jednotném čísle: je. Jsou tady nepatří.",
+   "Po tři (a dva, čtyři) je podstatné jméno v 1. pádu množného čísla a sloveso je v množném čísle: jsou.",
+   "Vedle + 2. pád. „Dvě“ ve 2. pádu je dvou: vedle dvou kamarádek.",
+   "Několik + 2. pád množného čísla: auto → aut. Několikrát znamená „víckrát“, ne množství.",
+   "Peníze mají ve 2. pádu množného čísla tvar peněz: hodně peněz.",
+   "Člověk má ve 2. pádu množného čísla tvar lidí: málo lidí.",
+   "Přídavné jméno i podstatné jméno jsou ve 2. pádu množného čísla: nový → nových, student → studentů.",
+   "Zajímavý (tvrdé) → zajímavých.",
+   "Volný → volných. Málo + 2. pád.",
+   "Velký → velkých. Blízko + 2. pád množného čísla: obchodů.",
+   "Hodně → sloveso je. Dobrý → dobrých, student → studentů (obě ve 2. pádu množného čísla).",
+   "Málo + 2. pád množného čísla: přítel → přátel, kamarád → kamarádů.",
+   "Bát se + 2. pád. Pes → psů (m., množné číslo)."
   ]
  },
  "whyRule": {
@@ -2394,7 +2696,10 @@ window.CONTENT.cs = {
   "genslov": "Bát se, ptát se, vážit si + 2. pád: Bojím se toho jednoho učitele. Nebojím se = nemám strach z + 2. pád.",
   "gakuz": "Pád určuje sloveso nebo předložka: vidím, znám, starám se o + 4. pád; bojím se, vedle, od + 2. pád. Dva/dvě/tři + 4. pád mn. č.",
   "hotel": "jednolůžkový = 1 postel, dvoulůžkový = 2. Chtěl bych rezervovat pokoj. Na kolik nocí? Je v ceně snídaně?",
-  "za": "za + cena / „za hodinu“: za tisíc, za hodinu, třikrát za týden. na + délka: na dva dny. v + přesný čas. denně, týdně = každý den, každý týden."
+  "za": "za + cena / „za hodinu“: za tisíc, za hodinu, třikrát za týden. na + délka: na dva dny. v + přesný čas. denně, týdně = každý den, každý týden.",
+  "chodit": "jít / jet — jeden děj teď (dnes jdu); chodit / jezdit — děj se opakuje (každý den chodím). Jdu, jdeš… · chodím, chodíš… · jedu… · jezdím…",
+  "genpl1": "2. pád množného čísla: m. -ů (studentů); ž. -a bez koncovky (žen, škol); -e → -í (židlí); -ice → -ic (ulic); s. -o bez koncovky (měst, oken); zvláštní: přátel, lidí, peněz.",
+  "genpl2": "Po hodně, málo, několik, pět a víc je 2. pád množného čísla: přídavné jméno -ých / -ích (českých, moderních), mých, našich, dvou. Sloveso — je."
  },
  "vocab": {
   "v-obchod": [

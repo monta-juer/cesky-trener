@@ -1531,6 +1531,240 @@ window.CONTENT.en = {
      "ru": "I go to the gym three times a week"
     }
    }
+  },
+  "chodit": {
+   "rule": "<p>Four verbs of motion. All of them are <b>imperfective</b>, but they differ like this:</p>\n<table>\n<tr><td><b>jít, jet</b><br>“short”</td><td>a <b>single</b> action, happening now or on one specific occasion: <i>teď, dnes, za chvíli, za 10 minut</i></td></tr>\n<tr><td><b>chodit, jezdit</b><br>“long”</td><td>a <b>repeated</b> action: <i>často, pořád, obvykle, každý den / týden / rok, každou neděli</i></td></tr></table>\n<p><b>jít</b> (on foot) and <b>chodit</b>, <b>jet</b> (by vehicle) and <b>jezdit</b>:</p>\n<table>\n<tr><td>já</td><td><b>jdu</b> · <b>jedu</b></td><td><b>chodím</b> · <b>jezdím</b></td></tr>\n<tr><td>ty</td><td><b>jdeš</b> · <b>jedeš</b></td><td><b>chodíš</b> · <b>jezdíš</b></td></tr>\n<tr><td>on/ona</td><td><b>jde</b> · <b>jede</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr>\n<tr><td>my</td><td><b>jdeme</b> · <b>jedeme</b></td><td><b>chodíme</b> · <b>jezdíme</b></td></tr>\n<tr><td>vy</td><td><b>jdete</b> · <b>jedete</b></td><td><b>chodíte</b> · <b>jezdíte</b></td></tr>\n<tr><td>oni</td><td><b>jdou</b> · <b>jedou</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr></table>\n<p><i>Chodím do školy každý den. × Dnes nejdu do školy, protože jsem nemocný.<br>Často jezdím do Brna. × Tento týden jedu do Brna na návštěvu.<br>Do práce obvykle jezdím tramvají. × V pondělí jedu do práce autem.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Každé úterý ___ na angličtinu. (I go)",
+     "tip": "Every Tuesday — it is repeated → chodit."
+    },
+    "1": {
+     "q": "Dnes večer ___ do divadla. (we are going)",
+     "tip": "Dnes večer — one time → jít."
+    },
+    "2": {
+     "q": "Moje sestra ___ každý rok do Řecka. (travels)",
+     "tip": "Every year, by vehicle → jezdit."
+    },
+    "3": {
+     "q": "Teď nemám čas, ___ na poštu. (I am going)",
+     "tip": "Teď — a single action, on foot → jdu."
+    },
+    "4": {
+     "q": "Často ___ do Brna, protože tam bydlí můj kamarád. (I travel)",
+     "tip": "Často — it is repeated → jezdím."
+    },
+    "5": {
+     "q": "Tento týden ___ na návštěvu do Brna. (I am going)",
+     "tip": "Tento týden — one specific occasion → jedu."
+    },
+    "6": {
+     "q": "Do práce obvykle ___ tramvají. (I travel)",
+     "tip": "Obvykle — a habit, by vehicle → jezdím."
+    },
+    "7": {
+     "q": "V pondělí ___ do práce autem. (I will go, one time)",
+     "tip": "A specific Monday → jedu."
+    },
+    "8": {
+     "q": "Kam ___ obvykle na procházku? (you go)",
+     "tip": "Obvykle — a habit, on foot → chodíš."
+    },
+    "9": {
+     "q": "Proč dneska ___ Martina na tenis? (is not going)",
+     "tip": "Dneska — today, one time → nejde."
+    },
+    "10": {
+     "q": "Za dvě hodiny ___ na zkoušku. (I am going)",
+     "tip": "Za dvě hodiny — one specific time → jdu."
+    },
+    "11": {
+     "q": "Jak často ___ tvůj bratranec do Německa? (travels)",
+     "tip": "Jak často? — a question about repetition → jezdí."
+    },
+    "12": {
+     "tip": "Every Saturday → chodit: chodíme."
+    },
+    "13": {
+     "tip": "Dnes večer → jet: jedeme."
+    },
+    "14": {
+     "tip": "Twice a year → jezdit: jezdí."
+    },
+    "15": {
+     "tip": "Zítra — one time → jet: jedu."
+    },
+    "16": {
+     "q": "How do you say “I go to school every day”?",
+     "tip": "Every day → chodím; to school on foot → not jedu."
+    },
+    "17": {
+     "q": "How do you say “to travel by train”?",
+     "tip": "Vehicle → jet / jezdit; “on foot” → jít / chodit."
+    },
+    "18": {
+     "ru": "I often go to the theatre",
+     "tip": "Často → chodím."
+    },
+    "19": {
+     "ru": "This evening we are going to the theatre",
+     "tip": "Dnes večer → jedeme."
+    }
+   }
+  },
+  "genpl1": {
+   "rule": "<p>The genitive <b>plural</b> (2nd case, pl.) is used after <b>mnoho, hodně, moc, málo, několik, five and more</b>, and also after do, z, od, u, vedle, bez, blízko:</p>\n<p><i>Je tady hodně <b>studentů</b>. Mám málo <b>kamarádek</b>. Potřebuju pět <b>židlí</b>.</i></p>\n<table>\n<tr><td>m. (all)</td><td><b>-ů</b></td><td>student → studentů, muž → mužů, učitel → učitelů, pokoj → pokojů, sešit → sešitů; pes → psů</td></tr>\n<tr><td>f. -a</td><td><b>no ending (zero ending)</b></td><td>žena → žen, škola → škol, banka → bank</td></tr>\n<tr><td>f. -ka, -ra…</td><td>no ending (zero ending) + <b>inserted (fleeting) e</b></td><td>kamarádka → kamarádek, učitelka → učitelek, sestra → sester</td></tr>\n<tr><td>f. -e</td><td><b>-í</b></td><td>židle → židlí, kancelář → kanceláří, skříň → skříní, místnost → místností</td></tr>\n<tr><td>f. -ice</td><td><b>-ic</b></td><td>ulice → ulic, učebnice → učebnic, sestřenice → sestřenic</td></tr>\n<tr><td>n. -o</td><td><b>no ending (zero ending)</b></td><td>město → měst, okno → oken, divadlo → divadel, letadlo → letadel</td></tr>\n<tr><td>n. -e, -í</td><td><b>-í</b></td><td>moře → moří, náměstí → náměstí</td></tr>\n<tr><td>-ště</td><td><b>-išť</b></td><td>parkoviště → parkovišť, letiště → letišť</td></tr></table>\n<p><b>Special words:</b> přítel → <b>přátel</b>, člověk → <b>lidí</b>, peníze → <b>peněz</b>.</p>",
+   "ex": {
+    "0": {
+     "tip": "Masculine in the plural → -ů: studentů."
+    },
+    "1": {
+     "tip": "Masculine inanimate → -ů: pokojů."
+    },
+    "2": {
+     "tip": "několik + genitive plural: sešitů."
+    },
+    "3": {
+     "tip": "muž → mužů."
+    },
+    "4": {
+     "tip": "f. -a → no ending: žen."
+    },
+    "5": {
+     "tip": "f. -e → -í: židlí."
+    },
+    "6": {
+     "tip": "-ice → -ic: ulic."
+    },
+    "7": {
+     "tip": "f. ending in a consonant (-ost) → -í: místností."
+    },
+    "8": {
+     "tip": "f. -a → no ending: škol."
+    },
+    "9": {
+     "tip": "-ka → -ek (inserted e): kamarádek."
+    },
+    "10": {
+     "tip": "n. -o → no ending, inserted e: oken."
+    },
+    "11": {
+     "tip": "n. -o: divadel (inserted e)."
+    },
+    "12": {
+     "tip": "pět + genitive plural: měst."
+    },
+    "13": {
+     "tip": "n. -e → -í: moří."
+    },
+    "14": {
+     "tip": "-ště → -išť: parkovišť."
+    },
+    "15": {
+     "tip": "Special form: přátel."
+    },
+    "16": {
+     "tip": "Special form: lidí."
+    },
+    "17": {
+     "tip": "Special form: peněz."
+    },
+    "18": {
+     "tip": "sestra → sester (inserted e)."
+    },
+    "19": {
+     "tip": "náměstí does not change in the genitive plural."
+    },
+    "20": {
+     "ru": "I know many students",
+     "tip": "hodně + genitive plural."
+    },
+    "21": {
+     "ru": "There are many schools in the town",
+     "tip": "hodně → the verb je; schools → škol."
+    }
+   }
+  },
+  "genpl2": {
+   "rule": "<p>Adjectives and pronouns that go with a noun in the genitive plural are also in the genitive:</p>\n<table>\n<tr><td>adjectives</td><td>hard <b>-ých</b>, soft <b>-ích</b></td><td>českých, velkých, dobrých · moderních</td></tr>\n<tr><td>my, your, our, your (pl.)</td><td><b>mých, tvých, našich, vašich</b></td><td>jeho, jejich — unchanged</td></tr>\n<tr><td>numbers</td><td><b>dvou, tří / třech, čtyř / čtyřech</b></td><td>těch — “of those”</td></tr></table>\n<p><i>Znám hodně <b>českých studentů</b>. Mám málo <b>mých přátel</b>. Sedím vedle <b>dvou kamarádek</b>.</i></p>\n<p><b>The verb:</b> after mnoho, hodně, málo, několik, and five or more, the verb is in the 3rd person <b>singular</b>: <i>Tam <b>je</b> hodně studentů.</i> But after <b>dva, tři, čtyři</b> the noun is in the nominative plural and the verb is <b>jsou</b>: <i>Tam <b>jsou</b> tři sešity.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Znám hodně ___ studentů. (Czech)",
+     "tip": "The adjective is also in the genitive plural: českých."
+    },
+    "1": {
+     "q": "V Praze je mnoho ___ kostelů. (old)",
+     "tip": "hard adjective → -ých."
+    },
+    "2": {
+     "q": "Mám málo ___ kamarádů. (good)",
+     "tip": "dobrý → dobrých."
+    },
+    "3": {
+     "q": "V tom městě je hodně ___ domů. (modern)",
+     "tip": "soft adjective → -ích: moderních."
+    },
+    "4": {
+     "q": "Znám několik ___ spolužáků. (your)",
+     "tip": "tvůj → tvých."
+    },
+    "5": {
+     "q": "Bydlím blízko ___ rodičů. (our)",
+     "tip": "náš → našich."
+    },
+    "6": {
+     "q": "To jsou dárky od ___ přátel. (my)",
+     "tip": "můj → mých."
+    },
+    "7": {
+     "tip": "hodně + genitive plural → the verb is singular: je."
+    },
+    "8": {
+     "tip": "tři + nominative plural → jsou."
+    },
+    "9": {
+     "q": "Sedím vedle ___ kamarádek. (two)",
+     "tip": "vedle + genitive: dvou."
+    },
+    "10": {
+     "q": "V ulici je ___ aut. (several)",
+     "tip": "několik + genitive plural: několik aut."
+    },
+    "11": {
+     "q": "How do you say “a lot of money”?",
+     "tip": "peníze → peněz."
+    },
+    "12": {
+     "q": "How do you say “few people”?",
+     "tip": "člověk → lidí."
+    },
+    "13": {
+     "q": "Ve třídě je pět ___. (new students)",
+     "tip": "The adjective and the noun are both in the genitive plural."
+    },
+    "14": {
+     "tip": "zajímavý → zajímavých."
+    },
+    "15": {
+     "tip": "volný → volných."
+    },
+    "16": {
+     "tip": "velký → velkých."
+    },
+    "17": {
+     "ru": "There are many good students in the class",
+     "tip": "hodně → je; dobrých studentů."
+    },
+    "18": {
+     "ru": "I have few friends",
+     "tip": "málo + genitive plural: přátel."
+    },
+    "19": {
+     "ru": "I am afraid of dogs",
+     "tip": "bát se + genitive plural: psů."
+    }
+   }
   }
  },
  "why": {
@@ -2285,6 +2519,74 @@ window.CONTENT.en = {
    "Za hodinu — “in an hour”. Na — “for a duration”, v — “at (an hour)”.",
    "Na dva dny — “for two days”. Za dva dny would mean “in two days”.",
    "Třikrát týdně — “three times a week”. Týdně — “per week”."
+  ],
+  "chodit": [
+   "“Každé úterý” — the action is repeated, so you need the “long” verb: chodit → chodím. Jdu means “I am going (now)”, jedu means “I am going (by vehicle)”.",
+   "“Dnes večer” — one specific action, so the “short” verb: jít → jdeme. Chodíme and jezdíme would mean “we go / we travel regularly”.",
+   "“Každý rok” — repeated, and you travel to Greece by vehicle: jezdit → jezdí. Jede and jde are the single-occasion forms.",
+   "“Teď” — a single action, going to the post office on foot: jít → jdu. Chodím means “I go regularly”, jezdím means “I travel (regularly)”.",
+   "“Často” — repeated, by vehicle: jezdit → jezdím. Jedu is the single-occasion “I am going”.",
+   "“Tento týden” — one specific period, not a habit: jet → jedu. Jezdím would mean “I travel regularly”.",
+   "“Obvykle” — a habit, and “tramvají” — a vehicle: jezdit → jezdím. Jedu and jdu are single-occasion forms.",
+   "“V pondělí” — a specific Monday, one time: jet → jedu. Jezdím and chodím are about repetition.",
+   "“Obvykle” — a habit, and you go for a walk on foot: chodit → chodíš. Jdeš means “you are going (now)”, jezdíš is by vehicle.",
+   "“Dneska” — today, one time: jít → nejde. Nechodí and nejezdí mean “does not go / does not travel at all”.",
+   "“Za dvě hodiny” — one specific time, going to the exam on foot: jít → jdu. Chodím and jezdím are about repetition.",
+   "“Jak často?” — a question about repetition, and trips to Germany are by vehicle: jezdit → jezdí. Jede is the single-occasion form.",
+   "“Každou sobotu” — repeated: chodit. With “my” — chodíme.",
+   "“Dnes večer” — one time, by vehicle: jet. With “my” — jedeme.",
+   "“Dvakrát do roka” — repeated, by vehicle: jezdit. With “oni” — jezdí (jezdí is both the 3rd person singular and plural).",
+   "“Zítra” — one time, by vehicle: jet. With “já” — jedu.",
+   "Chodím — repeated (“každý den”), and you go to school on foot. Jdu and jedu are single-occasion forms, and jedu is also about a vehicle.",
+   "Vehicle — jet / jezdit, on foot — jít / chodit. “To travel by train” is repeated → jezdit vlakem. Jít vlakem and chodit vlakem are not said.",
+   "“Často” — repeated: chodit → chodím. Jdu means “I am going (now)”.",
+   "“Dnes večer” — one time, and you travel to the theatre by vehicle → jedeme. Jezdíme means “we travel regularly”, jdeme means “we are going on foot”."
+  ],
+  "genpl1": [
+   "After hodně — the genitive plural. Masculine: ending -ů: student → studentů.",
+   "Pokoj is masculine; in the plural the genitive ends in -ů: pokojů.",
+   "Několik + genitive plural. Sešit → sešitů (m., -ů).",
+   "Muž → mužů. Masculine nouns always take -ů in the genitive plural.",
+   "Žena (f. -a) loses its ending in the genitive plural: žen. Ženy is the nominative plural, ženů is a masculine form.",
+   "Židle (f. ending in -e) → -í: židlí. After “pět” you need the genitive plural.",
+   "Ulice → ulic: for words in -ice, the ending -ice changes to -ic.",
+   "Místnost is a feminine noun ending in a consonant; its genitive plural takes -í: místností.",
+   "Škola (f. -a) → škol: the ending -a disappears.",
+   "Kamarádka → kamarádek: the ending disappears and an inserted e appears before the last consonant.",
+   "Okno (n. -o) → oken: the ending disappears and an inserted e appears.",
+   "Divadlo → divadel: the ending disappears and an inserted e appears (like okno → oken).",
+   "Město → měst: the ending -o disappears. After “pět” — the genitive plural.",
+   "Moře (n. -e) → moří: -e → -í.",
+   "Words in -ště change to -išť: parkoviště → parkovišť.",
+   "Přítel is a special form: přátel. Přítelů is not used.",
+   "Člověk is a special form: lidí. Člověků and lidé do not fit.",
+   "Peníze is a special form: peněz.",
+   "Sestra → sester: the ending -a disappears and an inserted e appears before the last consonant.",
+   "Náměstí (n. ending in -í) does not change in the genitive plural.",
+   "Hodně + genitive plural. Masculine → -ů: studentů.",
+   "Hodně + genitive: škola → škol. After hodně the verb is in the 3rd person singular: je."
+  ],
+  "genpl2": [
+   "The adjective agrees with the noun: both are in the genitive plural. Hard adjectives: -ých → českých.",
+   "Starý (hard) → starých. Mnoho + genitive plural.",
+   "Dobrý → dobrých. Málo + genitive plural.",
+   "Moderní is a soft adjective: in the genitive plural it takes -ích → moderních.",
+   "Tvůj → tvých (genitive plural): několik tvých spolužáků.",
+   "Náš → našich: blízko + genitive, rodičů is plural.",
+   "Můj → mých: od + genitive plural: od mých přátel.",
+   "After hodně (and mnoho, málo, několik, five and more) the verb is singular: je. Jsou does not fit here.",
+   "After tři (and dva, čtyři) the noun is in the nominative plural and the verb is plural: jsou.",
+   "Vedle + genitive. “Two” in the genitive is dvou: vedle dvou kamarádek.",
+   "Několik (“several”) + genitive plural: auto → aut. Několikrát means “several times”.",
+   "Peníze in the genitive plural is peněz: hodně peněz.",
+   "Člověk in the genitive plural is lidí: málo lidí.",
+   "The adjective and the noun are both in the genitive plural: nový → nových, student → studentů.",
+   "Zajímavý (hard) → zajímavých.",
+   "Volný → volných. Málo + genitive.",
+   "Velký → velkých. Blízko + genitive plural: obchodů.",
+   "Hodně → the verb je. Dobrý → dobrých, student → studentů (both in the genitive plural).",
+   "Málo + genitive plural: přítel → přátel, kamarád → kamarádů.",
+   "Bát se + genitive. Pes → psů (m., plural)."
   ]
  },
  "whyRule": {
@@ -2326,7 +2628,10 @@ window.CONTENT.en = {
   "genslov": "Bát se, ptát se, vážit si + the genitive: Bojím se toho jednoho učitele. Nebojím se = nemám strach z + genitive.",
   "gakuz": "The case is set by the verb or preposition: vidím, znám, starám se o + accusative; bojím se, vedle, od + genitive. Dva/dvě/tři + the accusative plural.",
   "hotel": "jednolůžkový = 1 bed, dvoulůžkový = 2. Chtěl bych rezervovat pokoj. Na kolik nocí? Je v ceně snídaně?",
-  "za": "za + price / “in (from now)”: za tisíc, za hodinu, třikrát za týden. na + duration: na dva dny. v + exact time. denně, týdně — “per day, per week”."
+  "za": "za + price / “in (from now)”: za tisíc, za hodinu, třikrát za týden. na + duration: na dva dny. v + exact time. denně, týdně — “per day, per week”.",
+  "chodit": "jít / jet — a single action now (dnes jdu); chodit / jezdit — a repeated action (každý den chodím). Jdu, jdeš… · chodím, chodíš… · jedu… · jezdím…",
+  "genpl1": "Genitive plural: m. -ů (studentů); f. -a — no ending (žen, škol); -e → -í (židlí); -ice → -ic (ulic); n. -o — no ending (měst, oken); special: přátel, lidí, peněz.",
+  "genpl2": "After hodně, málo, několik, five and more — the genitive plural: adjective -ých / -ích (českých, moderních), mých, našich, dvou. The verb is je."
  },
  "vocab": {
   "v-obchod": [

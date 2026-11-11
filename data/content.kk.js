@@ -1587,6 +1587,240 @@ window.CONTENT.kk = {
      "tip": "třikrát týdně."
     }
    }
+  },
+  "chodit": {
+   "rule": "<p>Қозғалыстың төрт етістігі. Олардың бәрі <b>аяқталмаған көріністе</b>, бірақ мынадай айырмашылығы бар:</p>\n<table>\n<tr><td><b>jít, jet</b><br>«қысқа»</td><td>әрекет <b>бір</b>, қазір немесе нақты бір рет: <i>teď, dnes, za chvíli, za 10 minut</i></td></tr>\n<tr><td><b>chodit, jezdit</b><br>«ұзақ»</td><td>әрекет <b>қайталанады</b>: <i>často, pořád, obvykle, každý den / týden / rok, každou neděli</i></td></tr></table>\n<p><b>jít</b> (жаяу) және <b>chodit</b>, <b>jet</b> (көлікпен) және <b>jezdit</b>:</p>\n<table>\n<tr><td>já</td><td><b>jdu</b> · <b>jedu</b></td><td><b>chodím</b> · <b>jezdím</b></td></tr>\n<tr><td>ty</td><td><b>jdeš</b> · <b>jedeš</b></td><td><b>chodíš</b> · <b>jezdíš</b></td></tr>\n<tr><td>on/ona</td><td><b>jde</b> · <b>jede</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr>\n<tr><td>my</td><td><b>jdeme</b> · <b>jedeme</b></td><td><b>chodíme</b> · <b>jezdíme</b></td></tr>\n<tr><td>vy</td><td><b>jdete</b> · <b>jedete</b></td><td><b>chodíte</b> · <b>jezdíte</b></td></tr>\n<tr><td>oni</td><td><b>jdou</b> · <b>jedou</b></td><td><b>chodí</b> · <b>jezdí</b></td></tr></table>\n<p><i>Chodím do školy každý den. × Dnes nejdu do školy, protože jsem nemocný.<br>Často jezdím do Brna. × Tento týden jedu do Brna na návštěvu.<br>Do práce obvykle jezdím tramvají. × V pondělí jedu do práce autem.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Každé úterý ___ na angličtinu. (мен жаяу қатынаймын)",
+     "tip": "Әр сейсенбі — қайталанады → chodit."
+    },
+    "1": {
+     "q": "Dnes večer ___ do divadla. (біз барамыз)",
+     "tip": "Dnes večer — бір рет → jít."
+    },
+    "2": {
+     "q": "Moje sestra ___ každý rok do Řecka. (көлікпен қатынайды)",
+     "tip": "Әр жыл сайын, көлікпен → jezdit."
+    },
+    "3": {
+     "q": "Teď nemám čas, ___ na poštu. (мен барамын)",
+     "tip": "Teď — бір әрекет, жаяу → jdu."
+    },
+    "4": {
+     "q": "Často ___ do Brna, protože tam bydlí můj kamarád. (мен көлікпен қатынаймын)",
+     "tip": "Často — қайталанады → jezdím."
+    },
+    "5": {
+     "q": "Tento týden ___ na návštěvu do Brna. (мен көлікпен барамын)",
+     "tip": "Tento týden — нақты бір рет → jedu."
+    },
+    "6": {
+     "q": "Do práce obvykle ___ tramvají. (мен көлікпен қатынаймын)",
+     "tip": "Obvykle — әдет, көлік → jezdím."
+    },
+    "7": {
+     "q": "V pondělí ___ do práce autem. (барамын, бір рет)",
+     "tip": "Нақты бір дүйсенбі → jedu."
+    },
+    "8": {
+     "q": "Kam ___ obvykle na procházku? (сен жаяу қатынайсың)",
+     "tip": "Obvykle — әдет, жаяу → chodíš."
+    },
+    "9": {
+     "q": "Proč dneska ___ Martina na tenis? (бармайды)",
+     "tip": "Dneska — бүгін, бір рет → nejde."
+    },
+    "10": {
+     "q": "Za dvě hodiny ___ na zkoušku. (мен барамын)",
+     "tip": "Za dvě hodiny — нақты бір рет → jdu."
+    },
+    "11": {
+     "q": "Jak často ___ tvůj bratranec do Německa? (көлікпен қатынайды)",
+     "tip": "Jak často? — қайталану туралы сұрақ → jezdí."
+    },
+    "12": {
+     "tip": "Әр сенбі → chodit: chodíme."
+    },
+    "13": {
+     "tip": "Dnes večer → jet: jedeme."
+    },
+    "14": {
+     "tip": "Жылына екі рет → jezdit: jezdí."
+    },
+    "15": {
+     "tip": "Zítra — бір рет → jet: jedu."
+    },
+    "16": {
+     "q": "«Мен күн сайын мектепке жаяу барамын» дегенді қалай айтады?",
+     "tip": "Әр күн → chodím; мектепке жаяу → jedu емес."
+    },
+    "17": {
+     "q": "«Пойызбен қатынау» дегенді қалай айтады?",
+     "tip": "Көлік → jet / jezdit; «жаяу» — jít / chodit."
+    },
+    "18": {
+     "ru": "Мен театрға жиі барамын",
+     "tip": "Často → chodím."
+    },
+    "19": {
+     "ru": "Бүгін кешке біз театрға барамыз",
+     "tip": "Dnes večer → jedeme."
+    }
+   }
+  },
+  "genpl1": {
+   "rule": "<p><b>Көпше</b> санның ілік септігі (2. pád pl.) <b>mnoho, hodně, moc, málo, několik, бес және одан көп</b> сөздерінен кейін, сондай-ақ do, z, od, u, vedle, bez, blízko предлогтарынан кейін қолданылады:</p>\n<p><i>Je tady hodně <b>studentů</b>. Mám málo <b>kamarádek</b>. Potřebuju pět <b>židlí</b>.</i></p>\n<table>\n<tr><td>ер жынысты (бәрі)</td><td><b>-ů</b></td><td>student → studentů, muž → mužů, učitel → učitelů, pokoj → pokojů, sešit → sešitů; pes → psů</td></tr>\n<tr><td>әйел жынысты -a</td><td><b>жалғаусыз</b></td><td>žena → žen, škola → škol, banka → bank</td></tr>\n<tr><td>әйел жынысты -ka, -ra…</td><td>жалғаусыз + <b>қыстырма e</b></td><td>kamarádka → kamarádek, učitelka → učitelek, sestra → sester</td></tr>\n<tr><td>әйел жынысты -e</td><td><b>-í</b></td><td>židle → židlí, kancelář → kanceláří, skříň → skříní, místnost → místností</td></tr>\n<tr><td>әйел жынысты -ice</td><td><b>-ic</b></td><td>ulice → ulic, učebnice → učebnic, sestřenice → sestřenic</td></tr>\n<tr><td>орта жынысты -o</td><td><b>жалғаусыз</b></td><td>město → měst, okno → oken, divadlo → divadel, letadlo → letadel</td></tr>\n<tr><td>орта жынысты -e, -í</td><td><b>-í</b></td><td>moře → moří, náměstí → náměstí</td></tr>\n<tr><td>-ště</td><td><b>-išť</b></td><td>parkoviště → parkovišť, letiště → letišť</td></tr></table>\n<p><b>Ерекше сөздер:</b> přítel → <b>přátel</b>, člověk → <b>lidí</b>, peníze → <b>peněz</b>.</p>",
+   "ex": {
+    "0": {
+     "tip": "Ер жынысты көпшеде → -ů: studentů."
+    },
+    "1": {
+     "tip": "Жансыз ер жынысты → -ů: pokojů."
+    },
+    "2": {
+     "tip": "několik + көпше ілік септік: sešitů."
+    },
+    "3": {
+     "tip": "muž → mužů."
+    },
+    "4": {
+     "tip": "Әйел жынысты -a → жалғаусыз: žen."
+    },
+    "5": {
+     "tip": "Әйел жынысты -e → -í: židlí."
+    },
+    "6": {
+     "tip": "-ice → -ic: ulic."
+    },
+    "7": {
+     "tip": "Жуан дауыссызға біткен әйел жынысты (-ost) → -í: místností."
+    },
+    "8": {
+     "tip": "Әйел жынысты -a → жалғаусыз: škol."
+    },
+    "9": {
+     "tip": "-ka → -ek (қыстырма e): kamarádek."
+    },
+    "10": {
+     "tip": "Орта жынысты -o → жалғаусыз, қыстырма e: oken."
+    },
+    "11": {
+     "tip": "Орта жынысты -o: divadel (қыстырма e)."
+    },
+    "12": {
+     "tip": "pět + көпше ілік септік: měst."
+    },
+    "13": {
+     "tip": "Орта жынысты -e → -í: moří."
+    },
+    "14": {
+     "tip": "-ště → -išť: parkovišť."
+    },
+    "15": {
+     "tip": "Ерекше форма: přátel."
+    },
+    "16": {
+     "tip": "Ерекше форма: lidí."
+    },
+    "17": {
+     "tip": "Ерекше форма: peněz."
+    },
+    "18": {
+     "tip": "sestra → sester (қыстырма e)."
+    },
+    "19": {
+     "tip": "Náměstí көпше ілік септікте өзгермейді."
+    },
+    "20": {
+     "ru": "Мен көп студентті білемін",
+     "tip": "hodně + көпше ілік септік."
+    },
+    "21": {
+     "ru": "Қалада мектеп көп",
+     "tip": "hodně → етістік je, школ → škol."
+    }
+   }
+  },
+  "genpl2": {
+   "rule": "<p>Көпше ілік септіктегі зат есімнің жанындағы сын есімдер мен есімдіктер де ілік септікте тұрады:</p>\n<table>\n<tr><td>сын есімдер</td><td>жуан түрі <b>-ých</b>, жұмсақ түрі <b>-ích</b></td><td>českých, velkých, dobrých · moderních</td></tr>\n<tr><td>менің, сенің, біздің, сіздің</td><td><b>mých, tvých, našich, vašich</b></td><td>jeho, jejich — өзгермейді</td></tr>\n<tr><td>сан есімдер</td><td><b>dvou, tří / třech, čtyř / čtyřech</b></td><td>těch — «сол»</td></tr></table>\n<p><i>Znám hodně <b>českých studentů</b>. Mám málo <b>mých přátel</b>. Sedím vedle <b>dvou kamarádek</b>.</i></p>\n<p><b>Етістік:</b> mnoho, hodně, málo, několik, бес және одан көп сөздерінен кейін етістік <b>жекеше</b> 3-жақта тұрады: <i>Tam <b>je</b> hodně studentů.</i> Ал <b>dva, tři, čtyři</b> сөздерінен кейін зат есім көпше атау септікте, етістік <b>jsou</b> болады: <i>Tam <b>jsou</b> tři sešity.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Znám hodně ___ studentů. (чехтың)",
+     "tip": "Сын есім де көпше ілік септікте: českých."
+    },
+    "1": {
+     "q": "V Praze je mnoho ___ kostelů. (көне)",
+     "tip": "Жуан сын есім → -ých."
+    },
+    "2": {
+     "q": "Mám málo ___ kamarádů. (жақсы)",
+     "tip": "dobrý → dobrých."
+    },
+    "3": {
+     "q": "V tom městě je hodně ___ domů. (заманауи)",
+     "tip": "Жұмсақ сын есім → -ích: moderních."
+    },
+    "4": {
+     "q": "Znám několik ___ spolužáků. (сенің)",
+     "tip": "tvůj → tvých."
+    },
+    "5": {
+     "q": "Bydlím blízko ___ rodičů. (біздің)",
+     "tip": "náš → našich."
+    },
+    "6": {
+     "q": "To jsou dárky od ___ přátel. (менің)",
+     "tip": "můj → mých."
+    },
+    "7": {
+     "tip": "hodně + көпше ілік септік → етістік жекешеде: je."
+    },
+    "8": {
+     "tip": "tři + көпше атау септік → jsou."
+    },
+    "9": {
+     "q": "Sedím vedle ___ kamarádek. (екі)",
+     "tip": "vedle + ілік септік: dvou."
+    },
+    "10": {
+     "q": "V ulici je ___ aut. (бірнеше)",
+     "tip": "několik + көпше ілік септік: několik aut."
+    },
+    "11": {
+     "q": "«Көп ақша» дегенді қалай айтады?",
+     "tip": "peníze → peněz."
+    },
+    "12": {
+     "q": "«Адам аз» дегенді қалай айтады?",
+     "tip": "člověk → lidí."
+    },
+    "13": {
+     "q": "Ve třídě je pět ___. (жаңа студенттер)",
+     "tip": "Сын есім де, зат есім де көпше ілік септікте."
+    },
+    "14": {
+     "tip": "zajímavý → zajímavých."
+    },
+    "15": {
+     "tip": "volný → volných."
+    },
+    "16": {
+     "tip": "velký → velkých."
+    },
+    "17": {
+     "ru": "Сыныпта жақсы студенттер көп",
+     "tip": "hodně → je; dobrých studentů."
+    },
+    "18": {
+     "ru": "Менің достарым аз",
+     "tip": "málo + көпше ілік септік: přátel."
+    },
+    "19": {
+     "ru": "Мен иттерден қорқамын",
+     "tip": "bát se + көпше ілік септік: psů."
+    }
+   }
   }
  },
  "why": {
@@ -2341,6 +2575,74 @@ window.CONTENT.kk = {
    "Za hodinu — «бір сағаттан кейін». Na — «мерзімге», v — «(сағат)-те».",
    "Na dva dny — «екі күнге». Za dva dny «екі күннен кейін» дегенді білдірер еді.",
    "Třikrát týdně — «аптасына үш рет». Týdně — «аптасына»."
+  ],
+  "chodit": [
+   "«Každé úterý» — әрекет қайталанады, сондықтан «ұзақ» етістік керек: chodit → chodím. Jdu — «қазір барамын», jedu — «барамын» (көлікпен).",
+   "«Dnes večer» — нақты бір әрекет, сондықтан «қысқа» етістік: jít → jdeme. Chodíme және jezdíme «үнемі барамыз / қатынаймыз» деген мағына берер еді.",
+   "«Každý rok» — қайталанады, Грекияға көлікпен барады: jezdit → jezdí. Jede және jde — бір реттік формалар.",
+   "«Teď» — бір әрекет, поштаға жаяу бару: jít → jdu. Chodím — «үнемі жаяу қатынаймын», jezdím — «көлікпен қатынаймын».",
+   "«Často» — қайталанады, көлік: jezdit → jezdím. Jedu — бір реттік «барамын».",
+   "«Tento týden» — нақты бір кезең, әдет емес: jet → jedu. Jezdím «үнемі қатынаймын» деген мағына берер еді.",
+   "«Obvykle» — әдет, ал «tramvají» — көлік: jezdit → jezdím. Jedu және jdu — бір реттік.",
+   "«V pondělí» — нақты бір дүйсенбі, бір рет: jet → jedu. Jezdím және chodím — қайталануды білдіреді.",
+   "«Obvykle» — әдет, «серуенге» жаяу шығады: chodit → chodíš. Jdeš — «қазір барасың», jezdíš — көлікпен.",
+   "«Dneska» — бүгін, бір рет: jít → nejde. Nechodí және nejezdí — «мүлде жүрмейді / қатынамайды».",
+   "«Za dvě hodiny» — нақты бір рет, емтиханға жаяу бару: jít → jdu. Chodím және jezdím — қайталануды білдіреді.",
+   "«Jak často?» — қайталану туралы сұрақ, Германияға көлікпен қатынайды: jezdit → jezdí. Jede — бір реттік.",
+   "«Každou sobotu» — қайталанады: chodit. «my» үшін — chodíme.",
+   "«Dnes večer» — бір рет, көлікпен: jet. «my» үшін — jedeme.",
+   "«Dvakrát do roka» — қайталанады, көлікпен: jezdit. «oni» үшін — jezdí (jezdí — жекеше 3-жақ та, көпше де).",
+   "«Zítra» — бір рет, көлікпен: jet. «já» үшін — jedu.",
+   "Chodím — қайталанады («každý den»), мектепке жаяу барады. Jdu және jedu — бір реттік формалар, ал jedu тағы да көлік туралы.",
+   "Көлік — jet / jezdit, жаяу — jít / chodit. «Пойызбен қатынау» — қайталанады → jezdit vlakem. Jít vlakem және chodit vlakem олай айтпайды.",
+   "«Často» — қайталанады: chodit → chodím. Jdu — «қазір барамын».",
+   "«Dnes večer» — бір рет, театрға көлікпен барады → jedeme. Jezdíme — «үнемі қатынаймыз», jdeme — «жаяу барамыз»."
+  ],
+  "genpl1": [
+   "Көпше ілік септік hodně сөзінен кейін тұрады. Ер жынысты сөзде жалғауы -ů: student → studentů.",
+   "Pokoj — ер жынысты, көпшеде ілік септік -ů жалғауымен: pokojů.",
+   "Několik + көпше ілік септік. Sešit → sešitů (ер жынысты, -ů).",
+   "Muž → mužů. Ер жынысты сөз көпше ілік септікте әрқашан -ů алады.",
+   "Žena (әйел жынысты -a) көпше ілік септікте жалғауын жоғалтады: žen. Ženy — көпше атау септік, ženů — ер жынысты форма.",
+   "Židle (әйел жынысты, -e) → -í: židlí. «pět» сөзінен кейін көпше ілік септік керек.",
+   "Ulice → ulic: -ice-мен біткен сөздерде -ice жалғауы -ic болып өзгереді.",
+   "Místnost — әйел жынысты, жуан дауыссызға біткен, көпше ілік септікте -í: místností.",
+   "Škola (әйел жынысты -a) → škol: -a жалғауы түсіп қалады.",
+   "Kamarádka → kamarádek: жалғау түсіп қалады, соңғы дауыссыздың алдында қыстырма e пайда болады.",
+   "Okno (орта жынысты -o) → oken: жалғау түсіп қалады, қыстырма e пайда болады.",
+   "Divadlo → divadel: жалғау түсіп қалады, қыстырма e пайда болады (okno → oken сияқты).",
+   "Město → měst: -o жалғауы түсіп қалады. «pět» сөзінен кейін — көпше ілік септік.",
+   "Moře (орта жынысты -e) → moří: -e → -í.",
+   "-ště-мен біткен сөздер -išť болып өзгереді: parkoviště → parkovišť.",
+   "Přítel — ерекше форма: přátel. Přítelů олай айтпайды.",
+   "Člověk — ерекше форма: lidí. Člověků және lidé жарамайды.",
+   "Peníze — ерекше форма: peněz.",
+   "Sestra → sester: -a жалғауы түсіп қалады, соңғы дауыссыздың алдында қыстырма e пайда болады.",
+   "Náměstí (-í-мен біткен орта жынысты) көпше ілік септікте өзгермейді.",
+   "Hodně + көпше ілік септік. Ер жынысты → -ů: studentů.",
+   "Hodně + ілік септік: škola → škol. Етістік hodně сөзінен кейін жекеше 3-жақта тұрады: je."
+  ],
+  "genpl2": [
+   "Сын есім зат есіммен үйлеседі: екеуі де көпше ілік септікте. Жуан түрі: -ých → českých.",
+   "Starý (жуан) → starých. Mnoho + көпше ілік септік.",
+   "Dobrý → dobrých. Málo + көпше ілік септік.",
+   "Moderní — жұмсақ сын есім: көпше ілік септікте -ích → moderních.",
+   "Tvůj → tvých (көпше ілік септік): několik tvých spolužáků.",
+   "Náš → našich: blízko + ілік септік, rodičů — көпше.",
+   "Můj → mých: od + көпше ілік септік: od mých přátel.",
+   "hodně (сондай-ақ mnoho, málo, několik, бес және одан көп) сөздерінен кейін етістік жекешеде тұрады: je. Jsou мұнда жарамайды.",
+   "tři (сондай-ақ dva, čtyři) сөздерінен кейін зат есім көпше атау септікте, етістік көпшеде: jsou.",
+   "Vedle + ілік септік. «Екі» ілік септікте — dvou: vedle dvou kamarádek.",
+   "Několik («бірнеше») + көпше ілік септік: auto → aut. Několikrát — «бірнеше рет».",
+   "Peníze көпше ілік септікте — peněz: hodně peněz.",
+   "Člověk көпше ілік септікте — lidí: málo lidí.",
+   "Сын есім де, зат есім де көпше ілік септікте: nový → nových, student → studentů.",
+   "Zajímavý (жуан) → zajímavých.",
+   "Volný → volných. Málo + ілік септік.",
+   "Velký → velkých. Blízko + көпше ілік септік: obchodů.",
+   "Hodně → етістік je. Dobrý → dobrých, student → studentů (екеуі де көпше ілік септікте).",
+   "Málo + көпше ілік септік: přítel → přátel, kamarád → kamarádů.",
+   "Bát se + ілік септік. Pes → psů (ер жынысты, көпше)."
   ]
  },
  "whyRule": {
@@ -2382,7 +2684,10 @@ window.CONTENT.kk = {
   "genslov": "Bát se, ptát se, vážit si + ілік септік: Bojím se toho jednoho učitele. Nebojím se = nemám strach z + ілік септік.",
   "gakuz": "Септікті етістік немесе предлог анықтайды: vidím, znám, starám se o + 4. pád; bojím se, vedle, od + 2. pád. Dva/dvě/tři + көпше табыс септік.",
   "hotel": "jednolůžkový = 1 кереует, dvoulůžkový = 2. Chtěl bych rezervovat pokoj. Na kolik nocí? Je v ceně snídaně?",
-  "za": "za + баға / «кейін»: za tisíc, za hodinu, třikrát za týden. na + мерзім: na dva dny. v + нақты уақыт. denně, týdně — «күніне, аптасына»."
+  "za": "za + баға / «кейін»: za tisíc, za hodinu, třikrát za týden. na + мерзім: na dva dny. v + нақты уақыт. denně, týdně — «күніне, аптасына».",
+  "chodit": "jít / jet — қазіргі бір әрекет (dnes jdu); chodit / jezdit — қайталанады (každý den chodím). Jdu, jdeš… · chodím, chodíš… · jedu… · jezdím…",
+  "genpl1": "Көпше ілік септік: ер жынысты -ů (studentů); әйел жынысты -a — жалғаусыз (žen, škol); -e → -í (židlí); -ice → -ic (ulic); орта жынысты -o — жалғаусыз (měst, oken); ерекше: přátel, lidí, peněz.",
+  "genpl2": "Көпше ілік септік: hodně, málo, několik, бес және одан көп сөздерінен кейін; сын есім -ých / -ích (českých, moderních), mých, našich, dvou. Етістік — je."
  },
  "vocab": {
   "v-obchod": [
