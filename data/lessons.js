@@ -1,4 +1,4 @@
-// Уроки собраны по конспекту ONL3_26/27 (занятия 5.10 – 30.10).
+// Уроки собраны по конспекту ONL3_26/27 (занятия 5.10 – 12.11).
 // c(вопрос, правильный, [неправильные], подсказка)  - выбор варианта (___ = пропуск)
 // f(вопрос, правильный|[варианты], подсказка)        - вписать слово (диакритику можно не ставить)
 // b(перевод, фраза|[варианты], [лишние слова], подсказка) - собрать предложение из слов
@@ -886,5 +886,294 @@ Ta košile je mi <b>bohužel malá</b>. = Nesedí mi. · Ta černá mi <b>sedí<
     b('Хорошего тебе дня', ['Měj se hezky', 'Měj hezký den'], ['Mějte', 'den']),
   ],
 },
+
+// ───────────────────────── 8. НОВОЕ ИЗ CLASSROOM (НОЯБРЬ) ─────────────────────────
+{
+  id: 'vid', unit: '8. Новое из Classroom (ноябрь)', icon: '🔁', title: 'Вид глагола: psát × napsat',
+  desc: 'dnes píšu, zítra napíšu',
+  rule: `<p>У большинства глаголов две формы — <b>вид</b>:</p>
+<p><b>несовершенный</b> — процесс, привычка, «каждый день»: <i>píšu, vařím, čtu</i><br><b>совершенный</b> — результат, «сделать до конца, один раз»: <i>napíšu, uvařím, přečtu</i></p>
+<table>
+<tr><td>psát</td><td>→ <b>napsat</b></td><td>napíšu</td></tr>
+<tr><td>vařit</td><td>→ <b>uvařit</b></td><td>uvařím</td></tr>
+<tr><td>číst</td><td>→ <b>přečíst</b></td><td>přečtu</td></tr>
+<tr><td>pít</td><td>→ <b>vypít</b></td><td>vypiju</td></tr>
+<tr><td>jíst</td><td>→ <b>sníst</b></td><td>sním</td></tr>
+<tr><td>říkat</td><td>→ <b>říct</b></td><td>řeknu</td></tr>
+<tr><td>péct</td><td>→ <b>upéct</b></td><td>upeču</td></tr>
+<tr><td>učit se</td><td>→ <b>naučit se</b></td><td>naučím se</td></tr>
+<tr><td>vstávat</td><td>→ <b>vstát</b></td><td>vstanu</td></tr>
+<tr><td>vystupovat</td><td>→ <b>vystoupit</b></td><td>vystoupím</td></tr></table>
+<p><b>Главное:</b> у совершенного глагола форма «как в настоящем» означает <b>будущее</b>: <i>napíšu</i> = «я напишу». Будущее несовершенного — с <i>budu</i>: <i>budu psát</i> («буду писать»). С совершенным <i>budu</i> не нужно!</p>
+<p><i>Každý den vařím oběd, ale zítra uvařím večeři.</i></p>`,
+  ex: [
+    c('Každý den ___ e-mail. (писать, как привычка)', 'píšu', ['napíšu', 'napsat'], 'Каждый день → повторяется → несовершенный вид.'),
+    c('Dnes vařím, ale zítra ___ večeři.', 'uvařím', ['budu uvařit', 'uvařil jsem'], 'Одноразовый результат в будущем → совершенный: uvařím.'),
+    c('Dnes čtu, ale zítra ___ celou knihu.', 'přečtu', ['budu přečíst', 'přečetl jsem'], 'celou knihu = до конца → přečtu.'),
+    c('Dnes piju čaj, ale zítra ___ kávu.', 'vypiju', ['budu vypít', 'vypil jsem'], 'Совершенный вид: vypiju = выпью (всё).'),
+    f('Dnes jím jablko, ale zítra ___ banán. (sníst)', 'sním', 'sníst → sním (съем).'),
+    f('Dnes říkám, že on má pravdu, ale zítra ___, že se plete. (říct)', 'řeknu', 'říct → řeknu (скажу).'),
+    c('Každou neděli peču koláč, ale zítra ___ dort.', 'upeču', ['budu upéct', 'upekl jsem'], 'péct → upéct: upeču.'),
+    c('Celý týden se učím slovíčka, ale zítra se je ___ dopoledne.', 'naučím', ['budu naučit', 'naučil jsem'], 'naučit se = выучить: naučím se.'),
+    c('Teď ___ z autobusu. (я выхожу)', 'vystupuju', ['vystoupím', 'vystoupit'], 'Идёт процесс → несовершенный вид.'),
+    c('Zítra ___ z autobusu na jiné zastávce.', 'vystoupím', ['vystoupit', 'vystoupil jsem'], 'Одно действие в будущем → vystoupím.'),
+    c('Совершенный вид к глаголу «psát» — это…', 'napsat', ['psal', 'psaní'], 'psát → napsat; napíšu = «напишу».'),
+    c('Как сказать «буду писать весь вечер» (процесс)?', 'budu psát', ['napíšu', 'budu napsat'], 'Несовершенный → budu + инфинитив.'),
+    c('Chci vstávat v šest, ale ___ v sedm. (встану)', 'vstanu', ['vstávám', 'vstát'], 'vstát → vstanu (встану).'),
+    f('Zítra ___ celý domácí úkol. (napsat)', 'napíšu', 'napsat → napíšu.'),
+    f('Každý večer ___ knihu. (číst)', 'čtu', 'Привычка → čtu.'),
+    b('Завтра я сварю ужин', 'Zítra uvařím večeři', ['vařím', 'budu'], 'uvařím — совершенный, будущее.'),
+    b('Каждый день я читаю книгу', 'Každý den čtu knihu', ['přečtu', 'zítra'], 'Каждый день → čtu.'),
+  ],
+},
+{
+  id: 'partit', unit: '8. Новое из Classroom (ноябрь)', icon: '🥛', title: 'Partitivní genitiv: plátek chleba',
+  desc: 'sklenice vody, kilo cukru, trochu mléka',
+  rule: `<p>После слов <b>количества и упаковки</b> («сколько?» «чего?») ставим <b>родительный падеж</b>:</p>
+<p><i>sklenice <b>vody</b> · šálek <b>čaje</b> · plátek <b>sýra</b> · kousek <b>chleba</b> · kilo <b>cukru</b> · litr <b>mléka</b> · trochu <b>zeleniny</b> · půl <b>cibule</b> · lžíce <b>kakaa</b> · lžička <b>soli</b></i></p>
+<table>
+<tr><td>ж. -a</td><td>→ <b>-y</b></td><td>voda → vody, káva → kávy, zelenina → zeleniny</td></tr>
+<tr><td>ж. -e / согласная</td><td>→ <b>-e / -i</b></td><td>cibule → cibule, sůl → soli</td></tr>
+<tr><td>м. неодуш.</td><td>→ <b>-u</b> (иногда -a)</td><td>cukr → cukru, jogurt → jogurtu; но sýr → sýra, chléb → chleba, čaj → čaje</td></tr>
+<tr><td>ср. -o</td><td>→ <b>-a</b></td><td>mléko → mléka, víno → vína, kakao → kakaa</td></tr></table>
+<p>Упаковки: <i>láhev vína, krabice mléka, kelímek jogurtu, sáček rýže, plechovka piva</i>.</p>`,
+  ex: [
+    c('Dám si sklenici ___. (voda)', 'vody', ['voda', 'vodu'], 'sklenice чего? → vody.'),
+    c('Dám si šálek ___. (čaj)', 'čaje', ['čaj', 'čaju'], 'šálek чего? → čaje.'),
+    c('Potřebuju kilo ___. (cukr)', 'cukru', ['cukr', 'cukra'], 'kilo чего? → cukru.'),
+    c('Koupím litr ___. (mléko)', 'mléka', ['mléko', 'mléku'], 'ср. -o → -a: mléka.'),
+    c('Dám si plátek ___. (sýr)', 'sýra', ['sýr', 'sýru'], 'plátek sýra — устойчиво, с -a.'),
+    c('Chtěla bych kousek ___. (chléb)', 'chleba', ['chléb', 'chlebu'], 'chléb → chleba (é становится e).'),
+    c('Přidej dvě lžíce ___. (kakao)', 'kakaa', ['kakao', 'kakau'], 'kakao → kakaa.'),
+    c('Dej tam půl lžičky ___. (sůl)', 'soli', ['sůl', 'sole'], 'sůl (ж.) → soli.'),
+    c('Potřebuju půl ___. (cibule)', 'cibule', ['cibuli', 'cibulu'], 'cibule в родительном та же: cibule.'),
+    c('Máš trochu ___? (zelenina)', 'zeleniny', ['zelenina', 'zeleninu'], 'trochu чего? → zeleniny.'),
+    c('Dám si sklenici ___. (džus)', 'džusu', ['džus', 'džusa'], 'sklenice чего? → džusu.'),
+    f('Dám si hrnek ___. (káva)', 'kávy', 'káva → kávy.'),
+    f('Koupím láhev ___. (víno)', 'vína', 'víno → vína.'),
+    f('Chci kelímek ___. (jogurt)', 'jogurtu', 'jogurt → jogurtu.'),
+    f('Potřebuju tři lžíce ___. (majonéza)', 'majonézy', 'majonéza → majonézy.'),
+    b('Мне нужен литр молока', 'Potřebuju litr mléka', ['mléko', 'dva'], 'litr + родительный.'),
+    b('Дайте мне стакан воды', ['Dejte mi sklenici vody', 'Dám si sklenici vody'], ['voda', 'kilo'], 'sklenice + vody.'),
+  ],
+},
+{
+  id: 'datum', unit: '8. Новое из Classroom (ноябрь)', icon: '📅', title: 'Datum: Kolikátého je dnes?',
+  desc: 'třetího března, šestnáctého října',
+  rule: `<p>Вопрос о дате: <b>Kolikátého je dnes?</b> — «Какое сегодня число?»; <b>Kdy je koncert?</b> — «Когда концерт?»</p>
+<p>Ответ: <b>порядковое числительное в родительном падеже (-ého)</b> + <b>месяц в родительном падеже</b>:</p>
+<p><i>Koncert je <b>šestého října</b>. Narozeniny mám <b>dvanáctého května</b>.</i></p>
+<table>
+<tr><td>1. první → <b>prvního</b></td><td>2. druhý → <b>druhého</b></td><td>3. třetí → <b>třetího</b></td></tr>
+<tr><td>5. pátý → <b>pátého</b></td><td>6. šestý → <b>šestého</b></td><td>12. dvanáctý → <b>dvanáctého</b></td></tr>
+<tr><td>15. patnáctý → <b>patnáctého</b></td><td>16. šestnáctý → <b>šestnáctého</b></td><td>20. dvacátý → <b>dvacátého</b></td></tr>
+<tr><td colspan="3">21. dvacátý první → <b>dvacátého prvního</b></td></tr></table>
+<p><b>Месяцы (род. п.):</b> ledna, února, března, dubna, května, června, července, srpna, <b>září</b>, října, listopadu, prosince.</p>`,
+  ex: [
+    c('Narozeniny mám ___ května. (12.)', 'dvanáctého', ['dvanáctý', 'dvanáct'], 'Дата = порядковое в родительном: dvanáctého.'),
+    c('Koncert je ___ října. (6.)', 'šestého', ['šestý', 'šest'], 'šestý → šestého.'),
+    c('Film začíná ___ března. (3.)', 'třetího', ['třetí', 'tři'], 'třetí → třetího.'),
+    c('Festival končí ___ července. (15.)', 'patnáctého', ['patnáctý', 'patnáct'], 'patnáctý → patnáctého.'),
+    c('Koncert začíná ___ dubna. (20.)', 'dvacátého', ['dvacátý', 'dvacet'], 'dvacátý → dvacátého.'),
+    c('Fotbal je ___ prosince. (1.)', 'prvního', ['první', 'jedna'], 'první → prvního.'),
+    c('Škola začíná prvního ___. (месяц 9)', 'září', ['zář', 'záře'], 'Слово září не меняется.'),
+    c('Koncert je dvacátého ___. (февраль)', 'února', ['únor', 'únoru'], 'únor → února.'),
+    c('Narozeniny mám dvacátého ___. (ноябрь)', 'listopadu', ['listopada', 'listopad'], 'listopad → listopadu.'),
+    c('Fotbal začíná pátého ___. (май)', 'května', ['květen', 'květnu'], 'květen → května (е выпадает).'),
+    c('Как спросить «Какое сегодня число?»', 'Kolikátého je dnes?', ['Kolik je hodin?', 'Kolik je dnes?'], 'Kolikátého — вопрос о дате.'),
+    f('Kolikátého je koncert? — Koncert je ___ června. (16.)', 'šestnáctého', 'šestnáctý → šestnáctého.'),
+    f('Šestého ___ slavíme Den architekta. (июль)', 'července', 'červenec → července.'),
+    f('Zkouška je dvacátého ___. (январь)', 'ledna', 'leden → ledna.'),
+    b('Мой день рождения двенадцатого мая', 'Narozeniny mám dvanáctého května', ['dvanáctý', 'květen'], 'Число + месяц в родительном.'),
+    b('Концерт начинается третьего марта', 'Koncert začíná třetího března', ['třetí', 'březen'], 'třetího března.'),
+    b('Какое сегодня число', 'Kolikátého je dnes', ['kolik', 'hodin'], 'Kolikátého je dnes?'),
+  ],
+},
+{
+  id: 'neco', unit: '8. Новое из Classroom (ноябрь)', icon: '❓', title: 'Něco, nic, někdo, nikdy',
+  desc: 'něco sladkého, nic nového, Co nového?',
+  rule: `<p><b>něco / nic / co + прилагательное</b> → прилагательное в родительном падеже на <b>-ého</b> (мягкие: <b>-ího</b>):</p>
+<p><i>něco <b>sladkého</b> · nic <b>dobrého</b> · Co <b>nového</b>? · Je to něco <b>moderního</b>. · Není to nic <b>zeleného</b>.</i></p>
+<table>
+<tr><td>někdo</td><td>кто-то</td><td>nikdo</td><td>никто</td></tr>
+<tr><td>něco</td><td>что-то</td><td>nic</td><td>ничего</td></tr>
+<tr><td>někdy</td><td>когда-нибудь</td><td>nikdy</td><td>никогда</td></tr>
+<tr><td>někde</td><td>где-то</td><td>nikde</td><td>нигде</td></tr>
+<tr><td>nějaký</td><td>какой-нибудь</td><td>žádný</td><td>никакой</td></tr></table>
+<p><b>Двойное отрицание обязательно:</b> <i>Nikdo tu není. Neznám nikoho. Nikdy nechci. Nemám žádnou sestru.</i></p>`,
+  ex: [
+    c('Chci něco ___. (сладкое)', 'sladkého', ['sladké', 'sladký'], 'něco + прилагательное на -ého.'),
+    c('Nemám chuť na nic ___. (солёное)', 'slaného', ['slané', 'slaný'], 'nic + -ého: slaného.'),
+    c('Co ___ máš? (нового)', 'nového', ['nové', 'nový'], 'Co nového? — устойчивый вопрос.'),
+    c('Není to nic ___. (зелёное)', 'zeleného', ['zelené', 'zelený'], 'nic zeleného.'),
+    c('Je to něco ___. (современное)', 'moderního', ['moderní', 'moderné'], 'Мягкое окончание: moderní → moderního.'),
+    c('Nemám nic ___ v ledničce. (хорошего)', 'dobrého', ['dobré', 'dobrý'], 'nic dobrého.'),
+    c('Nekoupím nic ___. (некрасивого)', 'ošklivého', ['ošklivé', 'ošklivý'], 'nic ošklivého.'),
+    c('Je to něco ___? (съедобное)', 'jedlého', ['jedlé', 'jedlý'], 'něco jedlého.'),
+    c('V pokoji ___ není. (никого)', 'nikdo', ['někdo', 'žádný'], 'nikdo = никто, в отрицательном предложении.'),
+    c('Znáš ___ anglickou zpěvačku? (какую-нибудь)', 'nějakou', ['žádnou', 'nějaká'], 'Вопрос → nějakou. Винительный ж.р.: -ou.'),
+    c('Ne, neznám ___ anglickou zpěvačku. (никакую)', 'žádnou', ['nějakou', 'nikoho'], 'После отрицания → žádnou.'),
+    c('Ne, nepůjdu ___ na fotbal. (никогда)', 'nikdy', ['někdy', 'nic'], 'nikdy + nepůjdu — двойное отрицание.'),
+    c('Chceš jet ___ do Prahy? (когда-нибудь)', 'někdy', ['nikdy', 'nic'], 'Вопрос → někdy.'),
+    c('Neznám ___ z naší skupiny. (никого)', 'nikoho', ['někoho', 'nikdo'], 'znát koho → nikoho (винительный).'),
+    f('Chci koupit auto. Chci něco ___, ale levného. (хорошего)', 'dobrého', 'něco dobrého.'),
+    f('Co ___ chceš ke snídani? (сладкого)', 'sladkého', 'Co sladkého chceš?'),
+    b('У меня нет ничего нового', 'Nemám nic nového', ['něco', 'nové'], 'nic + nového.'),
+    b('Я хочу что-нибудь сладкое', 'Chci něco sladkého', ['sladké', 'nic'], 'něco sladkého.'),
+    b('Я никого не знаю', 'Neznám nikoho', ['někoho', 'nikdo'], 'Двойное отрицание: neznám nikoho.'),
+  ],
+},
+{
+  id: 'posgen', unit: '8. Новое из Classroom (ноябрь)', icon: '🔑', title: 'Čí je to? Kniha mého bratra',
+  desc: 'auto mého bratra, telefon Petra',
+  rule: `<p>«Чьё?» — владельца ставим <b>в родительный падеж после предмета</b>:</p>
+<p><i>kniha <b>mého bratra</b> · telefon <b>našeho učitele</b> · kabát <b>té ženy</b> · pes <b>Petra</b> · klíče <b>mé maminky</b></i></p>
+<table>
+<tr><td>м. одуш.</td><td>-a / -e</td><td>bratr → bratra, učitel → učitele, strýc → strýce, Petr → Petra</td></tr>
+<tr><td>ж. -a</td><td>-y</td><td>maminka → maminky, žena → ženy, Honza → Honzy</td></tr>
+<tr><td>ж. -e</td><td>-e</td><td>sestřenice → sestřenice, Marie → Marie</td></tr></table>
+<p><b>Мой, твой, наш в родительном:</b> м./ср. — <b>mého, tvého, našeho</b>; ж. — <b>mé, tvé, naší</b>.<br>Вопрос: <b>Čí je ten kufr? Čí je ta taška?</b></p>`,
+  ex: [
+    c('To je kniha mého ___. (bratr)', 'bratra', ['bratr', 'bratru'], 'Владелец (м. одуш.) → bratra.'),
+    c('To je kabát té ___. (žena)', 'ženy', ['žena', 'ženu'], 'ж. -a → -y: ženy.'),
+    c('To je telefon našeho ___. (učitel)', 'učitele', ['učitel', 'učiteli'], 'učitel → učitele.'),
+    c('To jsou klíče mé ___. (maminka)', 'maminky', ['maminka', 'maminku'], 'maminka → maminky.'),
+    c('To je kufr tvého ___. (kamarád)', 'kamaráda', ['kamarád', 'kamarádu'], 'м. одуш. → -a.'),
+    c('To je rukavice ___. (Marie)', 'Marie', ['Marii', 'Marií'], 'Marie в родительном не меняется.'),
+    c('To je pes ___. (Petr)', 'Petra', ['Petr', 'Petru'], 'Petr → Petra.'),
+    c('To je čokoláda mé ___. (babička)', 'babičky', ['babička', 'babičku'], 'babička → babičky.'),
+    c('Čí je to auto? — To je auto našeho ___. (strýc)', 'strýce', ['strýc', 'strýcu'], 'strýc → strýce.'),
+    c('Как сказать «книга моего брата»?', 'kniha mého bratra', ['mého bratra kniha', 'kniha můj bratr'], 'Владелец идёт после предмета, в родительном.'),
+    c('Как спросить «Чья это сумка?»', 'Čí je ta taška?', ['Kdo je ta taška?', 'Co je ta taška?'], 'Čí — «чей, чья, чьё».'),
+    f('To je pes naší ___. (sousedka)', 'sousedky', 'ж. -a → -y: sousedky.'),
+    f('Čí je ta tužka? — To je tužka mého ___. (učitel)', 'učitele', 'učitel → učitele.'),
+    f('To je auto ___. (Honza)', 'Honzy', 'Honza склоняется как ж. на -a: Honzy.'),
+    f('To jsou boty mé ___. (sestřenice)', 'sestřenice', 'sestřenice → sestřenice (без изменений).'),
+    b('Это машина моего брата', 'To je auto mého bratra', ['můj', 'bratr'], 'auto mého bratra.'),
+    b('Это телефон нашей учительницы', 'To je telefon naší učitelky', ['naše', 'učitelka'], 'naší učitelky.'),
+  ],
+},
+{
+  id: 'genslov', unit: '8. Новое из Classroom (ноябрь)', icon: '😨', title: 'Bojím se, ptám se, vážím si + 2. pád',
+  desc: 'Bojím se toho jednoho učitele',
+  rule: `<p>Эти глаголы требуют <b>родительного падежа</b> (koho? čeho?):</p>
+<p><b>bát se</b> (bojím se) — бояться · <b>ptát se</b> (ptám se) — спрашивать · <b>vážit si</b> (vážím si) — уважать · <b>všímat si</b> — замечать<br><i>Nebojím se</i> = <i>Nemám strach <b>z</b> + род. п.</i></p>
+<table>
+<tr><td></td><td>м. / ср.</td><td>ж.</td></tr>
+<tr><td>один / тот</td><td><b>jednoho, toho</b></td><td><b>jedné, té</b></td></tr>
+<tr><td>мой, наш</td><td><b>mého, našeho</b></td><td><b>mé, naší</b></td></tr>
+<tr><td>добрый, милый</td><td><b>milého, hodného</b></td><td><b>milé, hodné</b></td></tr>
+<tr><td>существительное</td><td>-a / -e: <b>učitele, psa</b></td><td>-y: <b>babičky, kočky</b></td></tr></table>
+<p><i>Bojím se toho jednoho učitele. Ptám se té jedné ředitelky. Vážím si našeho milého učitele.</i></p>`,
+  ex: [
+    c('Bojím se ___ učitele.', 'toho jednoho', ['tu jednu', 'té jedné'], 'bát se + род. п.; учитель — м. р. → toho jednoho.'),
+    c('Ptám se ___ ředitelky.', 'té jedné', ['tu jednu', 'toho jednoho'], 'ředitelka — ж. р. → té jedné.'),
+    c('Bojím se zlého ___. (pes)', 'psa', ['pes', 'psu'], 'pes → psa.'),
+    c('Ptám se tvého staršího ___. (bratr)', 'bratra', ['bratr', 'bratru'], 'ptát se + род. п.: bratra.'),
+    c('Vážím si našeho milého ___. (učitel)', 'učitele', ['učitel', 'učiteli'], 'vážit si + род. п.'),
+    c('Bojím se jedné milé ___. (spolužačka)', 'spolužačky', ['spolužačka', 'spolužačku'], 'ж. -a → -y.'),
+    c('Ptám se její staré ___. (babička)', 'babičky', ['babička', 'babičku'], 'babička → babičky.'),
+    c('Mám strach z té jedné ___. (kočka)', 'kočky', ['kočka', 'kočku'], 'z + род. п.: kočky.'),
+    c('Sedím vedle toho jednoho milého ___. (pes)', 'psa', ['pes', 'psu'], 'vedle + род. п.'),
+    c('Vážím si ___ dědečka. (наш добрый)', 'našeho hodného', ['našeho hodný', 'náš hodného'], 'Оба слова в род. п. м.р.: našeho hodného.'),
+    c('Bojím se tvého mladého ___. (tatínek)', 'tatínka', ['tatínek', 'tatínku'], 'tatínek → tatínka.'),
+    c('Nebojím se té jedné ___. (zkouška)', 'zkoušky', ['zkoušku', 'zkouška'], 'zkouška → zkoušky.'),
+    c('Bojím se naší nové ___. (učitelka)', 'učitelky', ['učitelka', 'učitelku'], 'bát se + род. п.: učitelky.'),
+    f('Ptám se toho jednoho ___. (doktor)', 'doktora', 'doktor → doktora.'),
+    f('Vážím si našeho milého ___. (soused)', 'souseda', 'soused → souseda.'),
+    b('Я боюсь одного учителя', 'Bojím se jednoho učitele', ['jeden', 'učitel'], 'jednoho učitele.'),
+    b('Я спрашиваю нашу учительницу', 'Ptám se naší učitelky', ['naše', 'učitelka'], 'naší učitelky.'),
+    b('Я уважаю нашего учителя', 'Vážím si našeho učitele', ['náš', 'učitel'], 'vážit si + našeho učitele.'),
+  ],
+},
+{
+  id: 'gakuz', unit: '8. Новое из Classroom (ноябрь)', icon: '🧩', title: 'Genitiv × akuzativ: jednoho, dva',
+  desc: 'vidím jednoho psa × bojím se jednoho psa',
+  rule: `<p>Падеж определяет <b>глагол или предлог</b>, а формы часто похожи:</p>
+<table>
+<tr><td></td><td>akuz. sg.</td><td>genitiv sg.</td><td>akuz. pl.</td></tr>
+<tr><td>м. одуш.</td><td>jednoho psa</td><td>jednoho psa</td><td>dva psy</td></tr>
+<tr><td>м. неодуш.</td><td>jeden stůl</td><td>jednoho stolu</td><td>dva stoly</td></tr>
+<tr><td>ж.</td><td>jednu kočku</td><td>jedné kočky</td><td>dvě kočky</td></tr></table>
+<p><b>Akuzativ</b>: vidím, znám, hledám, starám se <b>o</b>, mám, čekám <b>na</b>.<br><b>Genitiv</b>: bojím se, ptám se, sedím <b>vedle</b>, <b>od</b>, <b>do</b>, <b>z</b>, <b>bez</b>.</p>
+<p><i>Znám jednoho známého sportovce</i> (4. pád) · <i>Vezmu si autogram od známého sportovce</i> (2. pád) · <i>Sleduju dva známé sportovce</i> (4. pád, мн.)</p>`,
+  ex: [
+    { ...c('Vidím jednoho hodného psa. — какой падеж и число?', 'akuzativ sg.', ['genitiv sg.', 'akuzativ pl.'], 'vidím + кого? — винительный, один пёс.'), say: 'Vidím jednoho hodného psa.' },
+    { ...c('Starám se o dva hodné psy. — какой падеж и число?', 'akuzativ pl.', ['genitiv sg.', 'akuzativ sg.'], 'o + вин. п., dva → множественное.'), say: 'Starám se o dva hodné psy.' },
+    { ...c('Sedím vedle jednoho hodného psa. — какой падеж и число?', 'genitiv sg.', ['akuzativ sg.', 'akuzativ pl.'], 'vedle + род. п., один пёс.'), say: 'Sedím vedle jednoho hodného psa.' },
+    { ...c('Bojím se jednoho protivného kluka. — какой падеж и число?', 'genitiv sg.', ['akuzativ sg.', 'akuzativ pl.'], 'bát se + род. п.'), say: 'Bojím se jednoho protivného kluka.' },
+    { ...c('Mám úkol pro dva protivné kluky. — какой падеж и число?', 'akuzativ pl.', ['genitiv sg.', 'akuzativ sg.'], 'pro + вин. п., dva → множественное.'), say: 'Mám úkol pro dva protivné kluky.' },
+    c('Vidím ___ chytrou kočku. (одну)', 'jednu', ['jedna', 'jedné'], 'Винительный ж.р.: jednu kočku.'),
+    c('Jana má tři ___ kočky. (умные)', 'chytré', ['chytrá', 'chytrou'], 'Вин. п. мн. ч. ж.р.: -é.'),
+    c('Jana je vedle té ___ kočky. (умной)', 'chytré', ['chytrou', 'chytrá'], 'Род. п. ж.р.: té chytré kočky.'),
+    c('Znám ___ sportovce. (одного известного)', 'jednoho známého', ['jeden známý', 'jednoho známé'], 'Вин. п. м. одуш.: jednoho známého.'),
+    c('Sleduju dva ___ sportovce. (известных)', 'známé', ['známého', 'známí'], 'Вин. п. мн. ч.: dva známé sportovce.'),
+    c('Vezmu si autogram od ___ sportovce. (известного)', 'známého', ['známé', 'známý'], 'od + род. п.: známého sportovce.'),
+    c('Kupuju dva ___ stoly. (деревянных)', 'dřevěné', ['dřevěný', 'dřevěného'], 'Вин. п. мн. ч.: dva dřevěné stoly.'),
+    f('Starám se o dva malé ___. (pes)', 'psy', 'Вин. п. мн. ч.: psy.'),
+    f('Bojím se jednoho protivného ___. (kluk)', 'kluka', 'bát se + род. п.: kluka.'),
+    b('Я знаю одного известного спортсмена', 'Znám jednoho známého sportovce', ['známý', 'sportovec'], 'znát + вин. п.'),
+    b('Я забочусь о двух маленьких собаках', 'Starám se o dva malé psy', ['malého', 'psa'], 'o + вин. п. мн. ч.'),
+  ],
+},
+{
+  id: 'hotel', unit: '8. Новое из Classroom (ноябрь)', icon: '🏨', title: 'V hotelu',
+  desc: 'jednolůžkový pokoj, se snídaní',
+  rule: `<p><b>Номера:</b> <b>jednolůžkový pokoj</b> = одна кровать, один человек · <b>dvoulůžkový pokoj</b> = две кровати, два человека.</p>
+<p><b>Полезные фразы:</b></p>
+<p><i>Dobrý den, chtěl bych rezervovat pokoj. (женщина: chtěla bych)<br>Máte volný pokoj?<br>Na kolik nocí? — Na tři noci.<br>Kolik stojí pokoj na noc?<br>Je v ceně snídaně? / Pokoj se snídaní.<br>Parkoviště je placené (нужно заплатить).</i></p>
+<p>Цена за проживание — <i>cena za ubytování</i>.</p>`,
+  ex: [
+    c('Pokoj pro jednoho člověka je ___ pokoj.', 'jednolůžkový', ['dvoulůžkový', 'třílůžkový'], 'jedno- = один, lůžko = кровать.'),
+    c('Pokoj se dvěma postelmi je ___ pokoj.', 'dvoulůžkový', ['jednolůžkový', 'volný'], 'dvou- = две кровати.'),
+    { ...c('Pokoj ___ snídaní znamená «номер с завтраком».', 'se', ['za', 'na'], 'se snídaní — устойчивое выражение (с завтраком).'), say: 'Pokoj se snídaní.' },
+    c('Parkoviště je ___. (платное)', 'placené', ['platné', 'placený'], 'Parkoviště (ср. р.) → placené.'),
+    c('Na recepci dostanu ___ od pokoje. (ключ)', 'klíč', ['klíče', 'klíči'], 'dostanu + вин. п.: klíč.'),
+    c('Dobrý den, chtěl bych ___ pokoj. (забронировать)', 'rezervovat', ['rezervuju', 'rezervace'], 'chtěl bych + инфинитив.'),
+    c('Máte ___ pokoj? (свободный)', 'volný', ['volná', 'volné'], 'pokoj (м. р.) → volný.'),
+    c('Na kolik ___? — Na tři noci. (ночей)', 'nocí', ['noci', 'noc'], 'Na kolik nocí? — устойчивый вопрос.'),
+    c('Kolik stojí pokoj na ___? (ночь)', 'noc', ['noci', 'nocí'], 'na noc — «за ночь».'),
+    c('Je v ceně ___? (завтрак)', 'snídaně', ['snídaní', 'snídani'], 'Je v ceně snídaně? — включён ли завтрак.'),
+    c('Parkoviště musím ___. (заплатить)', 'zaplatit', ['zaplacení', 'placení'], 'musím + инфинитив.'),
+    f('Chtěl bych rezervovat ___ pokoj. (с одной кроватью)', 'jednolůžkový', 'jedno + lůžkový.'),
+    f('Máte ___ pokoj? (свободный)', 'volný', 'volný pokoj.'),
+    f('Chci pokoj se ___. (завтраком)', 'snídaní', 'se snídaní.'),
+    b('Я хотел бы забронировать номер', ['Chtěl bych rezervovat pokoj', 'Chtěla bych rezervovat pokoj'], ['rezervuju', 'pokoje'], 'chtěl bych (м.) / chtěla bych (ж.).'),
+    b('У вас есть свободный номер', 'Máte volný pokoj', ['volná', 'pokoje'], 'volný pokoj.'),
+    b('Парковка платная', 'Parkoviště je placené', ['placený', 'zdarma'], 'placené.'),
+  ],
+},
+{
+  id: 'za', unit: '8. Новое из Classroom (ноябрь)', icon: '⏳', title: 'Za, na, v: за что, через сколько',
+  desc: 'za 1000 Kč, třikrát za týden, na dva dny',
+  rule: `<p>Все эти предлоги — с <b>винительным падежом</b>:</p>
+<table>
+<tr><td><b>za</b> + цена</td><td>за деньги</td><td>za tisíc korun · za kávu</td></tr>
+<tr><td><b>za</b> + время</td><td>через…</td><td>za hodinu (через час) · za týden · za rok</td></tr>
+<tr><td><b>za</b> + период</td><td>раз в…</td><td>třikrát za týden = třikrát týdně</td></tr>
+<tr><td><b>na</b> + срок</td><td>на…</td><td>na dva dny · na týden</td></tr>
+<tr><td><b>v</b> + время суток</td><td>в…</td><td>v 15:00 (в три)</td></tr></table>
+<p><b>Часто:</b> denně · týdně · měsíčně · ročně = «в день / в неделю / в месяц / в год».<br><i>Je 14:00. Přijdu za hodinu = v 15:00.</i></p>`,
+  ex: [
+    c('Koupil jsem kabát ___ tisíc korun.', 'za', ['na', 'do'], 'za + цена: за тысячу крон.'),
+    c('Chodím do posilovny třikrát ___ týden.', 'za', ['na', 'v'], 'třikrát za týden = «три раза в неделю».'),
+    c('Jedu na výlet ___ dva dny.', 'na', ['za', 'do'], 'na + срок: на два дня.'),
+    c('Ahoj, tady Jana. Přijdu ___ hodinu. (через час)', 'za', ['na', 'v'], 'za hodinu = через час.'),
+    c('Je 14:00. Autobus jede ___ 15:00.', 'v', ['za', 'na'], 'v + точное время: в три.'),
+    c('Zkouška je ___ týden. (через неделю)', 'za', ['v', 'na'], 'za týden = через неделю.'),
+    c('Jedu na hory ___ týden. (на неделю)', 'na', ['za', 'po'], 'na týden = на неделю (срок).'),
+    c('Platím ___ kávu šedesát korun.', 'za', ['na', 'do'], 'platit za + вин. п.'),
+    c('Как сказать «раз в неделю»?', 'jednou týdně', ['jednou na týden', 'jednou týden'], 'týdně = «в неделю».'),
+    c('Как сказать «три раза в день»?', 'třikrát denně', ['třikrát denní', 'třikrát v den'], 'denně = «в день».'),
+    c('Čtu knihu jednou ___ měsíc. (в месяц)', 'za', ['na', 'v'], 'jednou za měsíc.'),
+    f('Vracím se ___ hodinu. (через)', 'za', 'za hodinu.'),
+    f('Jedu do Prahy ___ dva dny. (на)', 'na', 'na dva dny.'),
+    f('Cvičím každý den = cvičím ___. (ежедневно)', 'denně', 'každý den = denně.'),
+    b('Я вернусь через час', 'Vrátím se za hodinu', ['na', 'v'], 'za hodinu.'),
+    b('Я еду на два дня', 'Jedu na dva dny', ['za', 'dvě'], 'na dva dny.'),
+    b('Я хожу в зал три раза в неделю', 'Chodím do posilovny třikrát týdně', ['za', 'v'], 'třikrát týdně.'),
+  ],
+},
+
 
 ];

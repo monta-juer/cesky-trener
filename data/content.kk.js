@@ -934,6 +934,659 @@ window.CONTENT.kk = {
      "ru": "Күнің сәтті болсын"
     }
    }
+  },
+  "vid": {
+   "rule": "<p>Көптеген етістіктің екі формасы бар — <b>көрініс</b>:</p>\n<p><b>аяқталмаған</b> — әрекеттің жүруі, әдет, «күн сайын»: <i>píšu, vařím, čtu</i><br><b>аяқталған</b> — нәтиже, «соңына дейін, бір рет жасау»: <i>napíšu, uvařím, přečtu</i></p>\n<table>\n<tr><td>psát</td><td>→ <b>napsat</b></td><td>napíšu</td></tr>\n<tr><td>vařit</td><td>→ <b>uvařit</b></td><td>uvařím</td></tr>\n<tr><td>číst</td><td>→ <b>přečíst</b></td><td>přečtu</td></tr>\n<tr><td>pít</td><td>→ <b>vypít</b></td><td>vypiju</td></tr>\n<tr><td>jíst</td><td>→ <b>sníst</b></td><td>sním</td></tr>\n<tr><td>říkat</td><td>→ <b>říct</b></td><td>řeknu</td></tr>\n<tr><td>péct</td><td>→ <b>upéct</b></td><td>upeču</td></tr>\n<tr><td>učit se</td><td>→ <b>naučit se</b></td><td>naučím se</td></tr>\n<tr><td>vstávat</td><td>→ <b>vstát</b></td><td>vstanu</td></tr>\n<tr><td>vystupovat</td><td>→ <b>vystoupit</b></td><td>vystoupím</td></tr></table>\n<p><b>Басты ереже:</b> аяқталған етістіктің «осы шақтағыдай» формасы <b>келер шақты</b> білдіреді: <i>napíšu</i> = «жазып шығамын». Аяқталмаған етістіктің келер шағы <i>budu</i> арқылы жасалады: <i>budu psát</i> («жазып отырамын»). Аяқталған етістікпен <i>budu</i> қажет емес!</p>\n<p><i>Každý den vařím oběd, ale zítra uvařím večeři.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Každý den ___ e-mail. (жазу, әдет ретінде)",
+     "tip": "Күн сайын → қайталанады → аяқталмаған көрініс."
+    },
+    "1": {
+     "tip": "Болашақтағы бір реттік нәтиже → аяқталған көрініс: uvařím."
+    },
+    "2": {
+     "tip": "celou knihu = соңына дейін → přečtu."
+    },
+    "3": {
+     "tip": "Аяқталған көрініс: vypiju = ішіп қоямын (бәрін)."
+    },
+    "4": {
+     "tip": "sníst → sním (жеп қоямын)."
+    },
+    "5": {
+     "tip": "říct → řeknu (айтамын)."
+    },
+    "6": {
+     "tip": "péct → upéct: upeču."
+    },
+    "7": {
+     "tip": "naučit se = жаттап алу: naučím se."
+    },
+    "8": {
+     "q": "Teď ___ z autobusu. (мен түсіп жатырмын)",
+     "tip": "Әрекет жүріп жатыр → аяқталмаған көрініс."
+    },
+    "9": {
+     "tip": "Болашақтағы бір әрекет → vystoupím."
+    },
+    "10": {
+     "q": "«psát» етістігінің аяқталған көрінісі — бұл…",
+     "tip": "psát → napsat; napíšu = «жазып шығамын»."
+    },
+    "11": {
+     "q": "«Бүкіл кешті жазумен өткіземін» (әрекеттің жүруі) қалай айтылады?",
+     "tip": "Аяқталмаған көрініс → budu + тұйық етістік."
+    },
+    "12": {
+     "q": "Chci vstávat v šest, ale ___ v sedm. (тұрамын)",
+     "tip": "vstát → vstanu (тұрамын)."
+    },
+    "13": {
+     "tip": "napsat → napíšu."
+    },
+    "14": {
+     "tip": "Әдет → čtu."
+    },
+    "15": {
+     "ru": "Ертең кешкі асты дайындап қоямын",
+     "tip": "uvařím — аяқталған көрініс, келер шақ."
+    },
+    "16": {
+     "ru": "Күн сайын мен кітап оқимын",
+     "tip": "Күн сайын → čtu."
+    }
+   }
+  },
+  "partit": {
+   "rule": "<p><b>Мөлшер мен орама</b> білдіретін сөздерден кейін («қанша?» «неден?») <b>ілік септік</b> қойылады:</p>\n<p><i>sklenice <b>vody</b> · šálek <b>čaje</b> · plátek <b>sýra</b> · kousek <b>chleba</b> · kilo <b>cukru</b> · litr <b>mléka</b> · trochu <b>zeleniny</b> · půl <b>cibule</b> · lžíce <b>kakaa</b> · lžička <b>soli</b></i></p>\n<table>\n<tr><td>әйел -a</td><td>→ <b>-y</b></td><td>voda → vody, káva → kávy, zelenina → zeleniny</td></tr>\n<tr><td>әйел -e / дауыссыз</td><td>→ <b>-e / -i</b></td><td>cibule → cibule, sůl → soli</td></tr>\n<tr><td>жансыз ер</td><td>→ <b>-u</b> (кейде -a)</td><td>cukr → cukru, jogurt → jogurtu; бірақ sýr → sýra, chléb → chleba, čaj → čaje</td></tr>\n<tr><td>орта -o</td><td>→ <b>-a</b></td><td>mléko → mléka, víno → vína, kakao → kakaa</td></tr></table>\n<p>Орамалар: <i>láhev vína, krabice mléka, kelímek jogurtu, sáček rýže, plechovka piva</i>.</p>",
+   "ex": {
+    "0": {
+     "q": "Dám si sklenici ___. (voda)",
+     "tip": "sklenice неден? → vody."
+    },
+    "1": {
+     "q": "Dám si šálek ___. (čaj)",
+     "tip": "šálek неден? → čaje."
+    },
+    "2": {
+     "q": "Potřebuju kilo ___. (cukr)",
+     "tip": "kilo неден? → cukru."
+    },
+    "3": {
+     "q": "Koupím litr ___. (mléko)",
+     "tip": "орта -o → -a: mléka."
+    },
+    "4": {
+     "q": "Dám si plátek ___. (sýr)",
+     "tip": "plátek sýra — тұрақты тіркес, -a-мен."
+    },
+    "5": {
+     "q": "Chtěla bych kousek ___. (chléb)",
+     "tip": "chléb → chleba (é әрпі e болады)."
+    },
+    "6": {
+     "q": "Přidej dvě lžíce ___. (kakao)",
+     "tip": "kakao → kakaa."
+    },
+    "7": {
+     "q": "Dej tam půl lžičky ___. (sůl)",
+     "tip": "sůl (әйел) → soli."
+    },
+    "8": {
+     "q": "Potřebuju půl ___. (cibule)",
+     "tip": "cibule ілік септікте де сол күйі: cibule."
+    },
+    "9": {
+     "q": "Máš trochu ___? (zelenina)",
+     "tip": "trochu неден? → zeleniny."
+    },
+    "10": {
+     "q": "Dám si sklenici ___. (džus)",
+     "tip": "sklenice неден? → džusu."
+    },
+    "11": {
+     "q": "Dám si hrnek ___. (káva)",
+     "tip": "káva → kávy."
+    },
+    "12": {
+     "q": "Koupím láhev ___. (víno)",
+     "tip": "víno → vína."
+    },
+    "13": {
+     "q": "Chci kelímek ___. (jogurt)",
+     "tip": "jogurt → jogurtu."
+    },
+    "14": {
+     "q": "Potřebuju tři lžíce ___. (majonéza)",
+     "tip": "majonéza → majonézy."
+    },
+    "15": {
+     "ru": "Маған бір литр сүт керек",
+     "tip": "litr + ілік септік."
+    },
+    "16": {
+     "ru": "Маған бір стақан су беріңіз",
+     "tip": "sklenice + vody."
+    }
+   }
+  },
+  "datum": {
+   "rule": "<p>Күн туралы сұрақ: <b>Kolikátého je dnes?</b> — «Бүгін айдың нешесі?»; <b>Kdy je koncert?</b> — «Концерт қашан?»</p>\n<p>Жауап: <b>ілік септіктегі реттік сан есім (-ého)</b> + <b>ілік септіктегі ай атауы</b>:</p>\n<p><i>Koncert je <b>šestého října</b>. Narozeniny mám <b>dvanáctého května</b>.</i></p>\n<table>\n<tr><td>1. první → <b>prvního</b></td><td>2. druhý → <b>druhého</b></td><td>3. třetí → <b>třetího</b></td></tr>\n<tr><td>5. pátý → <b>pátého</b></td><td>6. šestý → <b>šestého</b></td><td>12. dvanáctý → <b>dvanáctého</b></td></tr>\n<tr><td>15. patnáctý → <b>patnáctého</b></td><td>16. šestnáctý → <b>šestnáctého</b></td><td>20. dvacátý → <b>dvacátého</b></td></tr>\n<tr><td colspan=\"3\">21. dvacátý první → <b>dvacátého prvního</b></td></tr></table>\n<p><b>Айлар (ілік септік):</b> ledna, února, března, dubna, května, června, července, srpna, <b>září</b>, října, listopadu, prosince.</p>",
+   "ex": {
+    "0": {
+     "q": "Narozeniny mám ___ května. (12.)",
+     "tip": "Күні = ілік септіктегі реттік сан: dvanáctého."
+    },
+    "1": {
+     "q": "Koncert je ___ října. (6.)",
+     "tip": "šestý → šestého."
+    },
+    "2": {
+     "q": "Film začíná ___ března. (3.)",
+     "tip": "třetí → třetího."
+    },
+    "3": {
+     "q": "Festival končí ___ července. (15.)",
+     "tip": "patnáctý → patnáctého."
+    },
+    "4": {
+     "q": "Koncert začíná ___ dubna. (20.)",
+     "tip": "dvacátý → dvacátého."
+    },
+    "5": {
+     "q": "Fotbal je ___ prosince. (1.)",
+     "tip": "první → prvního."
+    },
+    "6": {
+     "q": "Škola začíná prvního ___. (9-шы ай)",
+     "tip": "Září сөзі өзгермейді."
+    },
+    "7": {
+     "q": "Koncert je dvacátého ___. (ақпан)",
+     "tip": "únor → února."
+    },
+    "8": {
+     "q": "Narozeniny mám dvacátého ___. (қараша)",
+     "tip": "listopad → listopadu."
+    },
+    "9": {
+     "q": "Fotbal začíná pátého ___. (мамыр)",
+     "tip": "květen → května (е түсіп қалады)."
+    },
+    "10": {
+     "q": "«Бүгін айдың нешесі?» деп қалай сұрайды?",
+     "tip": "Kolikátého — күн туралы сұрақ."
+    },
+    "11": {
+     "q": "Kolikátého je koncert? — Koncert je ___ června. (16.)",
+     "tip": "šestnáctý → šestnáctého."
+    },
+    "12": {
+     "q": "Šestého ___ slavíme Den architekta. (шілде)",
+     "tip": "červenec → července."
+    },
+    "13": {
+     "q": "Zkouška je dvacátého ___. (қаңтар)",
+     "tip": "leden → ledna."
+    },
+    "14": {
+     "ru": "Менің туған күнім он екінші мамырда",
+     "tip": "Күн + ай ілік септікте."
+    },
+    "15": {
+     "ru": "Концерт үшінші наурызда басталады",
+     "tip": "třetího března."
+    },
+    "16": {
+     "ru": "Бүгін айдың нешесі",
+     "tip": "Kolikátého je dnes?"
+    }
+   }
+  },
+  "neco": {
+   "rule": "<p><b>něco / nic / co + сын есім</b> → сын есім ілік септікте <b>-ého</b> жалғауымен (жұмсақ түрі: <b>-ího</b>):</p>\n<p><i>něco <b>sladkého</b> · nic <b>dobrého</b> · Co <b>nového</b>? · Je to něco <b>moderního</b>. · Není to nic <b>zeleného</b>.</i></p>\n<table>\n<tr><td>někdo</td><td>біреу</td><td>nikdo</td><td>ешкім</td></tr>\n<tr><td>něco</td><td>бірдеңе</td><td>nic</td><td>ешнәрсе</td></tr>\n<tr><td>někdy</td><td>бір кезде</td><td>nikdy</td><td>ешқашан</td></tr>\n<tr><td>někde</td><td>бір жерде</td><td>nikde</td><td>ешқайда</td></tr>\n<tr><td>nějaký</td><td>қандай да бір</td><td>žádný</td><td>ешқандай</td></tr></table>\n<p><b>Қос болымсыздық міндетті:</b> <i>Nikdo tu není. Neznám nikoho. Nikdy nechci. Nemám žádnou sestru.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Chci něco ___. (тәтті)",
+     "tip": "něco + -ého жалғаулы сын есім."
+    },
+    "1": {
+     "q": "Nemám chuť na nic ___. (тұзды)",
+     "tip": "nic + -ého: slaného."
+    },
+    "2": {
+     "q": "Co ___ máš? (жаңа)",
+     "tip": "Co nového? — тұрақты сұрақ."
+    },
+    "3": {
+     "q": "Není to nic ___. (жасыл)",
+     "tip": "nic zeleného."
+    },
+    "4": {
+     "q": "Je to něco ___. (заманауи)",
+     "tip": "Жұмсақ жалғау: moderní → moderního."
+    },
+    "5": {
+     "q": "Nemám nic ___ v ledničce. (жақсы)",
+     "tip": "nic dobrého."
+    },
+    "6": {
+     "q": "Nekoupím nic ___. (ұсқынсыз)",
+     "tip": "nic ošklivého."
+    },
+    "7": {
+     "q": "Je to něco ___? (жеуге жарамды)",
+     "tip": "něco jedlého."
+    },
+    "8": {
+     "q": "V pokoji ___ není. (ешкім)",
+     "tip": "nikdo = ешкім, болымсыз сөйлемде."
+    },
+    "9": {
+     "q": "Znáš ___ anglickou zpěvačku? (қандай да бір)",
+     "tip": "Сұрақта → nějakou. Әйел жынысты табыс септік: -ou."
+    },
+    "10": {
+     "q": "Ne, neznám ___ anglickou zpěvačku. (ешқандай)",
+     "tip": "Болымсыздықтан кейін → žádnou."
+    },
+    "11": {
+     "q": "Ne, nepůjdu ___ na fotbal. (ешқашан)",
+     "tip": "nikdy + nepůjdu — қос болымсыздық."
+    },
+    "12": {
+     "q": "Chceš jet ___ do Prahy? (бір кезде)",
+     "tip": "Сұрақта → někdy."
+    },
+    "13": {
+     "q": "Neznám ___ z naší skupiny. (ешкімді)",
+     "tip": "znát koho → nikoho (табыс септік)."
+    },
+    "14": {
+     "q": "Chci koupit auto. Chci něco ___, ale levného. (жақсы)",
+     "tip": "něco dobrého."
+    },
+    "15": {
+     "q": "Co ___ chceš ke snídani? (тәтті)",
+     "tip": "Co sladkého chceš?"
+    },
+    "16": {
+     "ru": "Менде жаңа ештеңе жоқ",
+     "tip": "nic + nového."
+    },
+    "17": {
+     "ru": "Мен бірдеңе тәтті алғым келеді",
+     "tip": "něco sladkého."
+    },
+    "18": {
+     "ru": "Мен ешкімді танымаймын",
+     "tip": "Қос болымсыздық: neznám nikoho."
+    }
+   }
+  },
+  "posgen": {
+   "rule": "<p>«Кімнің?» — иесін <b>затынан кейін ілік септікте</b> қоямыз:</p>\n<p><i>kniha <b>mého bratra</b> · telefon <b>našeho učitele</b> · kabát <b>té ženy</b> · pes <b>Petra</b> · klíče <b>mé maminky</b></i></p>\n<table>\n<tr><td>жанды ер</td><td>-a / -e</td><td>bratr → bratra, učitel → učitele, strýc → strýce, Petr → Petra</td></tr>\n<tr><td>әйел -a</td><td>-y</td><td>maminka → maminky, žena → ženy, Honza → Honzy</td></tr>\n<tr><td>әйел -e</td><td>-e</td><td>sestřenice → sestřenice, Marie → Marie</td></tr></table>\n<p><b>Менің, сенің, біздің ілік септікте:</b> ер/орта — <b>mého, tvého, našeho</b>; әйел — <b>mé, tvé, naší</b>.<br>Сұрақ: <b>Čí je ten kufr? Čí je ta taška?</b></p>",
+   "ex": {
+    "0": {
+     "q": "To je kniha mého ___. (bratr)",
+     "tip": "Иесі (жанды ер) → bratra."
+    },
+    "1": {
+     "q": "To je kabát té ___. (žena)",
+     "tip": "әйел -a → -y: ženy."
+    },
+    "2": {
+     "q": "To je telefon našeho ___. (učitel)",
+     "tip": "učitel → učitele."
+    },
+    "3": {
+     "q": "To jsou klíče mé ___. (maminka)",
+     "tip": "maminka → maminky."
+    },
+    "4": {
+     "q": "To je kufr tvého ___. (kamarád)",
+     "tip": "жанды ер → -a."
+    },
+    "5": {
+     "q": "To je rukavice ___. (Marie)",
+     "tip": "Marie ілік септікте өзгермейді."
+    },
+    "6": {
+     "q": "To je pes ___. (Petr)",
+     "tip": "Petr → Petra."
+    },
+    "7": {
+     "q": "To je čokoláda mé ___. (babička)",
+     "tip": "babička → babičky."
+    },
+    "8": {
+     "q": "Čí je to auto? — To je auto našeho ___. (strýc)",
+     "tip": "strýc → strýce."
+    },
+    "9": {
+     "q": "«Менің ағамның кітабы» деп қалай айтады?",
+     "tip": "Иесі затынан кейін, ілік септікте тұрады."
+    },
+    "10": {
+     "q": "«Бұл кімнің сөмкесі?» деп қалай сұрайды?",
+     "tip": "Čí — «кімнің»."
+    },
+    "11": {
+     "q": "To je pes naší ___. (sousedka)",
+     "tip": "әйел -a → -y: sousedky."
+    },
+    "12": {
+     "q": "Čí je ta tužka? — To je tužka mého ___. (učitel)",
+     "tip": "učitel → učitele."
+    },
+    "13": {
+     "q": "To je auto ___. (Honza)",
+     "tip": "Honza әйел -a сияқты өзгереді: Honzy."
+    },
+    "14": {
+     "q": "To jsou boty mé ___. (sestřenice)",
+     "tip": "sestřenice → sestřenice (өзгеріссіз)."
+    },
+    "15": {
+     "ru": "Бұл менің ағамның көлігі",
+     "tip": "auto mého bratra."
+    },
+    "16": {
+     "ru": "Бұл біздің мұғалімнің (әйел) телефоны",
+     "tip": "naší učitelky."
+    }
+   }
+  },
+  "genslov": {
+   "rule": "<p>Бұл етістіктер <b>ілік септікті</b> қажет етеді (koho? čeho?):</p>\n<p><b>bát se</b> (bojím se) — қорқу · <b>ptát se</b> (ptám se) — сұрау · <b>vážit si</b> (vážím si) — құрметтеу · <b>všímat si</b> — байқау<br><i>Nebojím se</i> = <i>Nemám strach <b>z</b> + ілік септік</i></p>\n<table>\n<tr><td></td><td>ер / орта</td><td>әйел</td></tr>\n<tr><td>бір / сол</td><td><b>jednoho, toho</b></td><td><b>jedné, té</b></td></tr>\n<tr><td>менің, біздің</td><td><b>mého, našeho</b></td><td><b>mé, naší</b></td></tr>\n<tr><td>қайырымды, сүйкімді</td><td><b>milého, hodného</b></td><td><b>milé, hodné</b></td></tr>\n<tr><td>зат есім</td><td>-a / -e: <b>učitele, psa</b></td><td>-y: <b>babičky, kočky</b></td></tr></table>\n<p><i>Bojím se toho jednoho učitele. Ptám se té jedné ředitelky. Vážím si našeho milého učitele.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Bojím se ___ učitele.",
+     "tip": "bát se + ілік септік; мұғалім — ер жынысты → toho jednoho."
+    },
+    "1": {
+     "q": "Ptám se ___ ředitelky.",
+     "tip": "ředitelka — әйел жынысты → té jedné."
+    },
+    "2": {
+     "q": "Bojím se zlého ___. (pes)",
+     "tip": "pes → psa."
+    },
+    "3": {
+     "q": "Ptám se tvého staršího ___. (bratr)",
+     "tip": "ptát se + ілік септік: bratra."
+    },
+    "4": {
+     "q": "Vážím si našeho milého ___. (učitel)",
+     "tip": "vážit si + ілік септік."
+    },
+    "5": {
+     "q": "Bojím se jedné milé ___. (spolužačka)",
+     "tip": "әйел -a → -y."
+    },
+    "6": {
+     "q": "Ptám se její staré ___. (babička)",
+     "tip": "babička → babičky."
+    },
+    "7": {
+     "q": "Mám strach z té jedné ___. (kočka)",
+     "tip": "z + ілік септік: kočky."
+    },
+    "8": {
+     "q": "Sedím vedle toho jednoho milého ___. (pes)",
+     "tip": "vedle + ілік септік."
+    },
+    "9": {
+     "q": "Vážím si ___ dědečka. (біздің қайырымды)",
+     "tip": "Екі сөз де ер жынысты ілік септікте: našeho hodného."
+    },
+    "10": {
+     "q": "Bojím se tvého mladého ___. (tatínek)",
+     "tip": "tatínek → tatínka."
+    },
+    "11": {
+     "q": "Nebojím se té jedné ___. (zkouška)",
+     "tip": "zkouška → zkoušky."
+    },
+    "12": {
+     "q": "Bojím se naší nové ___. (učitelka)",
+     "tip": "bát se + ілік септік: učitelky."
+    },
+    "13": {
+     "q": "Ptám se toho jednoho ___. (doktor)",
+     "tip": "doktor → doktora."
+    },
+    "14": {
+     "q": "Vážím si našeho milého ___. (soused)",
+     "tip": "soused → souseda."
+    },
+    "15": {
+     "ru": "Мен бір мұғалімнен қорқамын",
+     "tip": "jednoho učitele."
+    },
+    "16": {
+     "ru": "Мен біздің мұғаліміміздан (әйел) сұраймын",
+     "tip": "naší učitelky."
+    },
+    "17": {
+     "ru": "Мен біздің мұғалімімізді құрметтеймін",
+     "tip": "vážit si + našeho učitele."
+    }
+   }
+  },
+  "gakuz": {
+   "rule": "<p>Септікті <b>етістік немесе предлог</b> анықтайды, ал формалар жиі ұқсас болады:</p>\n<table>\n<tr><td></td><td>akuz. sg.</td><td>genitiv sg.</td><td>akuz. pl.</td></tr>\n<tr><td>жанды ер</td><td>jednoho psa</td><td>jednoho psa</td><td>dva psy</td></tr>\n<tr><td>жансыз ер</td><td>jeden stůl</td><td>jednoho stolu</td><td>dva stoly</td></tr>\n<tr><td>әйел</td><td>jednu kočku</td><td>jedné kočky</td><td>dvě kočky</td></tr></table>\n<p><b>Табыс септік (Akuzativ)</b>: vidím, znám, hledám, starám se <b>o</b>, mám, čekám <b>na</b>.<br><b>Ілік септік</b>: bojím se, ptám se, sedím <b>vedle</b>, <b>od</b>, <b>do</b>, <b>z</b>, <b>bez</b>.</p>\n<p><i>Znám jednoho známého sportovce</i> (4. pád) · <i>Vezmu si autogram od známého sportovce</i> (2. pád) · <i>Sleduju dva známé sportovce</i> (4. pád, көпше)</p>",
+   "ex": {
+    "0": {
+     "q": "Vidím jednoho hodného psa. — қандай септік және саны?",
+     "tip": "vidím + кімді? — табыс септік, бір ит."
+    },
+    "1": {
+     "q": "Starám se o dva hodné psy. — қандай септік және саны?",
+     "tip": "o + табыс септік, dva → көпше."
+    },
+    "2": {
+     "q": "Sedím vedle jednoho hodného psa. — қандай септік және саны?",
+     "tip": "vedle + ілік септік, бір ит."
+    },
+    "3": {
+     "q": "Bojím se jednoho protivného kluka. — қандай септік және саны?",
+     "tip": "bát se + ілік септік."
+    },
+    "4": {
+     "q": "Mám úkol pro dva protivné kluky. — қандай септік және саны?",
+     "tip": "pro + табыс септік, dva → көпше."
+    },
+    "5": {
+     "q": "Vidím ___ chytrou kočku. (біреуін)",
+     "tip": "Әйел жынысты табыс септік: jednu kočku."
+    },
+    "6": {
+     "q": "Jana má tři ___ kočky. (ақылды)",
+     "tip": "Әйел жынысты көпше табыс септік: -é."
+    },
+    "7": {
+     "q": "Jana je vedle té ___ kočky. (ақылды)",
+     "tip": "Әйел жынысты ілік септік: té chytré kočky."
+    },
+    "8": {
+     "q": "Znám ___ sportovce. (бір танымал)",
+     "tip": "Жанды ер жынысты табыс септік: jednoho známého."
+    },
+    "9": {
+     "q": "Sleduju dva ___ sportovce. (танымал)",
+     "tip": "Көпше табыс септік: dva známé sportovce."
+    },
+    "10": {
+     "q": "Vezmu si autogram od ___ sportovce. (танымал)",
+     "tip": "od + ілік септік: známého sportovce."
+    },
+    "11": {
+     "q": "Kupuju dva ___ stoly. (ағаш)",
+     "tip": "Көпше табыс септік: dva dřevěné stoly."
+    },
+    "12": {
+     "q": "Starám se o dva malé ___. (pes)",
+     "tip": "Көпше табыс септік: psy."
+    },
+    "13": {
+     "q": "Bojím se jednoho protivného ___. (kluk)",
+     "tip": "bát se + ілік септік: kluka."
+    },
+    "14": {
+     "ru": "Мен бір танымал спортшыны танимын",
+     "tip": "znát + табыс септік."
+    },
+    "15": {
+     "ru": "Мен екі кішкентай итке қарап жүрмін",
+     "tip": "o + көпше табыс септік."
+    }
+   }
+  },
+  "hotel": {
+   "rule": "<p><b>Нөмірлер:</b> <b>jednolůžkový pokoj</b> = бір кереует, бір адам · <b>dvoulůžkový pokoj</b> = екі кереует, екі адам.</p>\n<p><b>Пайдалы сөз тіркестері:</b></p>\n<p><i>Dobrý den, chtěl bych rezervovat pokoj. (әйел: chtěla bych)<br>Máte volný pokoj?<br>Na kolik nocí? — Na tři noci.<br>Kolik stojí pokoj na noc?<br>Je v ceně snídaně? / Pokoj se snídaní.<br>Parkoviště je placené (төлеу керек).</i></p>\n<p>Тұруға төленетін баға — <i>cena za ubytování</i>.</p>",
+   "ex": {
+    "0": {
+     "tip": "jedno- = бір, lůžko = кереует."
+    },
+    "1": {
+     "tip": "dvou- = екі кереует."
+    },
+    "2": {
+     "q": "Pokoj ___ snídaní znamená «таңғы асы бар нөмір».",
+     "tip": "se snídaní — тұрақты тіркес (таңғы асымен)."
+    },
+    "3": {
+     "q": "Parkoviště je ___. (ақылы)",
+     "tip": "Parkoviště (орта жынысты) → placené."
+    },
+    "4": {
+     "q": "Na recepci dostanu ___ od pokoje. (кілт)",
+     "tip": "dostanu + табыс септік: klíč."
+    },
+    "5": {
+     "q": "Dobrý den, chtěl bych ___ pokoj. (брондау)",
+     "tip": "chtěl bych + тұйық етістік."
+    },
+    "6": {
+     "q": "Máte ___ pokoj? (бос)",
+     "tip": "pokoj (ер жынысты) → volný."
+    },
+    "7": {
+     "q": "Na kolik ___? — Na tři noci. (түн)",
+     "tip": "Na kolik nocí? — тұрақты сұрақ."
+    },
+    "8": {
+     "q": "Kolik stojí pokoj na ___? (түн)",
+     "tip": "na noc — «бір түнге»."
+    },
+    "9": {
+     "q": "Je v ceně ___? (таңғы ас)",
+     "tip": "Je v ceně snídaně? — таңғы ас бағаға кіре ме."
+    },
+    "10": {
+     "q": "Parkoviště musím ___. (төлеу)",
+     "tip": "musím + тұйық етістік."
+    },
+    "11": {
+     "q": "Chtěl bych rezervovat ___ pokoj. (бір кереуетті)",
+     "tip": "jedno + lůžkový."
+    },
+    "12": {
+     "q": "Máte ___ pokoj? (бос)",
+     "tip": "volný pokoj."
+    },
+    "13": {
+     "q": "Chci pokoj se ___. (таңғы асымен)",
+     "tip": "se snídaní."
+    },
+    "14": {
+     "ru": "Мен нөмір брондағым келеді",
+     "tip": "chtěl bych (ер) / chtěla bych (әйел)."
+    },
+    "15": {
+     "ru": "Сізде бос нөмір бар ма",
+     "tip": "volný pokoj."
+    },
+    "16": {
+     "ru": "Тұрақ ақылы",
+     "tip": "placené."
+    }
+   }
+  },
+  "za": {
+   "rule": "<p>Бұл предлогтардың бәрі <b>табыс септікпен</b> қолданылады:</p>\n<table>\n<tr><td><b>za</b> + баға</td><td>ақша үшін</td><td>za tisíc korun · za kávu</td></tr>\n<tr><td><b>za</b> + уақыт</td><td>…-нан кейін</td><td>za hodinu (бір сағаттан кейін) · za týden · za rok</td></tr>\n<tr><td><b>za</b> + кезең</td><td>…-да бір рет</td><td>třikrát za týden = třikrát týdně</td></tr>\n<tr><td><b>na</b> + мерзім</td><td>…-ға</td><td>na dva dny · na týden</td></tr>\n<tr><td><b>v</b> + тәулік уақыты</td><td>…-де</td><td>v 15:00 (сағат үште)</td></tr></table>\n<p><b>Жиі:</b> denně · týdně · měsíčně · ročně = «күніне / аптасына / айына / жылына».<br><i>Je 14:00. Přijdu za hodinu = v 15:00.</i></p>",
+   "ex": {
+    "0": {
+     "q": "Koupil jsem kabát ___ tisíc korun.",
+     "tip": "za + баға: мың кроне үшін."
+    },
+    "1": {
+     "q": "Chodím do posilovny třikrát ___ týden.",
+     "tip": "třikrát za týden = «аптасына үш рет»."
+    },
+    "2": {
+     "q": "Jedu na výlet ___ dva dny.",
+     "tip": "na + мерзім: екі күнге."
+    },
+    "3": {
+     "q": "Ahoj, tady Jana. Přijdu ___ hodinu. (бір сағаттан кейін)",
+     "tip": "za hodinu = бір сағаттан кейін."
+    },
+    "4": {
+     "q": "Je 14:00. Autobus jede ___ 15:00.",
+     "tip": "v + нақты уақыт: сағат үште."
+    },
+    "5": {
+     "q": "Zkouška je ___ týden. (бір аптадан кейін)",
+     "tip": "za týden = бір аптадан кейін."
+    },
+    "6": {
+     "q": "Jedu na hory ___ týden. (бір аптаға)",
+     "tip": "na týden = бір аптаға (мерзім)."
+    },
+    "7": {
+     "q": "Platím ___ kávu šedesát korun.",
+     "tip": "platit za + табыс септік."
+    },
+    "8": {
+     "q": "«Аптасына бір рет» қалай айтылады?",
+     "tip": "týdně = «аптасына»."
+    },
+    "9": {
+     "q": "«Күніне үш рет» қалай айтылады?",
+     "tip": "denně = «күніне»."
+    },
+    "10": {
+     "q": "Čtu knihu jednou ___ měsíc. (айына)",
+     "tip": "jednou za měsíc."
+    },
+    "11": {
+     "q": "Vracím se ___ hodinu. (кейін)",
+     "tip": "za hodinu."
+    },
+    "12": {
+     "q": "Jedu do Prahy ___ dva dny. (-ға)",
+     "tip": "na dva dny."
+    },
+    "13": {
+     "q": "Cvičím každý den = cvičím ___. (күн сайын)",
+     "tip": "každý den = denně."
+    },
+    "14": {
+     "ru": "Мен бір сағаттан кейін оралам",
+     "tip": "za hodinu."
+    },
+    "15": {
+     "ru": "Мен екі күнге кетіп барамын",
+     "tip": "na dva dny."
+    },
+    "16": {
+     "ru": "Мен залға аптасына үш рет барамын",
+     "tip": "třikrát týdně."
+    }
+   }
   }
  },
  "why": {
@@ -1515,6 +2168,179 @@ window.CONTENT.kk = {
    "Děkovat za + табыс септік: tvůj e-mail.",
    "Pozdravovat + табыс септік: maminku.",
    "Měj se hezky — досқа тілек."
+  ],
+  "vid": [
+   "«Každý den» — әрекет қайталанады, сондықтан аяқталмаған көрініс керек: píšu. Napíšu — «жазып шығамын» (бір рет, келер шақта), napsat — тұйық етістік.",
+   "«Zítra ... večeři» — келер шақтағы бір аяқталған әрекет, сондықтан аяқталған көрініс: uvařím. Аяқталған етістікпен budu қажет емес (budu uvařit — қате), ал uvařil jsem — өткен шақ.",
+   "«Celou knihu» — соңына дейін оқу, бұл нәтиже: přečtu. Budu přečíst деп айтпайды, přečetl jsem — өткен шақ.",
+   "Соңына дейін ішу — аяқталған көрініс vypiju. Budu vypít — қате: аяқталған етістікке budu қоспайды.",
+   "Sníst — «жеп қою». Аяқталған көрініс етістігінің «осы шақтағыдай» формасы келер шақты білдіреді: sním = «жеп қоямын».",
+   "Říct — «айту (бір рет)». Řeknu — «айтамын». Říkám — аяқталмаған көрініс («айтып жүрмін, қайталаймын»).",
+   "Péct — upéct. Upeču — «пісіріп шығамын»: келер шақтағы бір нәтиже. Budu upéct және upekl jsem келмейді.",
+   "Naučit se — «жаттап алу, толық үйрену»: naučím se. Budu naučit — қате; naučil jsem — өткен шақ.",
+   "«Teď» — әрекет қазір жүріп жатыр: vystupuju (аяқталмаған көрініс). Vystoupím — «түсемін», келер шақ.",
+   "«Zítra» және бір әрекет — аяқталған көрініс: vystoupím. Vystoupit — тұйық етістік, vystoupil jsem — өткен шақ.",
+   "Psát — аяқталмаған көрініс, napsat — аяқталған көрініс («жазып бітіру»). Psal — өткен шақ, psaní — зат есім («жазу, хат»).",
+   "Келер шақтағы әрекеттің жүруі — budu-мен аяқталмаған етістік: budu psát. Napíšu — «жазып шығамын (бір рет)», ал budu napsat болмайды.",
+   "Vstát — vstanu («тұрамын»). Vstávám — аяқталмаған көрініс, әдет: «тұрып жүрмін».",
+   "Келер шақтағы нәтиже — аяқталған көрініс: napsat → napíšu («жазып шығамын»).",
+   "«Každý večer» — әдет, аяқталмаған көрініс: číst → čtu.",
+   "«Zítra» + нәтиже (кешкі асты дайындап қою) — аяқталған көрініс: uvařím. Vařím — «пісіріп жатырмын» (әрекеттің жүруі).",
+   "«Күн сайын» — қайталану, аяқталмаған көрініс: čtu. Přečtu «оқып шығамын (соңына дейін, бір рет)» дегенді білдірер еді."
+  ],
+  "partit": [
+   "Sklenice — өлшем, одан кейін «неден?» ілік септікте тұрады: sklenice vody (әйел -a → -y).",
+   "Šálek — кесе, өлшем. «Čaj» ілік септікте — čaje: šálek čaje.",
+   "Kilo неден? — cukr ілік септікте: cukru (жансыз ер → -u).",
+   "Litr неден? — mléko → mléka (орта -o → -a).",
+   "Plátek (тілім) — өлшем, сондықтан ілік септік: sýr → sýra. Дәл «plátek sýra» деп айтады.",
+   "«Chléb» ілік септікте — chleba (буын қысқарады: é → e): kousek chleba.",
+   "Kakao ілік септікте — kakaa (-o-мен аяқталады, басқа орта жынысты сөздер сияқты): lžíce kakaa.",
+   "Sůl — әйел жынысты, ілік септікте soli: lžička soli.",
+   "Půl (жарты) ілік септікті қажет етеді: půl cibule. Cibule -e-мен аяқталады да, өзгермейді.",
+   "Trochu («аздап») — өлшем: zelenina → zeleniny (әйел -a → -y).",
+   "Sklenice — өлшем, одан кейін ілік септік: džus (жансыз ер) → džusu. Džusa — жанды есімдерге тән форма, мұнда келмейді.",
+   "Hrnek (үлкен кесе) — өлшем: káva → kávy (әйел -a → -y).",
+   "Láhev (бөтелке) — өлшем: víno → vína (орта -o → -a).",
+   "Kelímek (стақанша) — өлшем: jogurt → jogurtu (жансыз ер → -u).",
+   "Lžíce (қасық) — өлшем: majonéza → majonézy (әйел -a → -y).",
+   "Litr — өлшем, сондықтан «сүт» ілік септікте: mléka. «Mléko» — атау септік, олай болмайды.",
+   "Sklenice — өлшем, сондықтан «су» ілік септікте: vody. «Dejte mi» — «маған беріңіз», «dám si» — «өзіме аламын»."
+  ],
+  "datum": [
+   "Күні — ілік септіктегі реттік сан есім: dvanáctý → dvanáctého. «Dvanáct» (12) және «dvanáctý» (атау септіктегі 12-ші) күнге келмейді.",
+   "6-сы — šestý, ілік септікте šestého. Күн мен ай екеуі де ілік септікте: šestého října.",
+   "3-і — třetí, ілік септікте třetího (-ího жалғауы, себебі třetí — жұмсақ сын есім).",
+   "15-і — patnáctý → patnáctého: patnáctého července.",
+   "20-сы — dvacátý → dvacátého: dvacátého dubna.",
+   "1-і — první → prvního: prvního prosince.",
+   "«Září» (қыркүйек) сөзі ілік септікте өзгермейді: prvního září.",
+   "Únor ілік септікте — února (o дыбысы түсіп қалады): dvacátého února.",
+   "Listopad ілік септікте — listopadu (жансыз ер → -u): dvacátého listopadu.",
+   "Květen ілік септікте — května (е түсіп қалады): pátého května.",
+   "«Kolikátého je dnes?» — күн туралы сұрақ. «Kolik je hodin?» — уақыт туралы сұрақ.",
+   "16-сы — šestnáctý → šestnáctého: šestnáctého června.",
+   "Červenec — шілде, ілік септікте července. Күні: šestého července.",
+   "Leden — қаңтар, ілік септікте ledna: dvacátého ledna.",
+   "Күні: реттік сан есім + ай, екеуі де ілік септікте: dvanáctého května.",
+   "3 наурыз — třetího března: třetí → třetího, březen → března.",
+   "«Kolikátého je dnes?» — «Бүгін айдың нешесі?». Kolik — «қанша», бұл басқа сұрақ."
+  ],
+  "neco": [
+   "«Něco»-дан кейін сын есім ілік септікте -ého жалғауымен тұрады: sladký → sladkého.",
+   "Nic + сын есім де -ého-мен: slaný → slaného. «Chuť na» табыс септікті қажет етеді, бірақ «nic» сын есімді ілік септікте тұрғызады.",
+   "«Co nového?» — «Не жаңалық бар?». Сын есім -ého-мен тұрады: nový → nového.",
+   "Nic + жасыл: zelený → zeleného (қатаң сын есім → -ého).",
+   "Moderní — жұмсақ сын есім, ілік септіктегі жалғауы -ího: moderního.",
+   "Dobrý → dobrého. Nic-тен кейін сын есім ілік септікте тұрады: «nic dobrého».",
+   "Ošklivý → ošklivého: nic ošklivého.",
+   "Jedlý → jedlého: «něco jedlého» — «жеуге жарамды бірдеңе».",
+   "Nikdo — «ешкім». Чех тілінде болымсыздық қосарлы болады: Nikdo tu není. Někdo — «біреу», болымсыз сөйлемге келмейді.",
+   "Сұрақта — «nějakou» (қандай да бір), әйел жынысты табыс септік -ou. Žádnou болымсыздықта қолданылады.",
+   "Болымсыздықта — žádnou (ешқандай), әйел жынысты табыс септік -ou. Nějakou neznám-ға келмейді.",
+   "Nikdy — «ешқашан». Болымсыз етістікпен: nikdy nepůjdu. Чехтің қос болымсыздығы міндетті.",
+   "Сұрақта — někdy («бір кезде»). Nikdy — «ешқашан», сұрақта олай сұрамайды.",
+   "Znát + табыс септік: koho? → nikoho (ешкімді). Nikdo — атау септік, ал někoho — «біреуді» (болымсыз сөйлемге келмейді).",
+   "«Něco dobrého» — «жақсы бірдеңе»: dobrý → dobrého něco-дан кейін.",
+   "«Co sladkého» — «тәттіден бірдеңе»: sladký → sladkého co-дан кейін.",
+   "Nemám nic nového: nic + -ého жалғаулы сын есім; етістік болымсыз (nemám).",
+   "Chci něco sladkého: něco + -ého жалғаулы сын есім.",
+   "Neznám nikoho: қос болымсыздық (neznám + nikoho), nikdo-ның табыс септігі — nikoho."
+  ],
+  "posgen": [
+   "Иесі затынан кейін ілік септікте тұрады: kniha mého bratra. Bratr (жанды ер) → bratra.",
+   "Žena (әйел -a) → ženy. Kabát té ženy — «сол әйелдің пальтосы».",
+   "Učitel → učitele. Našeho — «náš» сөзінің ілік септігі.",
+   "Maminka → maminky (әйел -a → -y), mé — «má» сөзінің ілік септігі.",
+   "Kamarád (жанды ер) → kamaráda. Tvého — «tvůj» сөзінің ер жынысты ілік септігі.",
+   "Marie ілік септікте өзгермейді: rukavice Marie. Marii — табыс септік, Marií — көмектес септік.",
+   "Petr → Petra: pes Petra («Петрдің иті»).",
+   "Babička → babičky (әйел -a → -y).",
+   "Strýc → strýce (-c-мен аяқталатын жанды ер → -e). Našeho — ер жынысты ілік септік.",
+   "Зат бірінші, иесі одан кейін ілік септікте тұрады: kniha mého bratra. Кері тәртіппен чех тілінде айтпайды.",
+   "«Čí» — «кімнің». Kdo — «кім», co — «не», олар «кімнің сөмкесі?» деген сұраққа келмейді.",
+   "Sousedka → sousedky (әйел -a → -y), naší — «naše» сөзінің әйел жынысты ілік септігі.",
+   "Učitel → učitele (жанды ер). Mého — «můj» сөзінің ер жынысты ілік септігі.",
+   "Honza — -a-мен аяқталатын ер есімі, бірақ әйел -a сияқты өзгереді: Honzy (auto Honzy).",
+   "Sestřenice -e-мен аяқталады, ілік септікте өзгермейді: boty mé sestřenice.",
+   "Зат + иесі ілік септікте: auto mého bratra. «Můj bratr» атау септік болар еді.",
+   "Telefon + naší učitelky: naší — «naše» сөзінің әйел жынысты ілік септігі, učitelka → učitelky."
+  ],
+  "genslov": [
+   "Bát se ілік септікті қажет етеді. Мұғалім — ер жынысты, сондықтан «toho jednoho» (сол бір). «Tu jednu» — әйел жынысты табыс септік, «té jedné» — әйел жынысты ілік септік.",
+   "Ptát se + ілік септік. Ředitelka — әйел жынысты: té jedné (әйел жынысты ілік септік).",
+   "Bát se + ілік септік. Pes — жанды ер жынысты: psa.",
+   "Ptát se + ілік септік. Bratr → bratra, tvého staršího — ер жынысты ілік септік.",
+   "Vážit si + ілік септік. Učitel → učitele.",
+   "Bát se + ілік септік. Әйел -a → -y: spolužačky, jedné milé — әйел жынысты ілік септік.",
+   "Ptát se + ілік септік. Babička → babičky.",
+   "«Mít strach z» ілік септікті қажет етеді. Kočka → kočky (әйел -a → -y).",
+   "Vedle + ілік септік. Pes → psa.",
+   "Vážit si + ілік септік. Екі сөз де ер жынысты ілік септікте тұр: našeho hodného dědečka.",
+   "Bát se + ілік септік. Tatínek → tatínka (-ek → -ka).",
+   "Nebojím se — bát se сияқты, ілік септік. Zkouška → zkoušky (әйел -a → -y).",
+   "Bát se + ілік септік. Učitelka (әйел -a) → učitelky, naší nové — әйел жынысты ілік септік.",
+   "Ptát se + ілік септік. Doktor → doktora.",
+   "Vážit si + ілік септік. Soused → souseda.",
+   "Bát se + ілік септік. Jednoho učitele — ер жынысты ілік септік.",
+   "Ptát se + ілік септік. Naší — «naše» сөзінің әйел жынысты ілік септігі, učitelka → učitelky.",
+   "Vážit si + ілік септік. Našeho učitele — ер жынысты ілік септік."
+  ],
+  "gakuz": [
+   "Vidím кімді? — табыс септік. Jednoho psa — жанды ер жынысты, бір → akuzativ sg.",
+   "Starám se o + табыс септік. Dva psy → көпше сан: akuzativ pl.",
+   "Vedle ілік септікті қажет етеді. Jednoho psa — бір ит, яғни genitiv sg.",
+   "Bát se ілік септікті қажет етеді, бір адам → genitiv sg.",
+   "Pro + табыс септік. Dva kluky — екі бала → akuzativ pl.",
+   "Vidím кімді? — әйел жынысты табыс септік: jednu chytrou kočku. Jedna — атау септік, jedné — ілік септік.",
+   "Tři + көпше сан. Әйел жынысты көпше табыс септік: chytré kočky.",
+   "Vedle + ілік септік. Әйел жынысты ілік септік: té chytré kočky. «Chytrou» — жекеше табыс септік.",
+   "Znát + табыс септік. Жанды ер жынысты табыс септік ілік септікпен бірдей: jednoho známého sportovce.",
+   "Sleduju кімді? — көпше табыс септік. Dva známé sportovce: сын есімдерде -é.",
+   "Od + ілік септік. Známého sportovce — ер жынысты ілік септік.",
+   "Kupuju нені? — көпше табыс септік. Dva dřevěné stoly: жансыз ер жынысты сөздерде -é, -y.",
+   "Starám se o + көпше табыс септік: dva malé psy.",
+   "Bát se + ілік септік. Kluk → kluka.",
+   "Znát + табыс септік. Жанды ер жынысты: jednoho známého sportovce.",
+   "Starat se o + көпше табыс септік: dva malé psy («dva» + -é, -y)."
+  ],
+  "hotel": [
+   "Jedno- — «бір», lůžko — «кереует». Jednolůžkový pokoj — бір адамға арналған нөмір.",
+   "Dvou- — «екі». Dvoulůžkový pokoj — екі кереуетті нөмір.",
+   "Pokoj se snídaní — «таңғы асы бар нөмір». «Se» предлогы «-мен» дегенді білдіреді (snídaní сөзімен тіркеседі).",
+   "Parkoviště — орта жынысты, сондықтан placené (ақылы). «Platné» «жарамды» дегенді білдіреді.",
+   "Dostat (dostanu) табыс септікті қажет етеді; жансыз ер жынысты сөзде ол атау септікпен бірдей: klíč. Klíče және klíči — басқа септіктер.",
+   "«Chtěl bych» + тұйық етістік: rezervovat. Rezervuju — 1-жақ, rezervace — зат есім.",
+   "Pokoj — ер жынысты, сондықтан сын есім volný (бос).",
+   "«Na kolik nocí?» — тұрақты сұрақ, «неше түнге?». Жауап: na tři noci.",
+   "«Na noc» — «бір түнге». Мұнда noc табыс септікте тұр.",
+   "«Je v ceně snídaně?» — «Таңғы ас бағаға кіре ме?». Snídaně — атау септік.",
+   "Musím + тұйық етістік: zaplatit («төлеу»).",
+   "Jedno + lůžkový = jednolůžkový, «бір кереуетті».",
+   "Pokoj — ер жынысты, сын есім volný.",
+   "Se snídaní — «таңғы асымен».",
+   "Chtěl bych (ер адам) немесе chtěla bych (әйел адам) + тұйық етістік rezervovat.",
+   "Máte volný pokoj — «сізде бос нөмір бар ма». Volný — ер жынысты, pokoj сияқты.",
+   "Parkoviště — орта жынысты, сондықтан placené. «Zdarma» — «тегін»."
+  ],
+  "za": [
+   "Za + баға: «мың кроне үшін». Na — «-ға», do — «дейін».",
+   "«Třikrát za týden» — «аптасына үш рет». Za мұнда «(кезеңде)» дегенді білдіреді.",
+   "Na + мерзім: «екі күнге». Za «екі күннен кейін» дегенді білдірер еді.",
+   "Za + уақыт — «кейін»: za hodinu = «бір сағаттан кейін».",
+   "V + нақты уақыт: «сағат 15:00-де». Za — «кейін», na — «-ға».",
+   "Za týden — «бір аптадан кейін».",
+   "Na týden — «бір аптаға» (сапар мерзімі). Za týden «бір аптадан кейін» болар еді.",
+   "Platit za + не: «кофе үшін төлеу». Na және do келмейді.",
+   "Týdně — «аптасына», яғни jednou týdně = «аптасына бір рет». «Na týden» «бір аптаға» дегенді білдірер еді.",
+   "Denně — «күніне»: třikrát denně = «күніне үш рет». «Denní» — сын есім, v den деп айтпайды.",
+   "«Jednou za měsíc» — «айына бір рет». Za мұнда «(кезеңде)» дегенді білдіреді.",
+   "Za hodinu — «бір сағаттан кейін».",
+   "Na dva dny — «екі күнге».",
+   "Každý den = denně («күн сайын»).",
+   "Za hodinu — «бір сағаттан кейін». Na — «мерзімге», v — «(сағат)-те».",
+   "Na dva dny — «екі күнге». Za dva dny «екі күннен кейін» дегенді білдірер еді.",
+   "Třikrát týdně — «аптасына үш рет». Týdně — «аптасына»."
   ]
  },
  "whyRule": {
@@ -1547,7 +2373,16 @@ window.CONTENT.kk = {
   "tenhle": "Tenhle (ер), tahle (әйел), tohle (орта), tyhle (көпше). Бірінші бөлігі септеледі: tuhle (табыс, әйел).",
   "kamdat": "Kam? → na/pod/před/za/nad/mezi + табыс септік. Dát: dám, dáš, dá, dáme, dáte, dají.",
   "genitiv": "Ілік септік: әйел -a → -y, жансыз ер -u (кейде -a), жанды ер -a, орта -o → -a. Do, z, od, u, vedle, bez-ден кейін.",
-  "email": "Үндеу: Milý Petře, Milá Lucie. «Сен» түрінде бейресми: tvůj, ti, měj se hezky."
+  "email": "Үндеу: Milý Petře, Milá Lucie. «Сен» түрінде бейресми: tvůj, ti, měj se hezky.",
+  "vid": "Аяқталмаған көрініс — әрекеттің жүруі және әдет (píšu, budu psát). Аяқталған көрініс — нәтиже: napíšu = «жазып шығамын» (келер шақ), budu оған қажет емес.",
+  "partit": "Мөлшер мен орама білдіретін сөздерден кейін — ілік септік: sklenice vody, kilo cukru, litr mléka, kousek chleba, plátek sýra, půl cibule.",
+  "datum": "Күні: ілік септіктегі реттік сан есім (-ého) + ілік септіктегі ай: šestého října. Сұрақ: Kolikátého je dnes? Září өзгермейді.",
+  "neco": "něco / nic / co + сын есім -ého (-ího) жалғауымен: něco sladkého, nic nového, Co nového? Болымсыздық қосарлы: nikdo, nikdy, žádný.",
+  "posgen": "Иесі затынан кейін ілік септікте тұрады: kniha mého bratra, auto Honzy. Mého / mé / naší — můj / má / naše сөздерінің ілік септігі.",
+  "genslov": "Bát se, ptát se, vážit si + ілік септік: Bojím se toho jednoho učitele. Nebojím se = nemám strach z + ілік септік.",
+  "gakuz": "Септікті етістік немесе предлог анықтайды: vidím, znám, starám se o + 4. pád; bojím se, vedle, od + 2. pád. Dva/dvě/tři + көпше табыс септік.",
+  "hotel": "jednolůžkový = 1 кереует, dvoulůžkový = 2. Chtěl bych rezervovat pokoj. Na kolik nocí? Je v ceně snídaně?",
+  "za": "za + баға / «кейін»: za tisíc, za hodinu, třikrát za týden. na + мерзім: na dva dny. v + нақты уақыт. denně, týdně — «күніне, аптасына»."
  },
  "vocab": {
   "v-obchod": [
@@ -1822,6 +2657,75 @@ window.CONTENT.kk = {
    "қою (түсі)",
    "мықты",
    "қайырымды, тәртіпті"
+  ],
+  "v-mesice": [
+   "қаңтар",
+   "ақпан",
+   "наурыз",
+   "сәуір",
+   "мамыр",
+   "маусым",
+   "шілде",
+   "тамыз",
+   "қыркүйек",
+   "қазан",
+   "қараша",
+   "желтоқсан",
+   "күні (дата)",
+   "туған күн",
+   "той, салтанат",
+   "концерт",
+   "фестиваль",
+   "тойлау, мерекелеу",
+   "мереке; есім күні",
+   "бірінші"
+  ],
+  "v-potraviny": [
+   "тілім",
+   "кесек",
+   "келі",
+   "литр",
+   "бөтелке",
+   "стақан; шыны банка",
+   "кесе",
+   "үлкен кесе",
+   "қасық",
+   "шай қасық",
+   "стақанша",
+   "қорап",
+   "орама",
+   "пакет, қапшық",
+   "қаңылтыр құты",
+   "аздап",
+   "жарты",
+   "қант",
+   "тұз",
+   "бал",
+   "ірімшік",
+   "нан",
+   "сүзбе",
+   "йогурт",
+   "майонез",
+   "какао",
+   "қияр",
+   "авокадо"
+  ],
+  "v-hotel": [
+   "қонақ үй",
+   "бір кереуетті нөмір",
+   "екі кереуетті нөмір",
+   "алдын ала брондау",
+   "брондап қою",
+   "қабылдау орны",
+   "кілт",
+   "түн",
+   "тұру",
+   "тұрақ",
+   "бос",
+   "бос емес",
+   "ақылы",
+   "тегін",
+   "бағаға кіреді"
   ]
  }
 };

@@ -123,6 +123,7 @@ window.TITLES = {
     '5. Предлоги и направления': { cs: '5. Předložky a směry', en: '5. Prepositions and directions', kk: 'Шылаулар мен бағыттар' },
     '6. Жизнь и покупки': { cs: '6. Život a nákupy', en: '6. Life and shopping', kk: 'Өмір және сауда' },
     '7. Из учебника и Classroom': { cs: '7. Z učebnice a Classroomu', en: '7. From the textbook and Classroom', kk: 'Оқулық пен Classroom-нан' },
+    '8. Новое из Classroom (ноябрь)': { cs: '8. Novinky z Classroomu (listopad)', en: '8. New from Classroom (November)', kk: 'Classroom-нан жаңалар (қараша)' },
   },
   lessons: {
     byt: { cs: 'Být: já, ty, on…', en: 'Být: I, you, he…', kk: 'Být: мен, сен, ол…' },
@@ -155,6 +156,15 @@ window.TITLES = {
     kamdat: { cs: 'Kam to dát? před, za, mezi, pod, nad, na', en: 'Where to put it? před, za, mezi, pod, nad, na', kk: 'Қайда қою керек? před, za, mezi, pod, nad, na' },
     genitiv: { cs: 'Genitiv sg. + do, z, od, u, vedle', en: 'Genitive sg. + do, z, od, u, vedle', kk: 'Ілік септік жекеше + do, z, od, u, vedle' },
     email: { cs: 'Neformální e-mail', en: 'Informal e-mail', kk: 'Бейресми e-mail' },
+    vid: { cs: 'Vid: psát × napsat', en: 'Aspect: psát × napsat', kk: 'Етістік көрінісі: psát × napsat' },
+    partit: { cs: 'Partitivní genitiv: plátek chleba', en: 'Partitive genitive: plátek chleba', kk: 'Бөлік ілік септік: plátek chleba' },
+    datum: { cs: 'Datum: Kolikátého je dnes?', en: 'Dates: Kolikátého je dnes?', kk: 'Күні: Kolikátého je dnes?' },
+    neco: { cs: 'Něco, nic, někdo, nikdy', en: 'Something, nothing, someone, never', kk: 'Бірдеңе, ештеңе, біреу, ешқашан' },
+    posgen: { cs: 'Čí je to? Kniha mého bratra', en: 'Whose is it? Kniha mého bratra', kk: 'Кімдікі? Kniha mého bratra' },
+    genslov: { cs: 'Bojím se, ptám se, vážím si + 2. pád', en: 'Bojím se, ptám se, vážím si + 2nd case', kk: 'Bojím se, ptám se, vážím si + ілік септік' },
+    gakuz: { cs: 'Genitiv × akuzativ: jednoho, dva', en: 'Genitive × accusative: jednoho, dva', kk: 'Ілік септік × табыс септік: jednoho, dva' },
+    hotel: { cs: 'V hotelu', en: 'At the hotel', kk: 'Қонақүйде' },
+    za: { cs: 'Za, na, v: cena, za hodinu, za týden', en: 'Za, na, v: price, in an hour, per week', kk: 'Za, na, v: баға, бір сағаттан кейін, аптасына' },
   },
   vocab: {
     'v-obchod': { cs: 'Obchod a oblečení', en: 'Shop and clothes', kk: 'Дүкен және киім' },
@@ -168,5 +178,8 @@ window.TITLES = {
     'v-rodina': { cs: 'Rodina', en: 'Family', kk: 'Отбасы' },
     'v-den': { cs: 'Den a čas', en: 'Day and time', kk: 'Күн және уақыт' },
     'v-barvy': { cs: 'Barvy a popis', en: 'Colours and description', kk: 'Түстер және сипаттау' },
+    'v-mesice': { cs: 'Měsíce a data', en: 'Months and dates', kk: 'Айлар және күндер' },
+    'v-potraviny': { cs: 'Množství a balení', en: 'Quantities and packaging', kk: 'Мөлшер және қаптама' },
+    'v-hotel': { cs: 'Hotel', en: 'Hotel', kk: 'Қонақүй' },
   },
 };
